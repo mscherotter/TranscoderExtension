@@ -13,6 +13,10 @@
     using Windows.Storage;
     using Windows.Storage.Streams;
     using Windows.ApplicationModel;
+
+    /// <summary>
+    /// Animated GIF Creator
+    /// </summary>
     public sealed class GifCreator : IBackgroundTask
     {
         public async void Run(IBackgroundTaskInstance taskInstance)
