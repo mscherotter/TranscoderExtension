@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="AnimatedGifCreator.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AnimatedGifCreator"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel> 
+            <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            <TextBlock Text="A Transcoder Extension" Margin="4" Style="{StaticResource BodyTextBlockStyle}"/>
+            <Button Content="Select video file" Margin="4" Click="OnSelectFile"/>
+            <TextBlock Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText"/>
+            <Button Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False"/>
+        </StackPanel>
+    </Grid>
+</Page>
