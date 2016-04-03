@@ -1,7 +1,7 @@
 # Transcoder Extension
 Extension for [Transcoder](http://clkde.tradedoubler.com/click?p=259740&a=2825476&g=0&url=https%3a%2f%2fwww.microsoft.com%2fstore%2fapps%2f9nblggh5z1bg) app for Windows
 
-Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, Animated GIF Creator with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the Windows Store.  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder TExtension:
+Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, Animated GIF Creator with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the Windows Store.  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder Extension:
 ```
 public sealed class GifCreator : IBackgroundTask
 {
@@ -35,13 +35,13 @@ public sealed class GifCreator : IBackgroundTask
 ## Transcoder Protocol
 Create a Windows Universal App that exposes an application service.  Read 
 [this article on MSDN](https://msdn.microsoft.com/en-us/windows/uwp/launch-resume/how-to-create-and-consume-an-app-service) 
-on how to create and consume an app service.  To work in Transcoder, the app service needs to behave in the following way:
+on how to create and consume an app service.  To work in Transcoder, the app service needs to follow a specific protocol, responding to messages that have "Command" properties:
 ### Get Description
-#### Input
 Gets the description of the app service
-Property | Type | Description
--------- | ---- | -----------
-Command | String | "GetDescription"
+#### Input
+Property | Type   | Description
+-------- | ------ | -----------
+Command  | String | "GetDescription"
 #### Output
 Property      | Type   | Description
 ------------- | ------ | -----------
@@ -49,18 +49,18 @@ DisplayName   | String | the localized display name of the hosting application
 PublisherName | String | the localized publisher name of the hosting application
 Version       | String | the version of the hosting application in the store
 Price         | String | the localized price of the hosting application in the store or "0" for free apps
-LogoFileToken | String | the SharedStorageAccessManager token for a square .png image at 50x50 px minimum size
+LogoFileToken | String | the token for a square .png image at 50x50 px minimum size created by using the [SharedStorageAccessManager.AddFile](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile.aspx) API
 
 ### Get Source Formats
 Get the source formats that the app service supports
 #### Input
-Property | Type | Description
--------- | ---- | -----------
-Command | String | "GetSourceFormats"
+Property | Type   | Description
+-------- | ------ | -----------
+Command  | String | "GetSourceFormats"
 #### Output
-Property      | Type   | Description
-------------- | ------ | -----------
-Formats   | String | the source formats that the transcoder takes separated by commas (for example ".wmv,.avi,.mp4")
+Property | Type   | Description
+-------- | ------ | -----------
+Formats  | String | the source formats that the transcoder takes separated by commas (for example ".wmv,.avi,.mp4")
 
 ### Get Destination Formats
 Gets the destination formats that the app service supports
