@@ -1,7 +1,36 @@
 # Transcoder Extension
 Extension for [Transcoder](http://clkde.tradedoubler.com/click?p=259740&a=2825476&g=0&url=https%3a%2f%2fwww.microsoft.com%2fstore%2fapps%2f9nblggh5z1bg) app for Windows
 
-Build an app that extends the Transcoder app, adding additional source and target formats.
+Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, Animated GIF Creator with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the Windows Store.  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder TExtension:
+```
+public sealed class GifCreator : IBackgroundTask
+{
+    public async void Run(IBackgroundTaskInstance taskInstance)
+    {
+        var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\StoreLogo.png");
+
+        var extension = new Transcoder.Extension
+        {
+            Price = "0",
+            Version = "1.0",
+            SourceFormats = new string[] { ".mp4", ".wmv", ".avi" },
+            DestinationFormats = new string[] { ".gif" },
+            LogoFile = logoFile,
+            TranscodeAsync = this.TranscodeGifAsync
+        };
+
+        extension.Run(taskInstance);
+    }
+
+    public IAsyncAction TranscodeGifAsync(StorageFile source, StorageFile destination, ValueSet arguments)
+    {
+        return AsyncInfo.Run(async delegate (CancellationToken token)
+        {
+			... todo: write transcoding here
+		});
+	}
+}	
+```
 
 ## Transcoder Protocol
 Create a Windows Universal App that exposes an application service.  Read 
@@ -9,6 +38,7 @@ Create a Windows Universal App that exposes an application service.  Read
 on how to create and consume an app service.  To work in Transcoder, the app service needs to behave in the following way:
 ### Get Description
 #### Input
+Gets the description of the app service
 Property | Type | Description
 -------- | ---- | -----------
 Command | String | "GetDescription"
@@ -22,6 +52,7 @@ Price         | String | the localized price of the hosting application in the s
 LogoFileToken | String | the SharedStorageAccessManager token for a square .png image at 50x50 px minimum size
 
 ### Get Source Formats
+Get the source formats that the app service supports
 #### Input
 Property | Type | Description
 -------- | ---- | -----------
@@ -32,6 +63,7 @@ Property      | Type   | Description
 Formats   | String | the source formats that the transcoder takes separated by commas (for example ".wmv,.avi,.mp4")
 
 ### Get Destination Formats
+Gets the destination formats that the app service supports
 #### Input
 Property | Type   | Description
 -------- | ------ | -----------
