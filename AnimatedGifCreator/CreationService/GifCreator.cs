@@ -6,14 +6,15 @@
     using System.Runtime.InteropServices.WindowsRuntime;
     using System.Threading;
     using Windows.ApplicationModel.Background;
-    using Windows.Foundation; 
+    using Windows.Foundation;
     using Windows.Foundation.Collections;
     using Windows.Graphics.Imaging;
     using Windows.Media.Editing;
     using Windows.Storage;
     using Windows.Storage.Streams;
     using Windows.ApplicationModel;
-
+    using System.Threading.Tasks;
+    using Windows.ApplicationModel.Store;
     /// <summary>
     /// Animated GIF Creator
     /// </summary>
@@ -25,7 +26,7 @@
 
             var extension = new Transcoder.Extension
             {
-                Price = "0",
+                Price = "0", // use = await GetPriceAsync() for apps that are not free
                 Version = "1.0",
                 SourceFormats = new string[] { ".mp4", ".wmv", ".avi" },
                 DestinationFormats = new string[] { ".gif" },
@@ -137,6 +138,16 @@
                     System.Diagnostics.Debug.WriteLine(se.Message);
                 }
             });
+        }
+
+        private async Task<string> GetPriceAsync()
+        {
+#if DEBUG
+            var listingInformation = await CurrentAppSimulator.LoadListingInformationAsync();
+#else
+            var listingInformation = await CurrentApp.LoadListingInformationAsync();
+#endif
+            return listingInformation.FormattedPrice;
         }
     }
 }

@@ -19,9 +19,6 @@
     internal class Extension : IBackgroundTask
     {
         #region Fields
-        /// <summary>
-        /// the background task deferral
-        /// </summary>
         private BackgroundTaskDeferral backgroundTaskDeferral;
         private bool _canceled;
         private IAsyncAction _action;

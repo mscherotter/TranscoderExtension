@@ -68,7 +68,11 @@ namespace AnimatedGifCreator
 
             if (destinationFile != null)
             {
+                this.ProgressRing.IsActive = true; 
+
                 await gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, null);
+
+                this.ProgressRing.IsActive = false;
             }
 
             await Launcher.LaunchFileAsync(destinationFile);
