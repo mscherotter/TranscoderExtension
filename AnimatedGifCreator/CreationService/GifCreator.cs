@@ -22,7 +22,7 @@
     {
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
-            var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\StoreLogo.png");
+            var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\Logo.png");
 
             var extension = new Transcoder.Extension
             {
