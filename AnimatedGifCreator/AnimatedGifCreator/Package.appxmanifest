@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.6.0" />
+  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.8.0" />
   <mp:PhoneIdentity PhoneProductId="3f529d8f-7401-4e6a-b44b-58fa8142299c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Animated GIF Creator</DisplayName>
