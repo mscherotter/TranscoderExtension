@@ -1,4 +1,12 @@
-﻿using System.Resources;
+﻿// <copyright file="AssemblyInfo.cs" company="Michael S. Scherotter">
+// Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
+// </copyright>
+// <author>Michael S. Scherotter</author>
+// <email>synergist@outlook.com</email>
+// <date>2016-04-04</date>
+// <summary>Assembly information</summary>
+
+using System.Resources;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -7,7 +15,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("AnimatedGifCreator")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Animated GIF Creator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Michael S. Scherotter")]
 [assembly: AssemblyProduct("AnimatedGifCreator")]

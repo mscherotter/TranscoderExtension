@@ -1,27 +1,44 @@
-﻿using System;
+﻿// <copyright file="MainPage.xaml.cs" company="Michael S. Scherotter">
+// Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
+// </copyright>
+// <author>Michael S. Scherotter</author>
+// <email>synergist@outlook.com</email>
+// <date>2016-04-04</date>
+// <summary>MainPage code behind</summary>
+
+using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Resources;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-
-// The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace AnimatedGifCreator
 {
     /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
+    /// MainPage code behind
     /// </summary>
     public sealed partial class MainPage : Page
     {
         private StorageFile sourceFile;
 
+        /// <summary>
+        /// Initializes a new instance of the MainPage class.
+        /// </summary>
         public MainPage()
         {
             this.InitializeComponent();
+        }
+
+        internal async void Activate(FileActivatedEventArgs args)
+        {
+            await SetSourceFileAsync(args.Files.FirstOrDefault() as StorageFile);
         }
 
         private async void OnSelectFile(object sender, RoutedEventArgs e)
@@ -33,15 +50,16 @@ namespace AnimatedGifCreator
             };
 
             picker.FileTypeFilter.Add(".mp4");
+            picker.FileTypeFilter.Add(".mov");
             picker.FileTypeFilter.Add(".wmv");
             picker.FileTypeFilter.Add(".avi");
 
             var file = await picker.PickSingleFileAsync();
 
-            SetSourceFile(file);
+            await SetSourceFileAsync(file);
         }
 
-        private void SetSourceFile(StorageFile file)
+        private async Task SetSourceFileAsync(StorageFile file)
         {
             this.sourceFile = file;
 
@@ -54,12 +72,15 @@ namespace AnimatedGifCreator
             {
                 FilenameText.Text = file.Name;
                 ConvertButton.IsEnabled = true;
-            }
-        }
 
-        internal void Activate(FileActivatedEventArgs args)
-        {
-            SetSourceFile(args.Files.FirstOrDefault() as StorageFile);
+                var thumbnail = await file.GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.VideosView);
+
+                var image = new BitmapImage();
+
+                await image.SetSourceAsync(thumbnail);
+
+                this.SourceThumbnail.Source = image;
+            }
         }
 
         private async void OnConvert(object sender, RoutedEventArgs e)
@@ -73,7 +94,9 @@ namespace AnimatedGifCreator
                 SuggestedFileName = Path.ChangeExtension(this.sourceFile.Name, ".gif"),
             };
 
-            picker.FileTypeChoices.Add("GIF Images", new string[] { ".gif" }.ToList());
+            var resources = ResourceLoader.GetForCurrentView();
+
+            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new string[] { ".gif" }.ToList());
 
             var destinationFile = await picker.PickSaveFileAsync();
 

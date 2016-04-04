@@ -1,13 +1,23 @@
-﻿namespace Transcoder
+﻿// <copyright file="Extension.cs" company="Michael S. Scherotter">
+// Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
+// </copyright>
+// <author>Michael S. Scherotter</author>
+// <email>synergist@outlook.com</email>
+// <date>2016-04-04</date>
+// <summary>Transcoder extension</summary>
+
+namespace Transcoder
 {
     using System;
-    using System.Collections.Generic; 
+    using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Threading.Tasks;
     using Windows.ApplicationModel;
     using Windows.ApplicationModel.AppService;
     using Windows.ApplicationModel.Background;
     using Windows.ApplicationModel.DataTransfer;
+    using Windows.ApplicationModel.Store;
     using Windows.Data.Json;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
@@ -30,10 +40,20 @@
         /// </summary>
         internal Extension()
         {
+            var version = Windows.ApplicationModel.Package.Current.Id.Version;
+
+            var versionString = string.Format(
+                CultureInfo.InvariantCulture,
+                "{0}.{1}.{2}.{3}",
+                version.Major,
+                version.Minor,
+                version.Build,
+                version.Revision);
+
             DisplayName = Package.Current.DisplayName;
             PublisherName = Package.Current.PublisherDisplayName;
-            Version = "0.1";
-            Price = "$0";
+            Version = versionString;
+            Price = "0";
         }
         #endregion
 
@@ -101,6 +121,21 @@
             var appServiceconnection = details.AppServiceConnection;
             appServiceconnection.RequestReceived += OnRequestReceived;
         }
+
+        /// <summary>
+        /// Gets the formatted price of the app
+        /// </summary>
+        /// <returns>an async task with the formatted price of the app as a string</returns>
+        internal static async Task<string> GetPriceAsync()
+        {
+#if DEBUG
+            var listingInformation = await CurrentAppSimulator.LoadListingInformationAsync();
+#else
+            var listingInformation = await CurrentApp.LoadListingInformationAsync();
+#endif
+            return listingInformation.FormattedPrice;
+        }
+
         #endregion
 
         #region Implementation

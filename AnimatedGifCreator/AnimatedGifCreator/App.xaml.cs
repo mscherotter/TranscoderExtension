@@ -1,4 +1,12 @@
-﻿namespace AnimatedGifCreator
+﻿// <copyright file="App.xaml.cs" company="Michael S. Scherotter">
+// Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
+// </copyright>
+// <author>Michael S. Scherotter</author>
+// <email>synergist@outlook.com</email>
+// <date>2016-04-04</date>
+// <summary>App.xaml code behind</summary>
+
+namespace AnimatedGifCreator
 {
     using System;
     using System.Linq;
@@ -26,6 +34,10 @@
             this.Suspending += OnSuspending;
         }
 
+        /// <summary>
+        /// File actiavated
+        /// </summary>
+        /// <param name="args">the file activated event arguments</param>
         protected override void OnFileActivated(FileActivatedEventArgs args)
         {
             var firstFile = args.Files.FirstOrDefault();

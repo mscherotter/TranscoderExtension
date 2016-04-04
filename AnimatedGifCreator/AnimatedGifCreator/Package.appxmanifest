@@ -15,18 +15,15 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="AnimatedGifCreator.App">
-      <uap:VisualElements DisplayName="Animated GIF Creator" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Convert MP4, WMV, or AVI files to animated GIF images." BackgroundColor="transparent">
+      <uap:VisualElements DisplayName="ms-resource:DisplayName" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="ms-resource:Description" BackgroundColor="transparent">
         <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#CBD0E8" />
-        <uap:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png" ShortName="Animated GIF Creator">
+        <uap:DefaultTile Square71x71Logo="Assets\Square71x71Logo.png" ShortName="ms-resource:ShortName">
         </uap:DefaultTile>
       </uap:VisualElements>
       <Extensions>
-        <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
-          <uap:AppService Name="com.charette.gifcreator" />
-        </uap:Extension>
         <uap:Extension Category="windows.fileTypeAssociation">
           <uap:FileTypeAssociation Name="video">
-            <uap:DisplayName>Video</uap:DisplayName>
+            <uap:DisplayName>ms-resource:Video</uap:DisplayName>
             <uap:SupportedFileTypes>
               <uap:FileType ContentType="video/x-ms-wmv">.wmv</uap:FileType>
               <uap:FileType ContentType="video/mp4">.mp4</uap:FileType>
@@ -34,6 +31,9 @@
               <uap:FileType ContentType="video/avi">.avi</uap:FileType>
             </uap:SupportedFileTypes>
           </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
+          <uap:AppService Name="com.charette.gifcreator" />
         </uap:Extension>
       </Extensions>
     </Application>

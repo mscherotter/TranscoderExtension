@@ -123,4 +123,34 @@
   <data name="ATranscoderExtension.Text" xml:space="preserve">
     <value>A Transcoder Extension</value>
   </data>
+  <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
+    <value>A Transcoder Extension</value>
+  </data>
+  <data name="CloneForkLink.Content" xml:space="preserve">
+    <value>Clone/fork on GitHub</value>
+  </data>
+  <data name="ConvertButton.Content" xml:space="preserve">
+    <value>Convert to animated GIF</value>
+  </data>
+  <data name="CreatedByText.Text" xml:space="preserve">
+    <value>Created by Michael S. Scherotter</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Convert .mp4, .mov, .wmv, or .avi files to animated GIF images.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Animated GIF Creator</value>
+  </data>
+  <data name="GIFImages" xml:space="preserve">
+    <value>GIF Images</value>
+  </data>
+  <data name="SelectFileButton.Content" xml:space="preserve">
+    <value>Select a video file</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Animated GIF Creator</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
 </root>

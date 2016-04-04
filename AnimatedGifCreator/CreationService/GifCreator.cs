@@ -1,34 +1,43 @@
-﻿namespace CreationService
+﻿// <copyright file="GifCreator.cs" company="Michael S. Scherotter">
+// Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
+// </copyright>
+// <author>Michael S. Scherotter</author>
+// <email>synergist@outlook.com</email>
+// <date>2016-04-04</date>
+// <summary>GIF Creator Application service</summary>
+
+namespace CreationService
 {
-    using System.IO;
     using System;
     using System.Collections.Generic;
     using System.Runtime.InteropServices.WindowsRuntime;
     using System.Threading;
+    using Windows.ApplicationModel;
     using Windows.ApplicationModel.Background;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
     using Windows.Graphics.Imaging;
     using Windows.Media.Editing;
     using Windows.Storage;
-    using Windows.Storage.Streams;
-    using Windows.ApplicationModel;
-    using System.Threading.Tasks;
-    using Windows.ApplicationModel.Store;
+
     /// <summary>
     /// Animated GIF Creator
     /// </summary>
     public sealed class GifCreator : IBackgroundTask
     {
+        #region Methods
+        /// <summary>
+        /// Background task entry point
+        /// </summary>
+        /// <param name="taskInstance">the task instance</param>
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
             var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\Logo.png");
 
             var extension = new Transcoder.Extension
             {
-                Price = "0", // use = await GetPriceAsync() for apps that are not free
-                Version = "1.0",
-                SourceFormats = new string[] { ".mp4", ".wmv", ".avi" },
+                Price = await Transcoder.Extension.GetPriceAsync(), 
+                SourceFormats = new string[] { ".mp4", ".mov", ".wmv", ".avi" },
                 DestinationFormats = new string[] { ".gif" },
                 LogoFile = logoFile,
                 TranscodeAsync = this.TranscodeGifAsync
@@ -37,6 +46,13 @@
             extension.Run(taskInstance);
         }
 
+        /// <summary>
+        /// Transcode a video file to an animated GIF image
+        /// </summary>
+        /// <param name="source">a video file</param>
+        /// <param name="destination">an empty GIF image</param>
+        /// <param name="arguments">transcode parameters</param>
+        /// <returns>an async action</returns>
         public IAsyncAction TranscodeGifAsync(StorageFile source, StorageFile destination, ValueSet arguments)
         {
             return AsyncInfo.Run(async delegate (CancellationToken token)
@@ -139,15 +155,6 @@
                 }
             });
         }
-
-        private async Task<string> GetPriceAsync()
-        {
-#if DEBUG
-            var listingInformation = await CurrentAppSimulator.LoadListingInformationAsync();
-#else
-            var listingInformation = await CurrentApp.LoadListingInformationAsync();
-#endif
-            return listingInformation.FormattedPrice;
-        }
+        #endregion
     }
 }
