@@ -1,9 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using Windows.ApplicationModel.Activation;
 using Windows.Storage;
 using Windows.Storage.Pickers;
-using Windows.System; 
+using Windows.System;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -37,6 +38,11 @@ namespace AnimatedGifCreator
 
             var file = await picker.PickSingleFileAsync();
 
+            SetSourceFile(file);
+        }
+
+        private void SetSourceFile(StorageFile file)
+        {
             this.sourceFile = file;
 
             if (file == null)
@@ -49,6 +55,11 @@ namespace AnimatedGifCreator
                 FilenameText.Text = file.Name;
                 ConvertButton.IsEnabled = true;
             }
+        }
+
+        internal void Activate(FileActivatedEventArgs args)
+        {
+            SetSourceFile(args.Files.FirstOrDefault() as StorageFile);
         }
 
         private async void OnConvert(object sender, RoutedEventArgs e)

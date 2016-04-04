@@ -1,6 +1,7 @@
 ﻿namespace AnimatedGifCreator
 {
     using System;
+    using System.Linq;
     using Windows.ApplicationModel;
     using Windows.ApplicationModel.Activation;
     using Windows.UI.Xaml;
@@ -23,6 +24,47 @@
                 Microsoft.ApplicationInsights.WindowsCollectors.Session);
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        protected override void OnFileActivated(FileActivatedEventArgs args)
+        {
+            var firstFile = args.Files.FirstOrDefault();
+
+            var frame = CreateRootFrame();
+
+            if (frame.Content == null)
+            {
+                frame.Navigate(typeof(MainPage));
+            }
+
+            var page = frame.Content as MainPage;
+
+            page.Activate(args);
+
+            // Ensure the current window is active
+            Window.Current.Activate();
+        }
+
+        private Frame CreateRootFrame()
+        {
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            // Do not repeat app initialization when the Window already has content, 
+            // just ensure that the window is active 
+            if (rootFrame == null)
+            {
+                // Create a Frame to act as the navigation context and navigate to the first page 
+                rootFrame = new Frame();
+
+                // Set the default language 
+                rootFrame.Language = Windows.Globalization.ApplicationLanguages.Languages[0];
+                rootFrame.NavigationFailed += OnNavigationFailed;
+
+                // Place the frame in the current Window 
+                Window.Current.Content = rootFrame;
+            }
+
+            return rootFrame;
         }
 
         /// <summary>

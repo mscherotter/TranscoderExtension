@@ -21,6 +21,18 @@
         </uap:DefaultTile>
       </uap:VisualElements>
       <Extensions>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="video">
+            <uap:DisplayName>Video</uap:DisplayName>
+            <uap:EditFlags OpenIsSafe="true" />
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="video/x-ms-wmv">.wmv</uap:FileType>
+              <uap:FileType ContentType="video/mp4">.mp4</uap:FileType>
+              <uap:FileType ContentType="video/quicktime">.mov</uap:FileType>
+              <uap:FileType ContentType="video/avi">.avi</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
         <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
           <uap:AppService Name="com.charette.gifcreator" />
         </uap:Extension>
