@@ -32,18 +32,21 @@ namespace CreationService
         /// <param name="taskInstance">the task instance</param>
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
+            var deferral = taskInstance.GetDeferral(); 
+
             var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\Logo.png");
 
             var extension = new Transcoder.Extension
             {
                 Price = await Transcoder.Extension.GetPriceAsync(), 
+                SourceType = "Video",
                 SourceFormats = new string[] { ".mp4", ".mov", ".wmv", ".avi" },
                 DestinationFormats = new string[] { ".gif" },
                 LogoFile = logoFile,
                 TranscodeAsync = this.TranscodeGifAsync
             };
 
-            extension.Run(taskInstance);
+            extension.Run(taskInstance, deferral);
         }
 
         /// <summary>

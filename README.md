@@ -7,19 +7,21 @@ public sealed class GifCreator : IBackgroundTask
 {
     public async void Run(IBackgroundTaskInstance taskInstance)
     {
-        var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\StoreLogo.png");
+		var deferral = taskInstance.GetDeferral(); 
 
-        var extension = new Transcoder.Extension
-        {
-            Price = "0",
-            Version = "1.0",
-            SourceFormats = new string[] { ".mp4", ".wmv", ".avi" },
-            DestinationFormats = new string[] { ".gif" },
-            LogoFile = logoFile,
-            TranscodeAsync = this.TranscodeGifAsync
-        };
+		var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\Logo.png");
 
-        extension.Run(taskInstance);
+		var extension = new Transcoder.Extension
+		{
+			Price = await Transcoder.Extension.GetPriceAsync(), 
+			SourceType = "Video",
+			SourceFormats = new string[] { ".mp4", ".mov", ".wmv", ".avi" },
+			DestinationFormats = new string[] { ".gif" },
+			LogoFile = logoFile,
+			TranscodeAsync = this.TranscodeGifAsync
+		};
+
+		extension.Run(taskInstance, deferral);
     }
 
     public IAsyncAction TranscodeGifAsync(StorageFile source, StorageFile destination, ValueSet arguments)
@@ -50,6 +52,7 @@ PublisherName | String | the localized publisher name of the hosting application
 Version       | String | the version of the hosting application in the store
 Price         | String | the localized price of the hosting application in the store or "0" for free apps
 LogoFileToken | String | the token for a square .png image at 50x50 px minimum size created by using the [SharedStorageAccessManager.AddFile](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharedstorageaccessmanager.addfile.aspx) API
+SourceType    | String | "Audio" or "Video"
 
 ### Get Source Formats
 Get the source formats that the app service supports

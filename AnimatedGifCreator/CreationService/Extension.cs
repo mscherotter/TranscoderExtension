@@ -26,7 +26,7 @@ namespace Transcoder
     /// <summary>
     /// Transcoder extension
     /// </summary>
-    internal class Extension : IBackgroundTask
+    internal class Extension
     {
         #region Fields
         private BackgroundTaskDeferral backgroundTaskDeferral;
@@ -104,6 +104,11 @@ namespace Transcoder
         /// Gets or sets the transcode function
         /// </summary>
         public Func<StorageFile, StorageFile, ValueSet, IAsyncAction> TranscodeAsync { get; set; }
+
+        /// <summary>
+        /// Gets the source type ("Audio" or "Video")
+        /// </summary>
+        public string SourceType { get; set; }
         #endregion
 
         #region Methods
@@ -111,9 +116,11 @@ namespace Transcoder
         /// Run the Transcoder extension. This should be called from IBackgroundTask.Run()
         /// </summary>
         /// <param name="taskInstance">the task instance</param>
-        public void Run(IBackgroundTaskInstance taskInstance)
+        /// <param name="deferral">the deferral</param>
+        public void Run(IBackgroundTaskInstance taskInstance, BackgroundTaskDeferral deferral)
         {
-            this.backgroundTaskDeferral = taskInstance.GetDeferral(); // Get a deferral so that the service isn&#39;t terminated.
+            this.backgroundTaskDeferral = deferral;
+
             taskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
 
             // Retrieve the app service connection and set up a listener for incoming app service requests.
@@ -211,6 +218,7 @@ namespace Transcoder
             response["Version"] = Version;
             response["Price"] = Price;
             response["LogoFileToken"] = SharedStorageAccessManager.AddFile(this.LogoFile);
+            response["SourceType"] = this.SourceType;
         }
 
         /// <summary>

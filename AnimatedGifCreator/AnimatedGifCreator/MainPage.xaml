@@ -7,17 +7,18 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel Padding="8"> 
-            <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
-            <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
-            <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
-            <Button x:Uid="SelectFileButton" Content="Select a video file" Margin="4" Click="OnSelectFile" HorizontalAlignment="Stretch"/>
-            <Image x:Name="SourceThumbnail" Width="190" Height="130" Margin="4"/>
-            <TextBlock Grid.Column="1" Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText" TextAlignment="Center" HorizontalAlignment="Center"/>
-            <Button x:Uid="ConvertButton" Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" HorizontalAlignment="Stretch"/>
-            <ProgressRing x:Name="ProgressRing" Margin="4"/>
-            <HyperlinkButton Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator" Margin="4"/>
-
-        </StackPanel>
+        <ScrollViewer>
+            <StackPanel Padding="8"> 
+                <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
+                <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
+                <Button x:Uid="SelectFileButton" Content="Select a video file" Margin="4" Click="OnSelectFile" HorizontalAlignment="Stretch"/>
+                <Image x:Name="SourceThumbnail" Width="190" Height="130" Margin="4"/>
+                <TextBlock Grid.Column="1" Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText" TextAlignment="Center" HorizontalAlignment="Center"/>
+                <Button x:Uid="ConvertButton" Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" HorizontalAlignment="Stretch"/>
+                <ProgressRing x:Name="ProgressRing" Margin="4"/>
+                <HyperlinkButton Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator" Margin="4"/>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Page>
