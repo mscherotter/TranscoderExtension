@@ -1,7 +1,7 @@
 # Transcoder Extension
-Extension for [Transcoder](http://clkde.tradedoubler.com/click?p=259740&a=2825476&g=0&url=https%3a%2f%2fwww.microsoft.com%2fstore%2fapps%2f9nblggh5z1bg) app for Windows
+Extension for [Transcoder](https://www.microsoft.com/store/apps/9nblggh5z1bg) app for Windows
 
-Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, [Animated GIF Creator](http://clkde.tradedoubler.com/click?p=259740&a=2825476&g=0&url=https%3a%2f%2fwww.microsoft.com%2fstore%2fapps%2f9nblggh4mpzq) with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the [Windows Store](http://clkde.tradedoubler.com/click?p=259740&a=2825476&g=0&url=https%3a%2f%2fwww.microsoft.com%2fstore%2fapps%2f9nblggh4mpzq).  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder Extension:
+Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, [Animated GIF Creator](https://www.microsoft.com/store/apps/9nblggh4mpzq) with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the [Windows Store](https://www.microsoft.com/store/apps/9nblggh4mpzq).  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder Extension:
 ```
 public sealed class GifCreator : IBackgroundTask
 {
