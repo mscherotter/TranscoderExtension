@@ -11,7 +11,7 @@
         <StackPanel Padding="8"> 
             <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
             <HyperlinkButton Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
-            <TextBlock Text="Created by Michael S. Scherotter"/>
+            <TextBlock Text="Created by Michael S. Scherotter" Margin="4"/>
             <Button Content="Select video file" Margin="4" Click="OnSelectFile" HorizontalAlignment="Stretch"/>
             <TextBlock Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText"/>
             <Button Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" HorizontalAlignment="Stretch"/>
