@@ -106,10 +106,10 @@ namespace AnimatedGifCreator
 
                 await gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, null);
 
+                await Launcher.LaunchFileAsync(destinationFile);
+
                 this.ProgressRing.IsActive = false;
             }
-
-            await Launcher.LaunchFileAsync(destinationFile);
         }
     }
 }
