@@ -2,7 +2,7 @@
 Extension for [Transcoder](https://www.microsoft.com/store/apps/9nblggh5z1bg) app for Windows
 
 Build an app that extends the Transcoder app, adding additional source and target formats. An example Transcoder extension, [Animated GIF Creator](https://www.microsoft.com/store/apps/9nblggh4mpzq) with full source code is [here](https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator) and is in the [Windows Store](https://www.microsoft.com/store/apps/9nblggh4mpzq).  You can use the [Transcoder.Extension](https://github.com/mscherotter/TranscoderExtension/blob/master/AnimatedGifCreator/CreationService/Extension.cs) class in your project to help in the implementation of a Transcoder Extension:
-```
+```cs
 public sealed class GifCreator : IBackgroundTask
 {
     public async void Run(IBackgroundTaskInstance taskInstance)
