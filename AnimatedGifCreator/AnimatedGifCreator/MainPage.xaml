@@ -17,6 +17,7 @@
                 <TextBlock Grid.Column="1" Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText" TextAlignment="Center" HorizontalAlignment="Center"/>
                 <Button x:Uid="ConvertButton" Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" HorizontalAlignment="Stretch"/>
                 <ProgressRing x:Name="ProgressRing" Margin="4"/>
+                <Button x:Name="CancelButton" x:Uid="CancelButton" Content="Cancel" Click="OnCancel" Visibility="Collapsed" Margin="4"/>
                 <HyperlinkButton Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator" Margin="4"/>
             </StackPanel>
         </ScrollViewer>

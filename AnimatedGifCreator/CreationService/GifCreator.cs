@@ -18,6 +18,7 @@ namespace CreationService
     using Windows.Foundation.Collections;
     using Windows.Graphics.Imaging;
     using Windows.Media.Editing;
+    using Windows.Media.MediaProperties;
     using Windows.Storage;
 
     /// <summary>
@@ -62,6 +63,28 @@ namespace CreationService
             {
                 try
                 {
+                    object value;
+
+                    var videoProperties = await source.Properties.GetVideoPropertiesAsync();
+
+                    var width = videoProperties.Width;
+                    var height = videoProperties.Height;
+                    
+                    if (arguments != null && arguments.TryGetValue("Quality", out value))
+                    {
+                        var qualityString = value.ToString();
+
+                        VideoEncodingQuality quality;
+
+                        if (Enum.TryParse(qualityString, out quality))
+                        {
+                            var profile = MediaEncodingProfile.CreateMp4(quality);
+                            
+                            width = profile.Video.Width;
+                            height = profile.Video.Height;
+                        }
+                    }
+
                     var composition = new MediaComposition();
 
                     System.Diagnostics.Debug.WriteLine(source.Path);
@@ -89,7 +112,7 @@ namespace CreationService
                             return;
                         }
 
-                        var increment = TimeSpan.FromSeconds(1.0 / 30.0);
+                        var increment = TimeSpan.FromSeconds(1.0 / 10.0);
 
                         var timesFromStart = new List<TimeSpan>();
 
@@ -98,7 +121,11 @@ namespace CreationService
                             timesFromStart.Add(timeCode);
                         }
 
-                        var thumbnails = await composition.GetThumbnailsAsync(timesFromStart, 640, 480, VideoFramePrecision.NearestFrame);
+                        var thumbnails = await composition.GetThumbnailsAsync(
+                            timesFromStart, 
+                            System.Convert.ToInt32(width), 
+                            System.Convert.ToInt32(height), 
+                            VideoFramePrecision.NearestFrame);
 
                         if (token.IsCancellationRequested)
                         {

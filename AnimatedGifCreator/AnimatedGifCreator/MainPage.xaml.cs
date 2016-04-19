@@ -12,6 +12,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources;
+using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.System;
@@ -27,6 +28,7 @@ namespace AnimatedGifCreator
     public sealed partial class MainPage : Page
     {
         private StorageFile sourceFile;
+        private IAsyncAction _action;
 
         /// <summary>
         /// Initializes a new instance of the MainPage class.
@@ -102,13 +104,37 @@ namespace AnimatedGifCreator
 
             if (destinationFile != null)
             {
-                this.ProgressRing.IsActive = true; 
+                this.ProgressRing.IsActive = true;
 
-                await gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, null);
+                this.CancelButton.Visibility = Visibility.Visible;
 
-                await Launcher.LaunchFileAsync(destinationFile);
+                try
+                {
+                    this._action = gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, null);
 
-                this.ProgressRing.IsActive = false;
+                    await _action;
+
+
+                    await Launcher.LaunchFileAsync(destinationFile);
+                }
+                catch (System.Exception se)
+                {
+                }
+                finally
+                {
+                    _action = null;
+
+                    this.ProgressRing.IsActive = false;
+                    this.CancelButton.Visibility = Visibility.Collapsed;
+                }
+            }
+        }
+
+        private void OnCancel(object sender, RoutedEventArgs e)
+        {
+            if (_action != null && _action.Status == AsyncStatus.Started)
+            {
+                _action.Cancel();
             }
         }
     }

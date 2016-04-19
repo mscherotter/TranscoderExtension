@@ -177,15 +177,15 @@ namespace Transcoder
                         var jsonArray = JsonArray.Parse(args.Request.Message["FileTokens"] as string);
 
                         var sourceTokens = from item in jsonArray
-                                           select item.GetString();
+                                           select item.GetObject();
 
-                        var fileTokens = await TranscodeJsonAsync(sourceTokens, args.Request.Message);
+                        await TranscodeJsonAsync(sourceTokens, args.Request.Message);
 
                         if (_canceled)
                         {
                             throw new TaskCanceledException();
                         }
-                        response["FileTokens"] = fileTokens;
+                        response["Status"] = "OK";
                         break;
 
                     case "GetDescription":
@@ -227,24 +227,19 @@ namespace Transcoder
         /// <param name="sourceFiles">the source files as a JsonArray</param>
         /// <param name="message">the transcode parameters</param>
         /// <returns>a list of tokens</returns>
-        private async Task<string> TranscodeJsonAsync(IEnumerable<string> sourceTokens, ValueSet message)
+        private async Task TranscodeJsonAsync(IEnumerable<JsonObject> fileTokens, ValueSet message)
         {
-            System.Diagnostics.Debug.WriteLine("TranscodeJsonAsync");
-            var destinationFiles = new JsonArray();
+            //System.Diagnostics.Debug.WriteLine("TranscodeJsonAsync");
 
-            foreach (var item in sourceTokens)
+            foreach (var item in fileTokens)
             {
-                var token = await PrepareTranscodeAsync(message, item);
+                await PrepareTranscodeAsync(message, item);
 
                 if (_canceled)
                 {
                     throw new TaskCanceledException();
                 }
-
-                destinationFiles.Add(token);
             }
-
-            return destinationFiles.Stringify();
         }
 
         /// <summary>
@@ -253,18 +248,19 @@ namespace Transcoder
         /// <param name="message">the transcode parameters</param>
         /// <param name="jsonValue">a JsonValue containing the token</param>
         /// <returns>an async task with a JsonValue</returns>
-        private async Task<JsonValue> PrepareTranscodeAsync(ValueSet message, string token)
+        private async Task PrepareTranscodeAsync(ValueSet message, JsonObject fileTokens)
         {
-            var sourceFile = await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
+            var sourceToken = fileTokens["SourceToken"].GetString();
+            var destinationToken = fileTokens["DestinationToken"].GetString();
+
+            var sourceFile = await SharedStorageAccessManager.RedeemTokenForFileAsync(sourceToken);
 
             if (_canceled)
             {
                 throw new TaskCanceledException();
             }
 
-            var desiredFilename = string.Format(@"{0}.gif", System.IO.Path.GetFileNameWithoutExtension(sourceFile.Name));
-
-            var destinationFile = await Windows.Storage.ApplicationData.Current.TemporaryFolder.CreateFileAsync(desiredFilename, CreationCollisionOption.GenerateUniqueName);
+            var destinationFile = await SharedStorageAccessManager.RedeemTokenForFileAsync(destinationToken);
 
             this._action = TranscodeAsync(sourceFile, destinationFile, message);
 
@@ -276,10 +272,6 @@ namespace Transcoder
             }
 
             this._action = null;
-
-            var destinationFileToken = SharedStorageAccessManager.AddFile(destinationFile);
-
-            return JsonValue.CreateStringValue(destinationFileToken);
         }
 
         /// <summary>
