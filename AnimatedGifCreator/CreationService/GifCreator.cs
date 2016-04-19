@@ -44,10 +44,131 @@ namespace CreationService
                 SourceFormats = new string[] { ".mp4", ".mov", ".wmv", ".avi" },
                 DestinationFormats = new string[] { ".gif" },
                 LogoFile = logoFile,
-                TranscodeAsync = this.TranscodeGifAsync
+                TranscodeAsync = this.TranscodeAsync
             };
 
             extension.Run(taskInstance, deferral);
+        }
+
+        public IAsyncActionWithProgress<double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height)
+        {
+            return AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
+            {
+                var composition = new MediaComposition();
+
+                System.Diagnostics.Debug.WriteLine(source.Path);
+
+                var clip = await MediaClip.CreateFromFileAsync(source);
+
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
+
+                progress.Report(10);
+
+                composition.Clips.Add(clip);
+
+                using (var outputStream = await destination.OpenAsync(FileAccessMode.ReadWrite))
+                {
+                    
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
+                    }
+
+                    progress.Report(20);
+
+                    var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, outputStream);
+
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
+                    }
+
+                    progress.Report(30);
+
+                    var increment = TimeSpan.FromSeconds(1.0 / 10.0);
+
+                    var timesFromStart = new List<TimeSpan>();
+
+                    for (var timeCode = TimeSpan.FromSeconds(0); timeCode < composition.Duration; timeCode += increment)
+                    {
+                        timesFromStart.Add(timeCode);
+                    }
+
+                    var thumbnails = await composition.GetThumbnailsAsync(
+                        timesFromStart,
+                        System.Convert.ToInt32(width),
+                        System.Convert.ToInt32(height),
+                        VideoFramePrecision.NearestFrame);
+
+                    progress.Report(40);
+
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
+                    }
+
+                    var index = 0;
+
+                    var progressPerStep = (90.0 - 40.0) / thumbnails.Count / 3.0;
+
+                    var currentProgress = 40.0;
+
+                    foreach (var thumbnail in thumbnails)
+                    {
+                        var decoder = await BitmapDecoder.CreateAsync(thumbnail);
+
+                        if (token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+
+                        progress.Report(currentProgress+=progressPerStep);
+
+                        var pixels = await decoder.GetPixelDataAsync();
+
+                        if (token.IsCancellationRequested)
+                        {
+                            return;
+                        }
+
+                        progress.Report(currentProgress += progressPerStep);
+
+                        encoder.SetPixelData(
+                            decoder.BitmapPixelFormat,
+                            BitmapAlphaMode.Ignore,
+                            decoder.PixelWidth,
+                            decoder.PixelHeight,
+                            decoder.DpiX,
+                            decoder.DpiY,
+                            pixels.DetachPixelData());
+
+                        if (index < thumbnails.Count - 1)
+                        {
+                            await encoder.GoToNextFrameAsync();
+
+                            if (token.IsCancellationRequested)
+                            {
+                                return;
+                            }
+
+                            progress.Report(currentProgress += progressPerStep);
+                        }
+                        index++;
+                    }
+
+                    await encoder.FlushAsync();
+
+                    if (token.IsCancellationRequested)
+                    {
+                        return;
+                    }
+
+                    progress.Report(100);
+                }
+        });
         }
 
         /// <summary>
@@ -57,134 +178,37 @@ namespace CreationService
         /// <param name="destination">an empty GIF image</param>
         /// <param name="arguments">transcode parameters</param>
         /// <returns>an async action</returns>
-        public IAsyncAction TranscodeGifAsync(StorageFile source, StorageFile destination, ValueSet arguments)
+        public IAsyncAction TranscodeAsync(StorageFile source, StorageFile destination, ValueSet arguments)
         {
             return AsyncInfo.Run(async delegate (CancellationToken token)
             {
-                try
-                {
-                    object value;
+                object value;
 
-                    var videoProperties = await source.Properties.GetVideoPropertiesAsync();
+                var videoProperties = await source.Properties.GetVideoPropertiesAsync();
 
-                    var width = videoProperties.Width;
-                    var height = videoProperties.Height;
+                var width = videoProperties.Width;
+                var height = videoProperties.Height;
                     
-                    if (arguments != null && arguments.TryGetValue("Quality", out value))
-                    {
-                        var qualityString = value.ToString();
-
-                        VideoEncodingQuality quality;
-
-                        if (Enum.TryParse(qualityString, out quality))
-                        {
-                            var profile = MediaEncodingProfile.CreateMp4(quality);
-                            
-                            width = profile.Video.Width;
-                            height = profile.Video.Height;
-                        }
-                    }
-
-                    var composition = new MediaComposition();
-
-                    System.Diagnostics.Debug.WriteLine(source.Path);
-
-                    var clip = await MediaClip.CreateFromFileAsync(source);
-
-                    if (token.IsCancellationRequested)
-                    {
-                        return;
-                    }
-
-                    composition.Clips.Add(clip);
-
-                    using (var outputStream = await destination.OpenAsync(FileAccessMode.ReadWrite))
-                    {
-                        if (token.IsCancellationRequested)
-                        {
-                            return;
-                        }
-
-                        var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, outputStream);
-
-                        if (token.IsCancellationRequested)
-                        {
-                            return;
-                        }
-
-                        var increment = TimeSpan.FromSeconds(1.0 / 10.0);
-
-                        var timesFromStart = new List<TimeSpan>();
-
-                        for (var timeCode = TimeSpan.FromSeconds(0); timeCode < composition.Duration; timeCode += increment)
-                        {
-                            timesFromStart.Add(timeCode);
-                        }
-
-                        var thumbnails = await composition.GetThumbnailsAsync(
-                            timesFromStart, 
-                            System.Convert.ToInt32(width), 
-                            System.Convert.ToInt32(height), 
-                            VideoFramePrecision.NearestFrame);
-
-                        if (token.IsCancellationRequested)
-                        {
-                            return;
-                        }
-
-                        var index = 0;
-
-                        foreach (var thumbnail in thumbnails)
-                        {
-                            var decoder = await BitmapDecoder.CreateAsync(thumbnail);
-
-                            if (token.IsCancellationRequested)
-                            {
-                                return;
-                            }
-
-                            var pixels = await decoder.GetPixelDataAsync();
-                            
-                            if (token.IsCancellationRequested)
-                            {
-                                return;
-                            }
-
-                            encoder.SetPixelData(
-                                decoder.BitmapPixelFormat, 
-                                BitmapAlphaMode.Ignore, 
-                                decoder.PixelWidth, 
-                                decoder.PixelHeight, 
-                                decoder.DpiX, 
-                                decoder.DpiY, 
-                                pixels.DetachPixelData());
-
-                            if (index < thumbnails.Count - 1)
-                            {
-                                await encoder.GoToNextFrameAsync();
-
-                                if (token.IsCancellationRequested)
-                                {
-                                    return;
-                                }
-                            }
-                            index++;
-                        }
-
-                        await encoder.FlushAsync();
-
-                        if (token.IsCancellationRequested)
-                        {
-                            return;
-                        }
-                    }
-                }
-                catch (System.Exception se)
+                if (arguments != null && arguments.TryGetValue("Quality", out value))
                 {
-                    System.Diagnostics.Debug.WriteLine(se.Message);
+                    var qualityString = value.ToString();
+
+                    VideoEncodingQuality quality;
+
+                    if (Enum.TryParse(qualityString, out quality))
+                    {
+                        var profile = MediaEncodingProfile.CreateMp4(quality);
+                            
+                        width = profile.Video.Width;
+                        height = profile.Video.Height;
+                    }
                 }
+
+                await TranscodeGifAsync(source, destination, width, height);
             });
         }
+
+
         #endregion
     }
 }

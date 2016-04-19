@@ -10,6 +10,7 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.ApplicationInsights;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
@@ -28,7 +29,7 @@ namespace AnimatedGifCreator
     public sealed partial class MainPage : Page
     {
         private StorageFile sourceFile;
-        private IAsyncAction _action;
+        private IAsyncActionWithProgress<double> _action;
 
         /// <summary>
         /// Initializes a new instance of the MainPage class.
@@ -104,21 +105,36 @@ namespace AnimatedGifCreator
 
             if (destinationFile != null)
             {
+                this.ProgressBar.Value = 0.0;
+
                 this.ProgressRing.IsActive = true;
+                this.ProgressBar.Visibility = Visibility.Visible;
 
                 this.CancelButton.Visibility = Visibility.Visible;
 
+                var videoProperties = await this.sourceFile.Properties.GetVideoPropertiesAsync();
+
                 try
                 {
-                    this._action = gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, null);
+                    this._action = gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, videoProperties.Width, videoProperties.Height);
 
+                    this._action.Progress = OnProgress;
                     await _action;
 
-
-                    await Launcher.LaunchFileAsync(destinationFile);
+                    if (_action.Status == AsyncStatus.Completed)
+                    {
+                        await Launcher.LaunchFileAsync(destinationFile);
+                    }
+                }
+                catch (TaskCanceledException tce)
+                {
+                    var tc = new TelemetryClient();
+                    tc.TrackEvent("Transcode Canceled.");
                 }
                 catch (System.Exception se)
                 {
+                    var tc = new TelemetryClient();
+                    tc.TrackException(se);
                 }
                 finally
                 {
@@ -126,8 +142,17 @@ namespace AnimatedGifCreator
 
                     this.ProgressRing.IsActive = false;
                     this.CancelButton.Visibility = Visibility.Collapsed;
+                    this.ProgressBar.Visibility = Visibility.Collapsed;
                 }
             }
+        }
+
+        private async void OnProgress(IAsyncActionWithProgress<double> asyncInfo, double progressInfo)
+        {
+            await this.ProgressBar.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, delegate
+            {
+                this.ProgressBar.Value = progressInfo;
+            });
         }
 
         private void OnCancel(object sender, RoutedEventArgs e)
