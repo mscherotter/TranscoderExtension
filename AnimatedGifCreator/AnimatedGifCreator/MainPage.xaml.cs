@@ -119,6 +119,7 @@ namespace AnimatedGifCreator
                     this._action = gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, videoProperties.Width, videoProperties.Height);
 
                     this._action.Progress = OnProgress;
+
                     await _action;
 
                     if (_action.Status == AsyncStatus.Completed)
@@ -126,7 +127,7 @@ namespace AnimatedGifCreator
                         await Launcher.LaunchFileAsync(destinationFile);
                     }
                 }
-                catch (TaskCanceledException tce)
+                catch (TaskCanceledException)
                 {
                     var tc = new TelemetryClient();
                     tc.TrackEvent("Transcode Canceled.");
