@@ -10,33 +10,35 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.ApplicationInsights;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources;
 using Windows.Foundation;
 using Windows.Storage;
+using Windows.Storage.FileProperties;
 using Windows.Storage.Pickers;
 using Windows.System;
+using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
+using CreationService;
 
 namespace AnimatedGifCreator
 {
     /// <summary>
-    /// MainPage code behind
+    ///     MainPage code behind
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private StorageFile sourceFile;
         private IAsyncActionWithProgress<double> _action;
+        private StorageFile sourceFile;
 
         /// <summary>
-        /// Initializes a new instance of the MainPage class.
+        ///     Initializes a new instance of the MainPage class.
         /// </summary>
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         internal async void Activate(FileActivatedEventArgs args)
@@ -64,7 +66,7 @@ namespace AnimatedGifCreator
 
         private async Task SetSourceFileAsync(StorageFile file)
         {
-            this.sourceFile = file;
+            sourceFile = file;
 
             if (file == null)
             {
@@ -76,49 +78,50 @@ namespace AnimatedGifCreator
                 FilenameText.Text = file.Name;
                 ConvertButton.IsEnabled = true;
 
-                var thumbnail = await file.GetThumbnailAsync(Windows.Storage.FileProperties.ThumbnailMode.VideosView);
+                var thumbnail = await file.GetThumbnailAsync(ThumbnailMode.VideosView);
 
                 var image = new BitmapImage();
 
                 await image.SetSourceAsync(thumbnail);
 
-                this.SourceThumbnail.Source = image;
+                SourceThumbnail.Source = image;
             }
         }
 
         private async void OnConvert(object sender, RoutedEventArgs e)
         {
-            var gifCreator = new CreationService.GifCreator();
+            var gifCreator = new GifCreator();
 
             var picker = new FileSavePicker
             {
                 SuggestedStartLocation = PickerLocationId.PicturesLibrary,
                 DefaultFileExtension = ".gif",
-                SuggestedFileName = Path.ChangeExtension(this.sourceFile.Name, ".gif"),
+                SuggestedFileName = Path.ChangeExtension(sourceFile.Name, ".gif")
             };
 
             var resources = ResourceLoader.GetForCurrentView();
 
-            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new string[] { ".gif" }.ToList());
+            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new[] {".gif"}.ToList());
 
             var destinationFile = await picker.PickSaveFileAsync();
 
             if (destinationFile != null)
             {
-                this.ProgressBar.Value = 0.0;
+                ProgressBar.Value = 0.0;
 
-                this.ProgressRing.IsActive = true;
-                this.ProgressBar.Visibility = Visibility.Visible;
+                ProgressRing.IsActive = true;
+                ProgressBar.Visibility = Visibility.Visible;
 
-                this.CancelButton.Visibility = Visibility.Visible;
+                CancelButton.Visibility = Visibility.Visible;
 
-                var videoProperties = await this.sourceFile.Properties.GetVideoPropertiesAsync();
+                var videoProperties = await sourceFile.Properties.GetVideoPropertiesAsync();
 
                 try
                 {
-                    this._action = gifCreator.TranscodeGifAsync(this.sourceFile, destinationFile, videoProperties.Width, videoProperties.Height);
+                    _action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, videoProperties.Width,
+                        videoProperties.Height);
 
-                    this._action.Progress = OnProgress;
+                    _action.Progress = OnProgress;
 
                     await _action;
 
@@ -129,31 +132,23 @@ namespace AnimatedGifCreator
                 }
                 catch (TaskCanceledException)
                 {
-                    var tc = new TelemetryClient();
-                    tc.TrackEvent("Transcode Canceled.");
-                }
-                catch (System.Exception se)
-                {
-                    var tc = new TelemetryClient();
-                    tc.TrackException(se);
                 }
                 finally
                 {
                     _action = null;
 
-                    this.ProgressRing.IsActive = false;
-                    this.CancelButton.Visibility = Visibility.Collapsed;
-                    this.ProgressBar.Visibility = Visibility.Collapsed;
+                    ProgressRing.IsActive = false;
+                    CancelButton.Visibility = Visibility.Collapsed;
+                    ProgressBar.Visibility = Visibility.Collapsed;
                 }
             }
         }
 
         private async void OnProgress(IAsyncActionWithProgress<double> asyncInfo, double progressInfo)
         {
-            await this.ProgressBar.Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, delegate
-            {
-                this.ProgressBar.Value = progressInfo;
-            });
+            await
+                ProgressBar.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                    delegate { ProgressBar.Value = progressInfo; });
         }
 
         private void OnCancel(object sender, RoutedEventArgs e)
