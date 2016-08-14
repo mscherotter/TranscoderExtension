@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.21.0" />
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap uap3 mp">
+  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.23.0" />
   <mp:PhoneIdentity PhoneProductId="3f529d8f-7401-4e6a-b44b-58fa8142299c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Animated GIF Creator</DisplayName>
@@ -35,9 +35,13 @@
         <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
           <uap:AppService Name="com.charette.gifcreator" />
         </uap:Extension>
-        <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
-          <uap:AppService Name="Transcoder.Transcode.1" />
-        </uap:Extension>
+        <uap3:Extension Category="windows.appExtension">
+          <uap3:AppExtension Name="Transcoder.Transcode.1" Id="AnimatedGifTranscoder" PublicFolder="Public" DisplayName="Animated GIF Transcoder" Description="Convert videos to animated GIF files.">
+            <uap3:Properties>
+              <Service>com.charette.gifcreator</Service>
+            </uap3:Properties>
+          </uap3:AppExtension>
+        </uap3:Extension>
       </Extensions>
     </Application>
   </Applications>
