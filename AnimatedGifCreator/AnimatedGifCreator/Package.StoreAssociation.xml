@@ -9,7 +9,7 @@
     <Language Code="am" InMinimumRequirementSet="true" />
     <Language Code="am-et" InMinimumRequirementSet="true" />
     <Language Code="ar" InMinimumRequirementSet="true" />
-    <Language Code="ar-ae" InMinimumRequirementSet="true" /> 
+    <Language Code="ar-ae" InMinimumRequirementSet="true" />
     <Language Code="ar-bh" InMinimumRequirementSet="true" />
     <Language Code="ar-dz" InMinimumRequirementSet="true" />
     <Language Code="ar-eg" InMinimumRequirementSet="true" />
@@ -365,26 +365,15 @@
   </ProductReservedInfo>
   <AccountPackageIdentityNames>
     <MainPackageIdentityName>49752MichaelS.Scherotter.OldTimeRadio</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.StopMotion</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.Stylist</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.AerialViewing</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.Apportunity</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Architecture</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.ArtistApps</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Authentic</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.BoxSetBuilder</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.BoxSetCreator</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Bricolage</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.CaptionCreator</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.CFFPlayer</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Charette</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.CMECreator</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.CMEPlayer</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.ColorPalettes</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.ComicJournal</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.ConnectedMediaExperience</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.CorpsofDiscovery</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.CrazyChoppers</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.CriticalPath</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.DailySketch</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Documentary</MainPackageIdentityName>
@@ -394,28 +383,20 @@
     <MainPackageIdentityName>49752MichaelS.Scherotter.Kepler-452b</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.KinectStudioLibrary</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.KineticTypography</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.LeanForward</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.LifeonEuropa</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.LocalMusic</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.LocationTasks</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.MatrixTool</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Maverick</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Mnemonic</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.ModelRockets</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.MonteCarloRoulette</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.MotorcycleDemon</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.MusicFire</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.MyEnergyUsage</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.MyRsum</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.NFLClips</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.OpenJSCAD</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.PeppersGhost</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Perspective</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.PlayersClub</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Polymathic</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Sculpture</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.Section</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.Sections</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.SketchMuse</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.SpokenWord</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.StorySlam</MainPackageIdentityName>
@@ -427,10 +408,9 @@
     <MainPackageIdentityName>49752MichaelS.Scherotter.Topographic</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.TouchSculpt</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Transcoder</MainPackageIdentityName>
-    <MainPackageIdentityName>49752MichaelS.Scherotter.VideoAnnotator</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.WindFarmer</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.Zoetrope</MainPackageIdentityName>
     <MainPackageIdentityName>49752MichaelS.Scherotter.ZoetropeRT</MainPackageIdentityName>
   </AccountPackageIdentityNames>
-  <PackageInfoList LandingUrl="https://dev.windows.com/dashboard/Application?appId=9NBLGGH4MPZQ" />
+  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9NBLGGH4MPZQ" />
 </StoreAssociation>
