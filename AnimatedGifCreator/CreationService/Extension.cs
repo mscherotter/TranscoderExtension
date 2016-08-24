@@ -125,6 +125,12 @@ namespace Transcoder
 
             // Retrieve the app service connection and set up a listener for incoming app service requests.
             var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
+
+            if (details == null)
+            {
+                return;
+            }
+
             var appServiceconnection = details.AppServiceConnection;
             appServiceconnection.RequestReceived += OnRequestReceived;
         }
@@ -166,11 +172,11 @@ namespace Transcoder
                 switch (command)
                 {
                     case "GetSourceFormats":
-                        response["Formats"] = string.Join(",", this.SourceFormats);
+                        response["Formats"] = string.Join(",", SourceFormats);
                         break;
 
                     case "GetDestinationFormats":
-                        response["Formats"] = string.Join(",", this.DestinationFormats);
+                        response["Formats"] = string.Join(",", DestinationFormats);
                         break;
 
                     case "Transcode":

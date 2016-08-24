@@ -153,4 +153,10 @@
   <data name="Video" xml:space="preserve">
     <value>Video</value>
   </data>
+  <data name="AppExtensionDescription" xml:space="preserve">
+    <value>Convert videos to animated GIF files.</value>
+  </data>
+  <data name="AppExtensionDisplayName" xml:space="preserve">
+    <value>Animated GIF Transcoder</value>
+  </data>
 </root>
