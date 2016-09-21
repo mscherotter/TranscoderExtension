@@ -118,6 +118,7 @@
     <None Include="AnimatedGifCreator_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Public\Extension.html" />
     <None Include="Package.StoreAssociation.xml" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\NewStoreLogo.scale-100.png" />

@@ -159,4 +159,19 @@
   <data name="AppExtensionDisplayName" xml:space="preserve">
     <value>Animated GIF Transcoder</value>
   </data>
+  <data name="AnimatedGIF" xml:space="preserve">
+    <value>Animated GIF</value>
+  </data>
+  <data name="JournalistExportDescription" xml:space="preserve">
+    <value>Create a movie from the pages of a journal.</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="SecondsPerFrame" xml:space="preserve">
+    <value>Seconds per frame</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width</value>
+  </data>
 </root>

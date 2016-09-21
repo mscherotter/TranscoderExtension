@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Animated GIF Creator</title>
+    <link type="text/css" href="Journalist/Style.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function setData(data) {
+            var jsonData = JSON.parse(data);
+            document.getElementById("FramesPerSecond").value = jsonData.FramesPerSecond;
+            //document.getElementById("Width").value = jsonData.Width;
+            //document.getElementById("Height").value = jsonData.Height;
+        }
+
+        function getData() {
+            var value = {};
+
+            value.FramesPerSecond = new Number(document.getElementById("FramesPerSecond").value);
+            //value.Width = new Number(document.getElementById("Width").value);
+            //value.Height = new Number(document.getElementById("Height").value);
+
+            return JSON.stringify(value);
+        }
+
+        function updateSecondsPerFrame() {
+            var framesPerSecond = new Number(document.getElementById("FramesPerSecond").value);
+
+            if (framesPerSecond > 0) {
+                var secondsPerFrame = 1.0 / framesPerSecond;
+                document.getElementById("SecondsPerFrame").innerText = secondsPerFrame.toFixed(3);
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <p>
+            <label for="FramesPerSecond">Frames per second</label>
+            <br />
+            <input type="number" id="FramesPerSecond" value="0.25" onchange="updateSecondsPerFrame()" />
+            <br/>
+            <span id="SecondsPerFrame">4</span>&nbsp;seconds per frame
+        </p>
+        <!--<p>
+            <label for="Height">Width</label>
+            <br />
+            <input type="number" id="Width" value="640" />
+        </p>
+        <p>
+            <label for="Height">Height</label>
+            <br />
+            <input type="number" id="Height" value="480" />
+        </p>-->
+    </form>
+</body>
+</html>
