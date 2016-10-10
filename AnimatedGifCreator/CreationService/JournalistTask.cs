@@ -79,8 +79,6 @@ namespace CreationService
 
                 var framesPerSecond = jsonData["FramesPerSecond"].GetNumber();
 
-                //var width = jsonData["Width"].GetNumber();
-                //var height = jsonData["Height"].GetNumber();
                 var secondsPerFrame = 1.0 / framesPerSecond;
 
                 var delayTime = System.Convert.ToUInt16(secondsPerFrame * 1000);
@@ -98,32 +96,7 @@ namespace CreationService
 
                         using (var journalStream = journalXmlEntry.Open())
                         {
-                            var document = XDocument.Load(journalStream);
-
-                            var ns = document.Root.Name.Namespace;
-
-                            var pages = document.Document.Element(ns + "Journal").Element(ns + "Pages").Elements(ns + "JournalPage");
-
-                            var entries = (from page in pages
-                                           let entryName = page.Element(ns + "ThumbnailImage").Value
-                                           select archive.GetEntry(entryName)).ToList();
-
-                            using (var outputStream = await gifFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
-                            {
-                                var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, outputStream);
-                                
-                                //var index = 0;
-
-                                foreach (var entry in entries)
-                                {
-                                    await EncodeImageAsync(
-                                        delayTime, 
-                                        encoder, 
-                                        entry);
-
-                                    //index++;
-                                }
-                            }
+                            await EncodeImagesAsync(delayTime, gifFile, archive, journalStream);
                         }
                     }
                 }
@@ -140,6 +113,32 @@ namespace CreationService
             finally
             {
                 deferral.Complete();
+            }
+        }
+
+        private static async Task EncodeImagesAsync(ushort delayTime, Windows.Storage.StorageFile gifFile, ZipArchive archive, Stream journalStream)
+        {
+            var document = XDocument.Load(journalStream);
+
+            var ns = document.Root.Name.Namespace;
+
+            var pages = document.Document.Element(ns + "Journal").Element(ns + "Pages").Elements(ns + "JournalPage");
+
+            var entries = (from page in pages
+                           let entryName = page.Element(ns + "ThumbnailImage").Value
+                           select archive.GetEntry(entryName)).ToList();
+
+            using (var outputStream = await gifFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite))
+            {
+                var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, outputStream);
+
+                foreach (var entry in entries)
+                {
+                    await EncodeImageAsync(
+                        delayTime,
+                        encoder,
+                        entry);
+                }
             }
         }
 
