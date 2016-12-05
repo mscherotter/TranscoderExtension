@@ -100,6 +100,16 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="AnimatedGifCreator_StoreKey.pfx" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\tr\Resources.resw" />
+    <PRIResource Include="Strings\es\Resources.resw" />
+    <PRIResource Include="Strings\ru\Resources.resw" />
+    <PRIResource Include="Strings\pt\Resources.resw" />
+    <PRIResource Include="Strings\pl\Resources.resw" />
+    <PRIResource Include="Strings\it\Resources.resw" />
+    <PRIResource Include="Strings\de\Resources.resw" />
+    <PRIResource Include="Strings\fr\Resources.resw" />
+    <PRIResource Include="Strings\nl\Resources.resw" />
+    <PRIResource Include="Strings\zh-Hans\Resources.resw" />
     <PRIResource Include="Strings\en-US\Resources.resw" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +120,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VideoFile.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -177,8 +188,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MultilingualResources\" />
     <Folder Include="Strings\qps-ploc\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.de.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.es.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.fr.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.it.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.nl.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.pl.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.pt.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.ru.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.tr.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.zh-Hans.xlf" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

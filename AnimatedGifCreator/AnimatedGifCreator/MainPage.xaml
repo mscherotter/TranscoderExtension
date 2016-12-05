@@ -7,20 +7,37 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ScrollViewer>
-            <StackPanel Padding="8">
-                <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed"/>
-                <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
-                <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
-                <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
-                <Button x:Uid="SelectFileButton" Content="Select a video file" Margin="4" Click="OnSelectFile" HorizontalAlignment="Stretch"/>
-                <Image x:Name="SourceThumbnail" Width="190" Height="130" Margin="4"/>
-                <TextBlock Grid.Column="1" Margin="4" Style="{StaticResource BodyTextBlockStyle}" x:Name="FilenameText" TextAlignment="Center" HorizontalAlignment="Center"/>
-                <Button x:Uid="ConvertButton" Content="Convert to animated GIF" Margin="4" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" HorizontalAlignment="Stretch"/>
-                <ProgressRing x:Name="ProgressRing" Margin="4"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <StackPanel Padding="8">
+            <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed"/>
+            <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
+            <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
+            <Button x:Uid="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
+        </StackPanel>
+        <GridView Grid.Row="1" x:Name="FileList" Margin="8" AutomationProperties.Name="Files to convert">
+            <GridView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="4">
+                        <Image Source="{Binding Thumbnail}" Width="190" Height="130"/>
+                        <TextBlock Text="{Binding Name}" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom"/>
+                    </Grid>
+                </DataTemplate>    
+            </GridView.ItemTemplate>
+        </GridView>
+        <StackPanel Grid.Row="2" Margin="8">
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="4" x:Uid="ConvertButton" Content="Convert to animated GIF" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" />
                 <Button x:Name="CancelButton" x:Uid="CancelButton" Content="Cancel" Click="OnCancel" Visibility="Collapsed" Margin="4"/>
-                <HyperlinkButton Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator" Margin="4"/>
+                <ProgressRing x:Name="ProgressRing" Margin="4"/>
+                <TextBlock x:Name="ProgressText" Margin="4" VerticalAlignment="Center"/>
             </StackPanel>
-        </ScrollViewer>
+            <HyperlinkButton Margin="4" Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator"/>
+            <HyperlinkButton Margin="4" x:Uid="TranslateButton" Content="Help translate Animated GIF Creator to your language." NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator"/>
+        </StackPanel>
     </Grid>
 </Page>

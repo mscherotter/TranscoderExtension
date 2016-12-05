@@ -145,7 +145,7 @@
     <value>GIF Images</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>Select a video file</value>
+    <value>Select video files</value>
   </data>
   <data name="ShortName" xml:space="preserve">
     <value>Animated GIF Creator</value>
@@ -173,5 +173,8 @@
   </data>
   <data name="Width" xml:space="preserve">
     <value>Width</value>
+  </data>
+  <data name="TranslateButton.Content" xml:space="preserve">
+    <value>Help translate Animated GIF Creator to your language.</value>
   </data>
 </root>
