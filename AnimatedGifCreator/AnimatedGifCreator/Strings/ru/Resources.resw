@@ -12,4 +12,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
+    <value>Анимированные GIF создатель</value>
+  </data>
+  <data name="ATranscoderExtension.Text" xml:space="preserve">
+    <value>Транскодер расширение</value>
+  </data>
+  <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
+    <value>Транскодер расширение</value>
+  </data>
+  <data name="CloneForkLink.Content" xml:space="preserve">
+    <value>Клон/вилка на GitHub</value>
+  </data>
+  <data name="ConvertButton.Content" xml:space="preserve">
+    <value>Преобразовать в анимированный GIF</value>
+  </data>
+  <data name="CreatedByText.Text" xml:space="preserve">
+    <value>Создан Майклом S. Scherotter</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Конвертировать MP4, .mov, .wmv или .avi файлов анимированных GIF изображений.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Анимированные GIF создатель</value>
+  </data>
+  <data name="GIFImages" xml:space="preserve">
+    <value>GIF изображения</value>
+  </data>
+  <data name="SelectFileButton.Content" xml:space="preserve">
+    <value>Выберите видео файлы</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Анимированные GIF создатель</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Видео</value>
+  </data>
+  <data name="AppExtensionDescription" xml:space="preserve">
+    <value>Конвертировать видео в анимированных GIF-файлов.</value>
+  </data>
+  <data name="AppExtensionDisplayName" xml:space="preserve">
+    <value>Анимированные GIF Транскодер</value>
+  </data>
+  <data name="AnimatedGIF" xml:space="preserve">
+    <value>GIF с анимацией</value>
+  </data>
+  <data name="JournalistExportDescription" xml:space="preserve">
+    <value>Создание фильма из страниц журнала.</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Высота</value>
+  </data>
+  <data name="SecondsPerFrame" xml:space="preserve">
+    <value>Секунды на кадр</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Ширина</value>
+  </data>
+  <data name="TranslateButton.Content" xml:space="preserve">
+    <value>Помогите перевести анимированные GIF Creator на ваш язык.</value>
+  </data>
 </root>

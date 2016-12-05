@@ -12,4 +12,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
+    <value>Geanimeerde GIF Creator</value>
+  </data>
+  <data name="ATranscoderExtension.Text" xml:space="preserve">
+    <value>De extensie van een Transcoder</value>
+  </data>
+  <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
+    <value>De extensie van een Transcoder</value>
+  </data>
+  <data name="CloneForkLink.Content" xml:space="preserve">
+    <value>Kloon/voorvork op GitHub</value>
+  </data>
+  <data name="ConvertButton.Content" xml:space="preserve">
+    <value>Converteren naar GIF-animatie</value>
+  </data>
+  <data name="CreatedByText.Text" xml:space="preserve">
+    <value>Gemaakt door Michael S. Scherotter</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>.Mp4, .mov, .wmv of .avi bestanden converteren naar geanimeerde beelden van GIF.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Geanimeerde GIF Creator</value>
+  </data>
+  <data name="GIFImages" xml:space="preserve">
+    <value>GIF-afbeeldingen</value>
+  </data>
+  <data name="SelectFileButton.Content" xml:space="preserve">
+    <value>Selecteer video bestanden</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Geanimeerde GIF Creator</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Video</value>
+  </data>
+  <data name="AppExtensionDescription" xml:space="preserve">
+    <value>Video's converteren naar geanimeerde GIF-bestanden.</value>
+  </data>
+  <data name="AppExtensionDisplayName" xml:space="preserve">
+    <value>Geanimeerde GIF Transcoder</value>
+  </data>
+  <data name="AnimatedGIF" xml:space="preserve">
+    <value>GIF-animatie</value>
+  </data>
+  <data name="JournalistExportDescription" xml:space="preserve">
+    <value>Een film maken van de pagina's van een dagboek.</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="SecondsPerFrame" xml:space="preserve">
+    <value>Seconden per frame</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Dikte</value>
+  </data>
+  <data name="TranslateButton.Content" xml:space="preserve">
+    <value>Help mee met verdere Animated GIF Creator vertalen naar uw taal.</value>
+  </data>
 </root>

@@ -12,4 +12,64 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
+    <value>Créateur GIF animé</value>
+  </data>
+  <data name="ATranscoderExtension.Text" xml:space="preserve">
+    <value>Une Extension de Transcoder</value>
+  </data>
+  <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
+    <value>Une Extension de Transcoder</value>
+  </data>
+  <data name="CloneForkLink.Content" xml:space="preserve">
+    <value>Clone/fourche sur GitHub</value>
+  </data>
+  <data name="ConvertButton.Content" xml:space="preserve">
+    <value>Convertir en GIF animé</value>
+  </data>
+  <data name="CreatedByText.Text" xml:space="preserve">
+    <value>Créé par Michael S. Scherotter</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Convertir des fichiers .mp4, .mov, .wmv ou .avi des images GIF animées.</value>
+  </data>
+  <data name="DisplayName" xml:space="preserve">
+    <value>Créateur GIF animé</value>
+  </data>
+  <data name="GIFImages" xml:space="preserve">
+    <value>Images GIF</value>
+  </data>
+  <data name="SelectFileButton.Content" xml:space="preserve">
+    <value>Sélectionnez les fichiers vidéo</value>
+  </data>
+  <data name="ShortName" xml:space="preserve">
+    <value>Créateur GIF animé</value>
+  </data>
+  <data name="Video" xml:space="preserve">
+    <value>Vidéo</value>
+  </data>
+  <data name="AppExtensionDescription" xml:space="preserve">
+    <value>Convertir des vidéos des fichiers GIF animés.</value>
+  </data>
+  <data name="AppExtensionDisplayName" xml:space="preserve">
+    <value>GIF animé transcodeur</value>
+  </data>
+  <data name="AnimatedGIF" xml:space="preserve">
+    <value>GIF animé</value>
+  </data>
+  <data name="JournalistExportDescription" xml:space="preserve">
+    <value>Créer un film à partir des pages d’un journal.</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>height</value>
+  </data>
+  <data name="SecondsPerFrame" xml:space="preserve">
+    <value>Secondes par image</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>width</value>
+  </data>
+  <data name="TranslateButton.Content" xml:space="preserve">
+    <value>Aider à traduire Animated GIF Creator dans votre langue.</value>
+  </data>
 </root>
