@@ -86,6 +86,14 @@
           <source>Help translate Animated GIF Creator to your language.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Help mee met verdere Animated GIF Creator vertalen naar uw taal.</target>
         </trans-unit>
+        <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Daniel Morozov (RU)</source>
+          <target state="new">Daniel Morozov (RU)</target>
+        </trans-unit>
+        <trans-unit id="TranslatorsText.Text" translate="yes" xml:space="preserve">
+          <source>Translators</source>
+          <target state="new">Translators</target>
+        </trans-unit>
       </group>
     </body>
   </file>

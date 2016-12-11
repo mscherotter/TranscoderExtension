@@ -37,6 +37,8 @@
                 <TextBlock x:Name="ProgressText" Margin="4" VerticalAlignment="Center"/>
             </StackPanel>
             <HyperlinkButton Margin="4" Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator"/>
+            <TextBlock Text="Translators" FontWeight="Bold" x:Uid="TranslatorsText" Margin="4"/>
+            <TextBlock Text="Daniel Morozov (RU)" x:Uid="RussianTranslationText" Margin="4"/>
             <HyperlinkButton Margin="4" x:Uid="TranslateButton" Content="Help translate Animated GIF Creator to your language." NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator"/>
         </StackPanel>
     </Grid>
