@@ -183,4 +183,7 @@
   <data name="TranslatorsText.Text" xml:space="preserve">
     <value>Translators</value>
   </data>
+  <data name="ChineseTranslationText.Text" xml:space="preserve">
+    <value>Alex Qian (zh-CN)</value>
+  </data>
 </root>

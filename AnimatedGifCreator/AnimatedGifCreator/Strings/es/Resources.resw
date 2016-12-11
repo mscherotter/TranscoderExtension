@@ -72,4 +72,13 @@
   <data name="TranslateButton.Content" xml:space="preserve">
     <value>Ayudenos a traducir creador de GIF animados para tu idioma.</value>
   </data>
+  <data name="RussianTranslationText.Text" xml:space="preserve">
+    <value>Daniel Morozov (RU)</value>
+  </data>
+  <data name="TranslatorsText.Text" xml:space="preserve">
+    <value>Traductores</value>
+  </data>
+  <data name="ChineseTranslationText.Text" xml:space="preserve">
+    <value>Alex Qian (zh-CN)</value>
+  </data>
 </root>

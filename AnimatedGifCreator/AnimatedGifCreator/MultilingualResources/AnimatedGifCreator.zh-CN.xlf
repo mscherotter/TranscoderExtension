@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="es" original="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="zh-CN" original="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
     </header>
@@ -8,95 +8,95 @@
       <group id="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
         <trans-unit id="AnimatedGIFCreatorText.Text" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Creador GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF动画编辑器</target>
         </trans-unit>
         <trans-unit id="ATranscoderExtension.Text" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Una extensión de transcodificador</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">格式转换器扩展</target>
         </trans-unit>
         <trans-unit id="ATranscoderExtensionLink.Content" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Una extensión de transcodificador</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">格式转换器扩展</target>
         </trans-unit>
         <trans-unit id="CloneForkLink.Content" translate="yes" xml:space="preserve">
           <source>Clone/fork on GitHub</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clon/tenedor en GitHub</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion"> 在GitHub上Clone/fork</target>
         </trans-unit>
         <trans-unit id="ConvertButton.Content" translate="yes" xml:space="preserve">
           <source>Convert to animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Convertir a GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">转换为 GIF 动画</target>
         </trans-unit>
         <trans-unit id="CreatedByText.Text" translate="yes" xml:space="preserve">
           <source>Created by Michael S. Scherotter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Creado por Michael S. Scherotter</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">由 Michael · S.Scherotter开发</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Convert .mp4, .mov, .wmv, or .avi files to animated GIF images.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Convertir archivos. MP4, .mov, .wmv o .avi a imágenes GIF animadas.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">将.mp4、.mov、.wmv 或.avi文件转换成GIF</target>
         </trans-unit>
         <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Creador GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF动画编辑器</target>
         </trans-unit>
         <trans-unit id="GIFImages" translate="yes" xml:space="preserve">
           <source>GIF Images</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Imágenes GIF</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF 图像</target>
         </trans-unit>
         <trans-unit id="SelectFileButton.Content" translate="yes" xml:space="preserve">
           <source>Select video files</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Seleccionar archivos de vídeo</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">选择视频文件</target>
         </trans-unit>
         <trans-unit id="ShortName" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Creador GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF动画编辑器</target>
         </trans-unit>
         <trans-unit id="Video" translate="yes" xml:space="preserve">
           <source>Video</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vídeo</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">视频</target>
         </trans-unit>
         <trans-unit id="AppExtensionDescription" translate="yes" xml:space="preserve">
           <source>Convert videos to animated GIF files.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Convertir vídeos a archivos GIF animados.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">将视频转换为GIF文件</target>
         </trans-unit>
         <trans-unit id="AppExtensionDisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Transcoder</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Transcoder GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF 动画转码器</target>
         </trans-unit>
         <trans-unit id="AnimatedGIF" translate="yes" xml:space="preserve">
           <source>Animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">GIF animado</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">动态 GIF</target>
         </trans-unit>
         <trans-unit id="JournalistExportDescription" translate="yes" xml:space="preserve">
           <source>Create a movie from the pages of a journal.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Crear una película de las páginas de un diario.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">从一本杂志的页面创建电影</target>
         </trans-unit>
         <trans-unit id="Height" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Alto</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">height</target>
         </trans-unit>
         <trans-unit id="SecondsPerFrame" translate="yes" xml:space="preserve">
           <source>Seconds per frame</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Segundos por fotograma</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">每帧秒</target>
         </trans-unit>
         <trans-unit id="Width" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Ancho</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">宽</target>
         </trans-unit>
         <trans-unit id="TranslateButton.Content" translate="yes" xml:space="preserve">
           <source>Help translate Animated GIF Creator to your language.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ayudenos a traducir creador de GIF animados para tu idioma.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">帮忙翻译成你的语言</target>
         </trans-unit>
         <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Daniel Morozov (RU)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Daniel Morozov (RU)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">丹尼尔 · 莫罗佐夫 (RU)</target>
         </trans-unit>
         <trans-unit id="TranslatorsText.Text" translate="yes" xml:space="preserve">
           <source>Translators</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Traductores</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">翻译人员</target>
         </trans-unit>
         <trans-unit id="ChineseTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Alex Qian (zh-CN)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alex Qian (zh-CN)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">亚历克斯钱其琛 (zh CN)</target>
         </trans-unit>
       </group>
     </body>

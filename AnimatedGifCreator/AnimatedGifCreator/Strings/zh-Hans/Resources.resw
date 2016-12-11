@@ -72,4 +72,13 @@
   <data name="TranslateButton.Content" xml:space="preserve">
     <value>帮忙翻译一下你的语言动画 GIF 造物主。</value>
   </data>
+  <data name="RussianTranslationText.Text" xml:space="preserve">
+    <value>丹尼尔 · 莫罗佐夫 (RU)</value>
+  </data>
+  <data name="TranslatorsText.Text" xml:space="preserve">
+    <value>翻译人员</value>
+  </data>
+  <data name="ChineseTranslationText.Text" xml:space="preserve">
+    <value>亚历克斯钱其琛 (zh CN)</value>
+  </data>
 </root>

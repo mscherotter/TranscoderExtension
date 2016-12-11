@@ -88,11 +88,15 @@
         </trans-unit>
         <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Daniel Morozov (RU)</source>
-          <target state="new">Daniel Morozov (RU)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Daniel Morozov (RU)</target>
         </trans-unit>
         <trans-unit id="TranslatorsText.Text" translate="yes" xml:space="preserve">
           <source>Translators</source>
-          <target state="new">Translators</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vertalers</target>
+        </trans-unit>
+        <trans-unit id="ChineseTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Alex Qian (zh-CN)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alex Qian (zh-CN)</target>
         </trans-unit>
       </group>
     </body>

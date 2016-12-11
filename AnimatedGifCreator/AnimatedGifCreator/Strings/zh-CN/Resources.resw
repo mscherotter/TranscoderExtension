@@ -13,72 +13,72 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>Criador GIF animado</value>
+    <value>GIF动画编辑器</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Uma extensão de Transcoder</value>
+    <value>格式转换器扩展</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Uma extensão de Transcoder</value>
+    <value>格式转换器扩展</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Clone/garfo no GitHub</value>
+    <value> 在GitHub上Clone/fork</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Converter para GIF animado</value>
+    <value>转换为 GIF 动画</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>Criado por Michael S. Scherotter</value>
+    <value>由 Michael · S.Scherotter开发</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Converta arquivos. MP4,. mov,. wmv ou. avi para imagens GIF animadas.</value>
+    <value>将.mp4、.mov、.wmv 或.avi文件转换成GIF</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Criador GIF animado</value>
+    <value>GIF动画编辑器</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>Imagens GIF</value>
+    <value>GIF 图像</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>Selecione arquivos de vídeo</value>
+    <value>选择视频文件</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>Criador GIF animado</value>
+    <value>GIF动画编辑器</value>
   </data>
   <data name="Video" xml:space="preserve">
-    <value>Vídeo</value>
+    <value>视频</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>Converta vídeos para arquivos GIF animados.</value>
+    <value>将视频转换为GIF文件</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>Transcodificador GIF animado</value>
+    <value>GIF 动画转码器</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>GIF animado</value>
+    <value>动态 GIF</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Crie um filme das páginas de um jornal.</value>
+    <value>从一本杂志的页面创建电影</value>
   </data>
   <data name="Height" xml:space="preserve">
-    <value>Altura</value>
+    <value>height</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Segundos por quadro</value>
+    <value>每帧秒</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Largura</value>
+    <value>宽</value>
   </data>
   <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Ajude a traduzir o criador de GIF animados para o seu idioma.</value>
+    <value>帮忙翻译成你的语言</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
-    <value>Daniel Morozov (RU)</value>
+    <value>丹尼尔 · 莫罗佐夫 (RU)</value>
   </data>
   <data name="TranslatorsText.Text" xml:space="preserve">
-    <value>Tradutores</value>
+    <value>翻译人员</value>
   </data>
   <data name="ChineseTranslationText.Text" xml:space="preserve">
-    <value>Alex Qian (zh-CN)</value>
+    <value>亚历克斯钱其琛 (zh CN)</value>
   </data>
 </root>
