@@ -87,4 +87,7 @@
   <data name="WidthBox.Header" xml:space="preserve">
     <value>Ширина</value>
   </data>
+  <data name="FPSBox.Header" xml:space="preserve">
+    <value>Кадров в секунду</value>
+  </data>
 </root>

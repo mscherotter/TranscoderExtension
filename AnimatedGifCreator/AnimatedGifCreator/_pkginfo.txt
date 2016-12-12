@@ -1,1 +1,1 @@
-C:\Users\mischero\Source\Repos\TranscoderExtension\AnimatedGifCreator\AnimatedGifCreator\AppPackages\AnimatedGifCreator_1.1.35.0\AnimatedGifCreator_1.1.35.0_x86_x64_arm.appxbundle
+C:\Users\mischero\Source\Repos\TranscoderExtension\AnimatedGifCreator\AnimatedGifCreator\AppPackages\AnimatedGifCreator_1.1.37.0\AnimatedGifCreator_1.1.37.0_x86_x64_arm.appxbundle

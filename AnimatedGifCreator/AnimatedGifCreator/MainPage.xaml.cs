@@ -36,6 +36,11 @@ namespace AnimatedGifCreator
     public sealed partial class MainPage : Page
     {
         /// <summary>
+        /// Default frame rate
+        /// </summary>
+        private const double DefaultFrameRate = 24.0;
+
+        /// <summary>
         /// the transcode action
         /// </summary>
         private IAsyncActionWithProgress<double> _action;
@@ -99,7 +104,7 @@ namespace AnimatedGifCreator
                     File = file,
                     Width = videoProperties.Width,
                     Height = videoProperties.Height,
-                    FrameRate = 10.0
+                    FrameRate = DefaultFrameRate
                 };
 
                 try
