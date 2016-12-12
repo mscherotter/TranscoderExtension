@@ -19,16 +19,26 @@
             <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
             <Button x:Uid="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
         </StackPanel>
-        <GridView Grid.Row="1" x:Name="FileList" Margin="8" AutomationProperties.Name="Files to convert">
-            <GridView.ItemTemplate>
-                <DataTemplate>
+        <ListView Grid.Row="1" x:Name="FileList" Margin="8" AutomationProperties.Name="Files to convert">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="local:VideoFile">
                     <Grid Margin="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
                         <Image Source="{Binding Thumbnail}" Width="190" Height="130"/>
-                        <TextBlock Text="{Binding Name}" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom"/>
+                        <StackPanel Grid.Column="1" Margin="4,0,0,0">
+                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom"/>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
+                                <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
+                            </StackPanel>
+                        </StackPanel>
                     </Grid>
                 </DataTemplate>    
-            </GridView.ItemTemplate>
-        </GridView>
+            </ListView.ItemTemplate>
+        </ListView>
         <StackPanel Grid.Row="2" Margin="8">
             <StackPanel Orientation="Horizontal">
                 <Button Margin="4" x:Uid="ConvertButton" Content="Convert to animated GIF" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" />

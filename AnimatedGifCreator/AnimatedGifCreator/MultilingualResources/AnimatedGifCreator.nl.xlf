@@ -98,6 +98,14 @@
           <source>Alex Qian (zh-CN)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Alex Qian (zh-CN)</target>
         </trans-unit>
+        <trans-unit id="HeightBox.Header" translate="yes" xml:space="preserve">
+          <source>Height</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Height</target>
+        </trans-unit>
+        <trans-unit id="WidthBox.Header" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dikte</target>
+        </trans-unit>
       </group>
     </body>
   </file>

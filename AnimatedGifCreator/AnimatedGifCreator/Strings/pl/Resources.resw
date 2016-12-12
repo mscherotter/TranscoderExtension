@@ -81,4 +81,10 @@
   <data name="ChineseTranslationText.Text" xml:space="preserve">
     <value>Alex Qian (zh-CN)</value>
   </data>
+  <data name="HeightBox.Header" xml:space="preserve">
+    <value>Wysokość</value>
+  </data>
+  <data name="WidthBox.Header" xml:space="preserve">
+    <value>Szerokość</value>
+  </data>
 </root>

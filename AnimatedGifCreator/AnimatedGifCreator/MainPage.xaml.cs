@@ -86,10 +86,19 @@ namespace AnimatedGifCreator
 
             foreach (var file in files)
             {
+                var videoProperties = await file.Properties.GetVideoPropertiesAsync();
+
+                if (videoProperties.Height == 0)
+                {
+                    continue;
+                }
+
                 var videoFile = new VideoFile
                 {
                     Name = file.Name,
-                    File = file
+                    File = file,
+                    Width = videoProperties.Width,
+                    Height = videoProperties.Height
                 };
 
                 try
@@ -159,8 +168,6 @@ namespace AnimatedGifCreator
                     {
                         var sourceFile = item.File;
 
-                        var videoProperties = await sourceFile.Properties.GetVideoPropertiesAsync();
-
                         var desiredName = Path.ChangeExtension(item.Name, ".gif");
 
                         var destinationFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
@@ -169,8 +176,8 @@ namespace AnimatedGifCreator
                         {
                             var gifCreator = new GifCreator();
 
-                            var action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, videoProperties.Width,
-                                videoProperties.Height);
+                            var action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, item.Width,
+                                item.Height);
 
                             action.Progress = delegate (IAsyncActionWithProgress<double> a, double v)
                             {

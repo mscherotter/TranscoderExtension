@@ -98,6 +98,14 @@
           <source>Alex Qian (zh-CN)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">亚历克斯钱其琛 (zh CN)</target>
         </trans-unit>
+        <trans-unit id="HeightBox.Header" translate="yes" xml:space="preserve">
+          <source>Height</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">height</target>
+        </trans-unit>
+        <trans-unit id="WidthBox.Header" translate="yes" xml:space="preserve">
+          <source>Width</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">宽</target>
+        </trans-unit>
       </group>
     </body>
   </file>
