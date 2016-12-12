@@ -90,4 +90,12 @@
   <data name="FPSBox.Header" xml:space="preserve">
     <value>Fotogrammi al secondo</value>
   </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>C'era un problema nella creazione di GIF animate. 
+Tecnico Dettagli:
+{0}</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Problema creazione GIF animate</value>
+  </data>
 </root>

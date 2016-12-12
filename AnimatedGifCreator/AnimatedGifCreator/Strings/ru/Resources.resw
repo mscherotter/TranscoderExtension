@@ -90,4 +90,12 @@
   <data name="FPSBox.Header" xml:space="preserve">
     <value>Кадров в секунду</value>
   </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>Существует проблема создания анимированных GIF-файлов. 
+Технические подробности:
+{0}</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Проблема создания анимированных GIF</value>
+  </data>
 </root>

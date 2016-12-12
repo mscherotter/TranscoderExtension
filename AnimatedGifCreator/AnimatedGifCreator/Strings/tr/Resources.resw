@@ -90,4 +90,12 @@
   <data name="FPSBox.Header" xml:space="preserve">
     <value>Kare/saniye</value>
   </data>
+  <data name="ErrorFormat" xml:space="preserve">
+    <value>Animasyonlu GIF dosyaları oluşturulurken bir sorun oluştu. 
+Teknik ayrıntılar:
+{0}</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Sorun oluşturma animasyonlu GIF</value>
+  </data>
 </root>
