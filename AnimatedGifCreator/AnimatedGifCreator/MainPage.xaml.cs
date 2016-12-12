@@ -98,7 +98,8 @@ namespace AnimatedGifCreator
                     Name = file.Name,
                     File = file,
                     Width = videoProperties.Width,
-                    Height = videoProperties.Height
+                    Height = videoProperties.Height,
+                    FrameRate = 10.0
                 };
 
                 try
@@ -177,7 +178,7 @@ namespace AnimatedGifCreator
                             var gifCreator = new GifCreator();
 
                             var action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, item.Width,
-                                item.Height);
+                                item.Height, item.FrameRate);
 
                             action.Progress = delegate (IAsyncActionWithProgress<double> a, double v)
                             {
@@ -230,7 +231,9 @@ namespace AnimatedGifCreator
 
         private async Task TranscodeSingleFileAsync()
         {
-            var sourceFile = _sourceFiles.First().File;
+            var firstVideo = _sourceFiles.First();
+
+            var sourceFile = firstVideo.File;
 
             var gifCreator = new GifCreator();
 
@@ -255,8 +258,8 @@ namespace AnimatedGifCreator
 
                 try
                 {
-                    _action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, videoProperties.Width,
-                        videoProperties.Height);
+                    _action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, firstVideo.Width,
+                        firstVideo.Height, firstVideo.FrameRate);
 
                     _action.Progress = OnProgress;
 

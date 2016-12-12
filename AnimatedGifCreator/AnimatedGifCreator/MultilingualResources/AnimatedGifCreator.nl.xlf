@@ -106,6 +106,10 @@
           <source>Width</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Dikte</target>
         </trans-unit>
+        <trans-unit id="FPSBox.Header" translate="yes" xml:space="preserve">
+          <source>Frames per second</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Frames per seconde</target>
+        </trans-unit>
       </group>
     </body>
   </file>

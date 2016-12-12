@@ -55,6 +55,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the frame rate
+        /// </summary>
+        public double FrameRate { get; set; }
+
         private void UpdateAspect()
         {
             if (Width * Height > 0 && Aspect == 0)

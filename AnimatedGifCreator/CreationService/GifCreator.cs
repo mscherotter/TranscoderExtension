@@ -50,8 +50,42 @@ namespace CreationService
             extension.Run(taskInstance, deferral);
         }
 
-        public IAsyncActionWithProgress<double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height)
+        /// <summary>
+        /// Transcode a GIF file
+        /// </summary>
+        /// <param name="source">the source video file</param>
+        /// <param name="destination">the destination .gif file</param>
+        /// <param name="width">the destination image width</param>
+        /// <param name="height">the destination image height</param>
+        /// <param name="fps">the frames per second to encode at</param>
+        /// <returns></returns>
+        public IAsyncActionWithProgress<double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height, double fps)
         {
+            if (source == null)
+            {
+                throw new ArgumentNullException("source", "source cannot be null.");
+            }
+
+            if (destination == null)
+            {
+                throw new ArgumentNullException("destination", "destination cannot be null.");
+            }
+
+            if (width == 0)
+            {
+                throw new ArgumentOutOfRangeException("width", "width cannot be 0.");
+            }
+
+            if (height == 0)
+            {
+                throw new ArgumentOutOfRangeException("height", "height cannot be 0.");
+            }
+
+            if (fps <= 0)
+            {
+                throw new ArgumentOutOfRangeException("fps", "fps must be greater than 0.");
+            }
+
             return AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
             {
                 var composition = new MediaComposition();
@@ -88,7 +122,7 @@ namespace CreationService
 
                     progress.Report(30);
 
-                    var increment = TimeSpan.FromSeconds(1.0 / 10.0);
+                    var increment = TimeSpan.FromSeconds(1.0 / fps);
 
                     var timesFromStart = new List<TimeSpan>();
 
@@ -144,6 +178,20 @@ namespace CreationService
                             decoder.DpiX,
                             decoder.DpiY,
                             pixels.DetachPixelData());
+
+                        var delayTime = System.Convert.ToUInt16(increment.TotalSeconds * 1000);
+
+                        var properties = new BitmapPropertySet
+                        {
+                            {
+                                "/grctlext/Delay",
+                                new BitmapTypedValue(delayTime / 10, PropertyType.UInt16)
+                            }
+                        };
+
+                        await encoder.BitmapProperties.SetPropertiesAsync(properties);
+
+
 
                         if (index < thumbnails.Count - 1)
                         {
@@ -204,7 +252,7 @@ namespace CreationService
                     }
                 }
 
-                await TranscodeGifAsync(source, destination, width, height);
+                await TranscodeGifAsync(source, destination, width, height, 10.0);
             });
         }
 

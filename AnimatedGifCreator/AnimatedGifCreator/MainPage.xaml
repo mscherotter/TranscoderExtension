@@ -13,16 +13,16 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Padding="8">
-            <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed"/>
+            <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed" Margin="4"/>
             <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
             <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
             <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
             <Button x:Uid="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
         </StackPanel>
-        <ListView Grid.Row="1" x:Name="FileList" Margin="8" AutomationProperties.Name="Files to convert">
+        <ListView Grid.Row="1" x:Name="FileList" Margin="0,8,8,8" AutomationProperties.Name="Files to convert">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:VideoFile">
-                    <Grid Margin="4">
+                    <Grid Margin="0,4,4,4">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition/>
@@ -33,6 +33,7 @@
                             <StackPanel Orientation="Horizontal">
                                 <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
                                 <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
+                                <TextBox x:Uid="FPSBox" Height="60" Header="Frames per second" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
