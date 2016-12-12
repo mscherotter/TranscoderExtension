@@ -110,6 +110,18 @@
           <source>Frames per second</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">每秒帧数</target>
         </trans-unit>
+        <trans-unit id="ErrorFormat" translate="yes" xml:space="preserve">
+          <source>There was a problem creating animated GIF files.
+Technical details:
+{0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">创建动画的 GIF 文件时出错。
+技术细节︰
+{0}</target>
+        </trans-unit>
+        <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
+          <source>Problem creating animated GIF</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">问题创建 GIF 动画</target>
+        </trans-unit>
       </group>
     </body>
   </file>

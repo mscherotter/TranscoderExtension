@@ -26,6 +26,7 @@ namespace AnimatedGifCreator
     using Windows.Storage.Pickers;
     using Windows.System;
     using Windows.UI.Core;
+    using Windows.UI.Popups;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Controls;
     using Windows.UI.Xaml.Media.Imaging;
@@ -130,13 +131,31 @@ namespace AnimatedGifCreator
 
         private async void OnConvert(object sender, RoutedEventArgs e)
         {
-            if (_sourceFiles.Count == 1)
+            try
             {
-                await TranscodeSingleFileAsync();
+                if (_sourceFiles.Count == 1)
+                {
+                    await TranscodeSingleFileAsync();
+                }
+                else if (_sourceFiles.Count > 1)
+                {
+                    await TranscodeMultipleFilesAsync();
+                }
             }
-            else if (_sourceFiles.Count > 1)
+            catch (System.Exception se)
             {
-                await TranscodeMultipleFilesAsync();
+                var resources = ResourceLoader.GetForCurrentView();
+
+                var content = string.Format(
+                    CultureInfo.CurrentCulture, 
+                    resources.GetString("ErrorFormat"),
+                    se.Message);
+
+                var title = resources.GetString("ErrorTitle");
+
+                var messageBox = new MessageDialog(content, title);
+
+                await messageBox.ShowAsync();
             }
         }
 

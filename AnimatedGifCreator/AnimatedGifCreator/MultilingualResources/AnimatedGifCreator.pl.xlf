@@ -110,6 +110,18 @@
           <source>Frames per second</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Klatek na sekundę</target>
         </trans-unit>
+        <trans-unit id="ErrorFormat" translate="yes" xml:space="preserve">
+          <source>There was a problem creating animated GIF files.
+Technical details:
+{0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Wystąpił problem podczas tworzenia animowanych plików GIF. 
+Techniczne szczegóły:
+{0}</target>
+        </trans-unit>
+        <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
+          <source>Problem creating animated GIF</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Problem tworzenia animowanych GIF</target>
+        </trans-unit>
       </group>
     </body>
   </file>

@@ -110,6 +110,18 @@
           <source>Frames per second</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Kare/saniye</target>
         </trans-unit>
+        <trans-unit id="ErrorFormat" translate="yes" xml:space="preserve">
+          <source>There was a problem creating animated GIF files.
+Technical details:
+{0}</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Animasyonlu GIF dosyaları oluşturulurken bir sorun oluştu. 
+Teknik ayrıntılar:
+{0}</target>
+        </trans-unit>
+        <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
+          <source>Problem creating animated GIF</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sorun oluşturma animasyonlu GIF</target>
+        </trans-unit>
       </group>
     </body>
   </file>
