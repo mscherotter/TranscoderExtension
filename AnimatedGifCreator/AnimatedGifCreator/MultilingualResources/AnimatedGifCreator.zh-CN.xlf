@@ -20,11 +20,11 @@
         </trans-unit>
         <trans-unit id="CloneForkLink.Content" translate="yes" xml:space="preserve">
           <source>Clone/fork on GitHub</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"> 在GitHub上Clone/fork</target>
+          <target state="translated">在GitHub上Clone/fork</target>
         </trans-unit>
         <trans-unit id="ConvertButton.Content" translate="yes" xml:space="preserve">
           <source>Convert to animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">转换为 GIF 动画</target>
+          <target state="translated">转换为GIF动画</target>
         </trans-unit>
         <trans-unit id="CreatedByText.Text" translate="yes" xml:space="preserve">
           <source>Created by Michael S. Scherotter</source>
@@ -40,7 +40,7 @@
         </trans-unit>
         <trans-unit id="GIFImages" translate="yes" xml:space="preserve">
           <source>GIF Images</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF 图像</target>
+          <target state="translated">GIF图像</target>
         </trans-unit>
         <trans-unit id="SelectFileButton.Content" translate="yes" xml:space="preserve">
           <source>Select video files</source>
@@ -60,19 +60,19 @@
         </trans-unit>
         <trans-unit id="AppExtensionDisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Transcoder</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF 动画转码器</target>
+          <target state="translated">GIF动画转码器</target>
         </trans-unit>
         <trans-unit id="AnimatedGIF" translate="yes" xml:space="preserve">
           <source>Animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">动态 GIF</target>
+          <target state="translated">动态GIF</target>
         </trans-unit>
         <trans-unit id="JournalistExportDescription" translate="yes" xml:space="preserve">
           <source>Create a movie from the pages of a journal.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">从一本杂志的页面创建电影</target>
+          <target state="translated">从一本杂志的页面上创建电影</target>
         </trans-unit>
         <trans-unit id="Height" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">height</target>
+          <target state="translated">高</target>
         </trans-unit>
         <trans-unit id="SecondsPerFrame" translate="yes" xml:space="preserve">
           <source>Seconds per frame</source>
@@ -100,7 +100,7 @@
         </trans-unit>
         <trans-unit id="HeightBox.Header" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">height</target>
+          <target state="translated">高</target>
         </trans-unit>
         <trans-unit id="WidthBox.Header" translate="yes" xml:space="preserve">
           <source>Width</source>
@@ -114,13 +114,13 @@
           <source>There was a problem creating animated GIF files.
 Technical details:
 {0}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">创建动画的 GIF 文件时出错。
-技术细节︰
+          <target state="translated">创建GIF文件时出错
+详细信息︰
 {0}</target>
         </trans-unit>
         <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
           <source>Problem creating animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">问题创建 GIF 动画</target>
+          <target state="translated">创建GIF动画时出现问题</target>
         </trans-unit>
       </group>
     </body>
