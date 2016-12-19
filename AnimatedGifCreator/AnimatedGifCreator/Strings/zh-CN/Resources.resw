@@ -98,4 +98,7 @@
   <data name="ErrorTitle" xml:space="preserve">
     <value>创建GIF动画时出现问题</value>
   </data>
+  <data name="SlovenianTranslationText.Text" xml:space="preserve">
+    <value>彼得 · 哈尔卜 (SL)</value>
+  </data>
 </root>

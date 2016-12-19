@@ -13,90 +13,90 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animirani GIF Creator</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Bir Transcoder uzantısı</value>
+    <value>Razširitvijo Transcoder</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Bir Transcoder uzantısı</value>
+    <value>Razširitvijo Transcoder</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Klon/GitHub doğum çatal</value>
+    <value>Klon/vilice na GitHub</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Animasyonlu GIF dönüştürmek</value>
+    <value>Pretvoriti v animirani GIF</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>Michael S. Scherotter tarafından oluşturulmuş</value>
+    <value>Ustvaril Michael S. Scherotter</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Animasyonlu GIF görüntüler için .mp4, .mov, .wmv veya .avi dosyalarını dönüştürün.</value>
+    <value>.Mp4, .mov, .wmv ali .avi pila pretvoriti animirani GIF slike.</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animirani GIF Creator</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>GIF resimleri</value>
+    <value>GIF slike</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>Video dosyalarını seçin</value>
+    <value>Izberite video datoteke</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animirani GIF Creator</value>
   </data>
   <data name="Video" xml:space="preserve">
     <value>Video</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>Animasyonlu GIF dosyaları için videoları dönüştürmek.</value>
+    <value>Spremeniti televizija v animirani GIF datotek.</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>Animasyonlu GIF dönüştürücü</value>
+    <value>Animirani GIF Transcoder</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>Canlandırılmış GIF</value>
+    <value>Animiran GIF</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Bir film bir dergi sayfalarından oluşturun.</value>
+    <value>Ustvarite film iz strani temeljnico.</value>
   </data>
   <data name="Height" xml:space="preserve">
-    <value>Yükseklik</value>
+    <value>Višina</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Çerçeve başına saniye</value>
+    <value>Sekund na okvir</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Genişlik</value>
+    <value>Širina</value>
   </data>
   <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Animasyonlu GIF Creator dilinize çeviriye yardım et.</value>
+    <value>Pomoč, animirani GIF Creator prevesti v svoj jezik.</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>Daniel Morozov (RU)</value>
   </data>
   <data name="TranslatorsText.Text" xml:space="preserve">
-    <value>Çevirmenler</value>
+    <value>Prevajalci</value>
   </data>
   <data name="ChineseTranslationText.Text" xml:space="preserve">
     <value>Alex Qian (zh-CN)</value>
   </data>
   <data name="HeightBox.Header" xml:space="preserve">
-    <value>Yükseklik</value>
+    <value>Višina</value>
   </data>
   <data name="WidthBox.Header" xml:space="preserve">
-    <value>Genişlik</value>
+    <value>Širina</value>
   </data>
   <data name="FPSBox.Header" xml:space="preserve">
-    <value>Kare/saniye</value>
+    <value>Slik na sekundo</value>
   </data>
   <data name="ErrorFormat" xml:space="preserve">
-    <value>Animasyonlu GIF dosyaları oluşturulurken bir sorun oluştu. 
-Teknik ayrıntılar:
+    <value>Je prišlo do težave, ustvarjanje animiranih GIF datotek. 
+Tehnične podrobnosti:
 {0}</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Sorun oluşturma animasyonlu GIF</value>
+    <value>Problem ustvarjanja animirani GIF</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>

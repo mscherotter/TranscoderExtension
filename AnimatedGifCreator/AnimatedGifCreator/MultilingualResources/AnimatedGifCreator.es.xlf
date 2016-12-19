@@ -122,6 +122,10 @@ técnica:
           <source>Problem creating animated GIF</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Problema crear GIF animados</target>
         </trans-unit>
+        <trans-unit id="SlovenianTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Peter Harb (SL)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Peter Harb (SL)</target>
+        </trans-unit>
       </group>
     </body>
   </file>

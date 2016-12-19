@@ -98,4 +98,7 @@ technique :
   <data name="ErrorTitle" xml:space="preserve">
     <value>Problème de création de GIF animés</value>
   </data>
+  <data name="SlovenianTranslationText.Text" xml:space="preserve">
+    <value>Peter Harb (SL)</value>
+  </data>
 </root>

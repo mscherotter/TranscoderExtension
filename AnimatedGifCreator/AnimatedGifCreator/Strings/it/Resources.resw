@@ -98,4 +98,7 @@ Tecnico Dettagli:
   <data name="ErrorTitle" xml:space="preserve">
     <value>Problema creazione GIF animate</value>
   </data>
+  <data name="SlovenianTranslationText.Text" xml:space="preserve">
+    <value>Peter Harb (SL)</value>
+  </data>
 </root>
