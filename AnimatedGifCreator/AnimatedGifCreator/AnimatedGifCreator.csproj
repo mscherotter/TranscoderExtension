@@ -100,6 +100,9 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="AnimatedGifCreator_StoreKey.pfx" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\id\Resources.resw" />
+    <PRIResource Include="Strings\ta\Resources.resw" />
+    <PRIResource Include="Strings\ku-Arab\Resources.resw" />
     <PRIResource Include="Strings\vi\Resources.resw" />
     <PRIResource Include="Strings\sl\Resources.resw" />
     <PRIResource Include="Strings\zh-CN\Resources.resw" />
@@ -191,18 +194,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Strings\id-ID\" />
     <Folder Include="Strings\qps-ploc\" />
   </ItemGroup>
   <ItemGroup>
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.de.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.es.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.fr.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.id.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.it.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.ku-Arab.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.nl.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.pl.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.pt.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.ru.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.sl.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.ta.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.tr.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.vi.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.zh-CN.xlf">

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en-US" target-language="nl" original="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="ku-Arab" original="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
       <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.1795.0" tool-company="Microsoft" />
     </header>
@@ -8,139 +8,139 @@
       <group id="ANIMATEDGIFCREATOR/STRINGS/EN-US/RESOURCES.RESW" datatype="resx">
         <trans-unit id="AnimatedGIFCreatorText.Text" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Geanimeerde GIF Creator</target>
+          <target state="new">Animated GIF Creator</target>
         </trans-unit>
         <trans-unit id="ATranscoderExtension.Text" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">De extensie van een Transcoder</target>
+          <target state="new">A Transcoder Extension</target>
         </trans-unit>
         <trans-unit id="ATranscoderExtensionLink.Content" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">De extensie van een Transcoder</target>
+          <target state="new">A Transcoder Extension</target>
         </trans-unit>
         <trans-unit id="CloneForkLink.Content" translate="yes" xml:space="preserve">
           <source>Clone/fork on GitHub</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Kloon/voorvork op GitHub</target>
+          <target state="new">Clone/fork on GitHub</target>
         </trans-unit>
         <trans-unit id="ConvertButton.Content" translate="yes" xml:space="preserve">
           <source>Convert to animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Converteren naar GIF-animatie</target>
+          <target state="new">Convert to animated GIF</target>
         </trans-unit>
         <trans-unit id="CreatedByText.Text" translate="yes" xml:space="preserve">
           <source>Created by Michael S. Scherotter</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Gemaakt door Michael S. Scherotter</target>
+          <target state="new">Created by Michael S. Scherotter</target>
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Convert .mp4, .mov, .wmv, or .avi files to animated GIF images.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">.Mp4, .mov, .wmv of .avi bestanden converteren naar geanimeerde beelden van GIF.</target>
+          <target state="new">Convert .mp4, .mov, .wmv, or .avi files to animated GIF images.</target>
         </trans-unit>
         <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Geanimeerde GIF Creator</target>
+          <target state="new">Animated GIF Creator</target>
         </trans-unit>
         <trans-unit id="GIFImages" translate="yes" xml:space="preserve">
           <source>GIF Images</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">GIF-afbeeldingen</target>
+          <target state="new">GIF Images</target>
         </trans-unit>
         <trans-unit id="SelectFileButton.Content" translate="yes" xml:space="preserve">
           <source>Select video files</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Selecteer video bestanden</target>
+          <target state="new">Select video files</target>
         </trans-unit>
         <trans-unit id="ShortName" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Geanimeerde GIF Creator</target>
+          <target state="new">Animated GIF Creator</target>
         </trans-unit>
         <trans-unit id="Video" translate="yes" xml:space="preserve">
           <source>Video</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Video</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">ڤیدیۆ</target>
         </trans-unit>
         <trans-unit id="AppExtensionDescription" translate="yes" xml:space="preserve">
           <source>Convert videos to animated GIF files.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Video's converteren naar geanimeerde GIF-bestanden.</target>
+          <target state="new">Convert videos to animated GIF files.</target>
         </trans-unit>
         <trans-unit id="AppExtensionDisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Transcoder</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Geanimeerde GIF Transcoder</target>
+          <target state="new">Animated GIF Transcoder</target>
         </trans-unit>
         <trans-unit id="AnimatedGIF" translate="yes" xml:space="preserve">
           <source>Animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">GIF-animatie</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">وێنەی جوڵێنراوی GIF</target>
         </trans-unit>
         <trans-unit id="JournalistExportDescription" translate="yes" xml:space="preserve">
           <source>Create a movie from the pages of a journal.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Een film maken van de pagina's van een dagboek.</target>
+          <target state="new">Create a movie from the pages of a journal.</target>
         </trans-unit>
         <trans-unit id="Height" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Height</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بەرزیی</target>
         </trans-unit>
         <trans-unit id="SecondsPerFrame" translate="yes" xml:space="preserve">
           <source>Seconds per frame</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Seconden per frame</target>
+          <target state="new">Seconds per frame</target>
         </trans-unit>
         <trans-unit id="Width" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dikte</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">به‌رینی</target>
         </trans-unit>
         <trans-unit id="TranslateButton.Content" translate="yes" xml:space="preserve">
           <source>Help translate Animated GIF Creator to your language.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Help mee met verdere Animated GIF Creator vertalen naar uw taal.</target>
+          <target state="new">Help translate Animated GIF Creator to your language.</target>
         </trans-unit>
         <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Daniel Morozov (RU)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Daniel Morozov (RU)</target>
+          <target state="new">Daniel Morozov (RU)</target>
         </trans-unit>
         <trans-unit id="TranslatorsText.Text" translate="yes" xml:space="preserve">
           <source>Translators</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Vertalers</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">وەرگێڕان</target>
         </trans-unit>
         <trans-unit id="ChineseTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Alex Qian (zh-CN)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alex Qian (zh-CN)</target>
+          <target state="new">Alex Qian (zh-CN)</target>
         </trans-unit>
         <trans-unit id="HeightBox.Header" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Height</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">بەرزیی</target>
         </trans-unit>
         <trans-unit id="WidthBox.Header" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dikte</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">به‌رینی</target>
         </trans-unit>
         <trans-unit id="FPSBox.Header" translate="yes" xml:space="preserve">
           <source>Frames per second</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Frames per seconde</target>
+          <target state="new">Frames per second</target>
         </trans-unit>
         <trans-unit id="ErrorFormat" translate="yes" xml:space="preserve">
           <source>There was a problem creating animated GIF files.
 Technical details:
 {0}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Er was een probleem creëren van geanimeerde GIF-bestanden. 
-Technische details:
+          <target state="new">There was a problem creating animated GIF files.
+Technical details:
 {0}</target>
         </trans-unit>
         <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
           <source>Problem creating animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Probleem creëren geanimeerde GIF</target>
+          <target state="new">Problem creating animated GIF</target>
         </trans-unit>
         <trans-unit id="SlovenianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Peter Harb (SL)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Peter Harb (SL)</target>
+          <target state="new">Peter Harb (SL)</target>
         </trans-unit>
         <trans-unit id="KurdishTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Zana Yousif (KU-Arab)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zana Yousif (KU-Arab)</target>
+          <target state="new">Zana Yousif (KU-Arab)</target>
         </trans-unit>
         <trans-unit id="IndonesianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Muhammed Angga Siswantoro (IN)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Muhammed Angga Siswantoro (IN)</target>
+          <target state="new">Muhammed Angga Siswantoro (IN)</target>
         </trans-unit>
         <trans-unit id="ItalianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Alessandro Di Roberto (IT)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alessandro Di Roberto (IT)</target>
+          <target state="new">Alessandro Di Roberto (IT)</target>
         </trans-unit>
         <trans-unit id="TamilTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Yasar Arafath (TA)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Yasar Arafath (TA)</target>
+          <target state="new">Yasar Arafath (TA)</target>
         </trans-unit>
       </group>
     </body>

@@ -101,4 +101,16 @@
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>彼得 · 哈尔卜 (SL)</value>
   </data>
+  <data name="KurdishTranslationText.Text" xml:space="preserve">
+    <value>优素福 Zana （KU-阿拉伯）</value>
+  </data>
+  <data name="IndonesianTranslationText.Text" xml:space="preserve">
+    <value>穆罕默德 Angga Siswantoro （中）</value>
+  </data>
+  <data name="ItalianTranslationText.Text" xml:space="preserve">
+    <value>亚历山德罗 · 迪罗伯托 (IT)</value>
+  </data>
+  <data name="TamilTranslationText.Text" xml:space="preserve">
+    <value>亚 Arafath (TA)</value>
+  </data>
 </root>

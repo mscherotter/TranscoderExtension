@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Video" xml:space="preserve">
+    <value>ڤیدیۆ</value>
+  </data>
+  <data name="AnimatedGIF" xml:space="preserve">
+    <value>وێنەی جوڵێنراوی GIF</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>بەرزیی</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>به‌رینی</value>
+  </data>
+  <data name="TranslatorsText.Text" xml:space="preserve">
+    <value>وەرگێڕان</value>
+  </data>
+  <data name="HeightBox.Header" xml:space="preserve">
+    <value>بەرزیی</value>
+  </data>
+  <data name="WidthBox.Header" xml:space="preserve">
+    <value>به‌رینی</value>
+  </data>
+</root>

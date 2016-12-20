@@ -101,4 +101,16 @@ Tehnične podrobnosti:
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>
   </data>
+  <data name="KurdishTranslationText.Text" xml:space="preserve">
+    <value>Zana Yousif (KU-arabski)</value>
+  </data>
+  <data name="IndonesianTranslationText.Text" xml:space="preserve">
+    <value>Muhammed Angga Siswantoro (v)</value>
+  </data>
+  <data name="ItalianTranslationText.Text" xml:space="preserve">
+    <value>Alessandro Di Roberto (TO)</value>
+  </data>
+  <data name="TamilTranslationText.Text" xml:space="preserve">
+    <value>Dragica Yasar (TA)</value>
+  </data>
 </root>

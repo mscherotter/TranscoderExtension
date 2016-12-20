@@ -126,6 +126,22 @@ Techniczne szczegóły:
           <source>Peter Harb (SL)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Peter Harb (SL)</target>
         </trans-unit>
+        <trans-unit id="KurdishTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Zana Yousif (KU-Arab)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Zana Yousif (KU-Arab)</target>
+        </trans-unit>
+        <trans-unit id="IndonesianTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Muhammed Angga Siswantoro (IN)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Muhammed Angga Siswantoro (w)</target>
+        </trans-unit>
+        <trans-unit id="ItalianTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Alessandro Di Roberto (IT)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alessandro Di Roberto (GO)</target>
+        </trans-unit>
+        <trans-unit id="TamilTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Yasar Arafath (TA)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Yasar Arafath (TA)</target>
+        </trans-unit>
       </group>
     </body>
   </file>

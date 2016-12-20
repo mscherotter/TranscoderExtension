@@ -206,4 +206,16 @@ Technical details:
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>
   </data>
+  <data name="IndonesianTranslationText.Text" xml:space="preserve">
+    <value>Muhammed Angga Siswantoro (IN)</value>
+  </data>
+  <data name="ItalianTranslationText.Text" xml:space="preserve">
+    <value>Alessandro Di Roberto (IT)</value>
+  </data>
+  <data name="KurdishTranslationText.Text" xml:space="preserve">
+    <value>Zana Yousif (KU-Arab)</value>
+  </data>
+  <data name="TamilTranslationText.Text" xml:space="preserve">
+    <value>Yasar Arafath (TA)</value>
+  </data>
 </root>
