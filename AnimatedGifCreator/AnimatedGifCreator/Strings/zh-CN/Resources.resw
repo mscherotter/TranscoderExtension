@@ -113,4 +113,7 @@
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>亚 Arafath (TA)</value>
   </data>
+  <data name="VietnameseTranslationText.Text" xml:space="preserve">
+    <value>Liêm 阮 （六）</value>
+  </data>
 </root>

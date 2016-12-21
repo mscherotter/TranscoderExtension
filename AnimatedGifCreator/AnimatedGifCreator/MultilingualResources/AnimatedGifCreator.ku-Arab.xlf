@@ -142,6 +142,10 @@ Technical details:
           <source>Yasar Arafath (TA)</source>
           <target state="new">Yasar Arafath (TA)</target>
         </trans-unit>
+        <trans-unit id="VietnameseTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Liêm Nguyễn (VI)</source>
+          <target state="new">Liêm Nguyễn (VI)</target>
+        </trans-unit>
       </group>
     </body>
   </file>

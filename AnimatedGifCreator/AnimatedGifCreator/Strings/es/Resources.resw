@@ -113,4 +113,7 @@ técnica:
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>Yasar Arafath (TA)</value>
   </data>
+  <data name="VietnameseTranslationText.Text" xml:space="preserve">
+    <value>Liêm Nguyễn (VI)</value>
+  </data>
 </root>

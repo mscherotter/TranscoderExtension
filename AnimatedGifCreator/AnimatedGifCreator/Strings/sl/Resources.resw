@@ -113,4 +113,7 @@ Tehnične podrobnosti:
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>Dragica Yasar (TA)</value>
   </data>
+  <data name="VietnameseTranslationText.Text" xml:space="preserve">
+    <value>Liêm Nguyễn (VI)</value>
+  </data>
 </root>

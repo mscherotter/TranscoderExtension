@@ -16,28 +16,28 @@
     <value>Animated GIF Creator</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Một phần mở rộng Transcoder</value>
+    <value>Tiện ích mở rộng chuyển mã</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Một phần mở rộng Transcoder</value>
+    <value>Tiện ích mở rộng chuyển mã</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Clone/ngã ba trên GitHub</value>
+    <value>Tham khảo trên GitHub</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Chuyển đổi hoạt hình GIF</value>
+    <value>Chuyển đổi thành hình động GIF</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
     <value>Tạo bởi Michael S. Scherotter</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Chuyển đổi tập tin .mp4, MOV, .wmv hoặc .avi animated GIF hình ảnh.</value>
+    <value>Chuyển đổi tập tin .mp4, MOV, .wmv hoặc .avi thành hình động GIF.</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
     <value>Animated GIF Creator</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>Hình ảnh GIF</value>
+    <value>Ảnh động GIF</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
     <value>Chọn tập tin video</value>
@@ -49,28 +49,28 @@
     <value>Video</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>Chuyển đổi video sang tập tin GIF hoạt hình.</value>
+    <value>Chuyển đổi video sang tập tin hình động GIF.</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
     <value>Animated GIF Transcoder</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>GIF hoạt hình</value>
+    <value>Hình động GIF</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Tạo ra một bộ phim từ các trang của một tạp chí.</value>
+    <value>Tạo ra một bộ phim từ các trang của hướng dẫn.</value>
   </data>
   <data name="Height" xml:space="preserve">
-    <value>Cao</value>
+    <value>Chiều cao</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Giây cho mỗi khung hình</value>
+    <value>Số giây mỗi khung hình</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Rộng</value>
+    <value>Chiều rộng</value>
   </data>
   <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Giúp dịch Animated GIF Creator cho ngôn ngữ của bạn.</value>
+    <value>Giúp đỡ dịch Animated GIF Creator cho ngôn ngữ của bạn.</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>Daniel Morozov (RU)</value>
@@ -82,21 +82,21 @@
     <value>Alex Qian (zh-CN)</value>
   </data>
   <data name="HeightBox.Header" xml:space="preserve">
-    <value>Cao</value>
+    <value>Chiều cao</value>
   </data>
   <data name="WidthBox.Header" xml:space="preserve">
-    <value>Rộng</value>
+    <value>Chiều rộng</value>
   </data>
   <data name="FPSBox.Header" xml:space="preserve">
-    <value>Khung hình trên giây</value>
+    <value>Số khung hình trên giây</value>
   </data>
   <data name="ErrorFormat" xml:space="preserve">
-    <value>Đã có một vấn đề tạo ra tập tin GIF hoạt hình. 
-Kỹ thuật chi tiết: {0}
+    <value>Đã có một vấn đề khi tạo ra tập tin ảnh động GIF 
+Chi tiết kỹ thuật: {0}
 </value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Vấn đề tạo GIF động</value>
+    <value>Vấn đề khi tạo hình động GIF</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>
@@ -112,5 +112,8 @@ Kỹ thuật chi tiết: {0}
   </data>
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>Yasar Arafath (TA)</value>
+  </data>
+  <data name="VietnameseTranslationText.Text" xml:space="preserve">
+    <value>Liêm Nguyễn (VI)</value>
   </data>
 </root>

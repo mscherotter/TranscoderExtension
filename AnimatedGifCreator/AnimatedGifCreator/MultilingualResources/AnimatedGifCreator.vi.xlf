@@ -12,19 +12,19 @@
         </trans-unit>
         <trans-unit id="ATranscoderExtension.Text" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Một phần mở rộng Transcoder</target>
+          <target state="translated">Tiện ích mở rộng chuyển mã</target>
         </trans-unit>
         <trans-unit id="ATranscoderExtensionLink.Content" translate="yes" xml:space="preserve">
           <source>A Transcoder Extension</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Một phần mở rộng Transcoder</target>
+          <target state="translated">Tiện ích mở rộng chuyển mã</target>
         </trans-unit>
         <trans-unit id="CloneForkLink.Content" translate="yes" xml:space="preserve">
           <source>Clone/fork on GitHub</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Clone/ngã ba trên GitHub</target>
+          <target state="translated">Tham khảo trên GitHub</target>
         </trans-unit>
         <trans-unit id="ConvertButton.Content" translate="yes" xml:space="preserve">
           <source>Convert to animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chuyển đổi hoạt hình GIF</target>
+          <target state="translated">Chuyển đổi thành hình động GIF</target>
         </trans-unit>
         <trans-unit id="CreatedByText.Text" translate="yes" xml:space="preserve">
           <source>Created by Michael S. Scherotter</source>
@@ -32,7 +32,7 @@
         </trans-unit>
         <trans-unit id="Description" translate="yes" xml:space="preserve">
           <source>Convert .mp4, .mov, .wmv, or .avi files to animated GIF images.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chuyển đổi tập tin .mp4, MOV, .wmv hoặc .avi animated GIF hình ảnh.</target>
+          <target state="translated">Chuyển đổi tập tin .mp4, MOV, .wmv hoặc .avi thành hình động GIF.</target>
         </trans-unit>
         <trans-unit id="DisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Creator</source>
@@ -40,7 +40,7 @@
         </trans-unit>
         <trans-unit id="GIFImages" translate="yes" xml:space="preserve">
           <source>GIF Images</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Hình ảnh GIF</target>
+          <target state="translated">Ảnh động GIF</target>
         </trans-unit>
         <trans-unit id="SelectFileButton.Content" translate="yes" xml:space="preserve">
           <source>Select video files</source>
@@ -56,7 +56,7 @@
         </trans-unit>
         <trans-unit id="AppExtensionDescription" translate="yes" xml:space="preserve">
           <source>Convert videos to animated GIF files.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Chuyển đổi video sang tập tin GIF hoạt hình.</target>
+          <target state="translated">Chuyển đổi video sang tập tin hình động GIF.</target>
         </trans-unit>
         <trans-unit id="AppExtensionDisplayName" translate="yes" xml:space="preserve">
           <source>Animated GIF Transcoder</source>
@@ -64,27 +64,27 @@
         </trans-unit>
         <trans-unit id="AnimatedGIF" translate="yes" xml:space="preserve">
           <source>Animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">GIF hoạt hình</target>
+          <target state="translated">Hình động GIF</target>
         </trans-unit>
         <trans-unit id="JournalistExportDescription" translate="yes" xml:space="preserve">
           <source>Create a movie from the pages of a journal.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tạo ra một bộ phim từ các trang của một tạp chí.</target>
+          <target state="translated">Tạo ra một bộ phim từ các trang của hướng dẫn.</target>
         </trans-unit>
         <trans-unit id="Height" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Cao</target>
+          <target state="translated">Chiều cao</target>
         </trans-unit>
         <trans-unit id="SecondsPerFrame" translate="yes" xml:space="preserve">
           <source>Seconds per frame</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Giây cho mỗi khung hình</target>
+          <target state="translated">Số giây mỗi khung hình</target>
         </trans-unit>
         <trans-unit id="Width" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rộng</target>
+          <target state="translated">Chiều rộng</target>
         </trans-unit>
         <trans-unit id="TranslateButton.Content" translate="yes" xml:space="preserve">
           <source>Help translate Animated GIF Creator to your language.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Giúp dịch Animated GIF Creator cho ngôn ngữ của bạn.</target>
+          <target state="translated">Giúp đỡ dịch Animated GIF Creator cho ngôn ngữ của bạn.</target>
         </trans-unit>
         <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Daniel Morozov (RU)</source>
@@ -100,27 +100,27 @@
         </trans-unit>
         <trans-unit id="HeightBox.Header" translate="yes" xml:space="preserve">
           <source>Height</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Cao</target>
+          <target state="translated">Chiều cao</target>
         </trans-unit>
         <trans-unit id="WidthBox.Header" translate="yes" xml:space="preserve">
           <source>Width</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rộng</target>
+          <target state="translated">Chiều rộng</target>
         </trans-unit>
         <trans-unit id="FPSBox.Header" translate="yes" xml:space="preserve">
           <source>Frames per second</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Khung hình trên giây</target>
+          <target state="translated">Số khung hình trên giây</target>
         </trans-unit>
         <trans-unit id="ErrorFormat" translate="yes" xml:space="preserve">
           <source>There was a problem creating animated GIF files.
 Technical details:
 {0}</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Đã có một vấn đề tạo ra tập tin GIF hoạt hình. 
-Kỹ thuật chi tiết: {0}
+          <target state="translated">Đã có một vấn đề khi tạo ra tập tin ảnh động GIF 
+Chi tiết kỹ thuật: {0}
 </target>
         </trans-unit>
         <trans-unit id="ErrorTitle" translate="yes" xml:space="preserve">
           <source>Problem creating animated GIF</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vấn đề tạo GIF động</target>
+          <target state="translated">Vấn đề khi tạo hình động GIF</target>
         </trans-unit>
         <trans-unit id="SlovenianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Peter Harb (SL)</source>
@@ -141,6 +141,10 @@ Kỹ thuật chi tiết: {0}
         <trans-unit id="TamilTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Yasar Arafath (TA)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Yasar Arafath (TA)</target>
+        </trans-unit>
+        <trans-unit id="VietnameseTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Liêm Nguyễn (VI)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Liêm Nguyễn (VI)</target>
         </trans-unit>
       </group>
     </body>

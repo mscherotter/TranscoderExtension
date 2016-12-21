@@ -51,6 +51,7 @@
             <TextBlock Text="Translators" FontWeight="Bold" x:Uid="TranslatorsText" Margin="4"/>
             <TextBlock Text="Daniel Morozov (RU)" x:Uid="RussianTranslationText" Margin="4"/>
             <TextBlock Text="Alex Qian (zh-CN)" x:Uid="ChineseTranslationText" Margin="4"/>
+            <TextBlock Text="Liêm Nguyễn (VI)" x:Uid="VietnameseTranslationText" Margin="4"/>
             <HyperlinkButton Margin="4" x:Uid="TranslateButton" Content="Help translate Animated GIF Creator to your language." NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator"/>
         </StackPanel>
     </Grid>
