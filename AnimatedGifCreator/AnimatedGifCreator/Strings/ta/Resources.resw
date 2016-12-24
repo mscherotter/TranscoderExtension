@@ -36,4 +36,8 @@
   <data name="FPSBox.Header" xml:space="preserve">
     <value>வினாடி ஒன்றுகான சட்டகங்கள்</value>
   </data>
+  <data name="MainPage.FlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
 </root>

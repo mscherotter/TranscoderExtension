@@ -100,6 +100,7 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <None Include="AnimatedGifCreator_StoreKey.pfx" />
     <None Include="project.json" />
+    <PRIResource Include="Strings\fa\Resources.resw" />
     <PRIResource Include="Strings\id\Resources.resw" />
     <PRIResource Include="Strings\ta\Resources.resw" />
     <PRIResource Include="Strings\ku-Arab\Resources.resw" />
@@ -200,6 +201,7 @@
   <ItemGroup>
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.de.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.es.xlf" />
+    <XliffResource Include="MultilingualResources\AnimatedGifCreator.fa.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.fr.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.id.xlf" />
     <XliffResource Include="MultilingualResources\AnimatedGifCreator.it.xlf" />

@@ -33,4 +33,8 @@
   <data name="WidthBox.Header" xml:space="preserve">
     <value>به‌رینی</value>
   </data>
+  <data name="MainPage.FlowDirection" xml:space="preserve">
+    <value>RightToLeft</value>
+    <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
 </root>

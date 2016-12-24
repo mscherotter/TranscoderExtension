@@ -13,111 +13,111 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>Animasi GIF pencipta</value>
+    <value>خالق انیمیشن های GIF</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Transcoder ekstensi</value>
+    <value>فرمت Transcoder</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Transcoder ekstensi</value>
+    <value>فرمت Transcoder</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Klon/garpu pada GitHub</value>
+    <value>کلون/چنگال در GitHub</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Mengkonversi GIF animasi</value>
+    <value>تبدیل به انیمیشن های GIF</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>Dibuat oleh Michael S. Scherotter</value>
+    <value>ایجاد شده توسط Michael S. Scherotter</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Mengkonversi file .mp4, .mov, .wmv atau .avi ke GIF animasi gambar.</value>
+    <value>تبدیل فایل های .mp4 ویدئویی و یا .avi به متحرک قاب عکس.</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Animasi GIF pencipta</value>
+    <value>خالق انیمیشن های GIF</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>Gambar GIF</value>
+    <value>قاب عکس</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>Pilih file video</value>
+    <value>انتخاب فایل های ویدئویی</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>Animasi GIF pencipta</value>
+    <value>خالق انیمیشن های GIF</value>
   </data>
   <data name="Video" xml:space="preserve">
-    <value>Video</value>
+    <value>ویدیو</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>Mengkonversi video ke animasi GIF file.</value>
+    <value>فیلم ها تبدیل به فایل های GIF متحرک.</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>Transcoder animasi GIF</value>
+    <value>قاب های متحرک Transcoder</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>Animasi GIF</value>
+    <value>GIF متحرک.</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Membuat film dari halaman jurnal.</value>
+    <value>ایجاد فیلم از صفحات یک مجله.</value>
   </data>
   <data name="Height" xml:space="preserve">
-    <value>Height</value>
+    <value>ارتفاع</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Detik per bingkai</value>
+    <value>ثانیه در هر قاب</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>Width</value>
+    <value>WIDTH</value>
   </data>
   <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Membantu menerjemahkan animasi GIF pencipta untuk bahasa Anda.</value>
+    <value>متحرک قاب خالق ترجمه به زبان شما کمک کند.</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
-    <value>Daniel Morozov (RU)</value>
+    <value>دانیل موروزوف (انگشت های دست فاصله)</value>
   </data>
   <data name="TranslatorsText.Text" xml:space="preserve">
-    <value>Penerjemah</value>
+    <value>مترجمان</value>
   </data>
   <data name="ChineseTranslationText.Text" xml:space="preserve">
-    <value>Alex Qian (zh-CN)</value>
+    <value>Alex کیان (ژاله انتخاب نمایید:))</value>
   </data>
   <data name="HeightBox.Header" xml:space="preserve">
-    <value>Height</value>
+    <value>ارتفاع</value>
   </data>
   <data name="WidthBox.Header" xml:space="preserve">
-    <value>Width</value>
+    <value>WIDTH</value>
   </data>
   <data name="FPSBox.Header" xml:space="preserve">
-    <value>bingkai per detik</value>
+    <value>فریم در ثانیه</value>
   </data>
   <data name="ErrorFormat" xml:space="preserve">
-    <value>Ada masalah saat membuat animasi GIF file. 
-Teknis rincian:
+    <value>مشکلی در ایجاد فایل های GIF متحرک. 
+فنی جزئیات:
 {0}</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Masalah membuat GIF animasi</value>
+    <value>ایجاد مشکل متحرک GIF</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
-    <value>Peter Harb (SL)</value>
+    <value>پیتر بنادر (SL)</value>
   </data>
   <data name="IndonesianTranslationText.Text" xml:space="preserve">
-    <value>Muhammad Angga Siswantoro (IN)</value>
+    <value>محمد Angga Siswantoro (در)</value>
   </data>
   <data name="ItalianTranslationText.Text" xml:space="preserve">
-    <value>Alessandro Di Roberto (ITU)</value>
+    <value>روبرتو دی الساندرو (آن)</value>
   </data>
   <data name="KurdishTranslationText.Text" xml:space="preserve">
-    <value>Zana dariabdullah (KU-Arab)</value>
+    <value>Zana Yousif (KU و عرب)</value>
   </data>
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>Yasar Arafath (TA)</value>
   </data>
   <data name="VietnameseTranslationText.Text" xml:space="preserve">
-    <value>Liêm Nguyễn (VI)</value>
+    <value>Liêm Nguyễn (ششم)</value>
   </data>
   <data name="MainPage.FlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
+    <value>RightToLeft</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
   </data>
 </root>

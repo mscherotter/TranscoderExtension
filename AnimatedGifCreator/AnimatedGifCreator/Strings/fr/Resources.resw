@@ -116,4 +116,8 @@ technique :
   <data name="VietnameseTranslationText.Text" xml:space="preserve">
     <value>Liêm Nguyễn (VI)</value>
   </data>
+  <data name="MainPage.FlowDirection" xml:space="preserve">
+    <value>LeftToRight</value>
+    <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
 </root>

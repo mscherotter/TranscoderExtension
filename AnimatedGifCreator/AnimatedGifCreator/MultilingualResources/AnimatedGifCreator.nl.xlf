@@ -146,6 +146,11 @@ Technische details:
           <source>Liêm Nguyễn (VI)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Liêm Nguyễn (VI)</target>
         </trans-unit>
+        <trans-unit id="MainPage.FlowDirection" translate="yes" xml:space="preserve">
+          <source>LeftToRight</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">LeftToRight</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</note>
+        </trans-unit>
       </group>
     </body>
   </file>
