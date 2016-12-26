@@ -18,6 +18,7 @@ namespace AnimatedGifCreator
     using System.Threading;
     using System.Threading.Tasks;
     using CreationService;
+    using Microsoft.Services.Store.Engagement;
     using Windows.ApplicationModel.Activation;
     using Windows.ApplicationModel.Resources;
     using Windows.Foundation;
@@ -59,6 +60,8 @@ namespace AnimatedGifCreator
             InitializeComponent();
 
             FileList.ItemsSource = _sourceFiles;
+
+            this.FeedbackButton.Visibility = StoreServicesFeedbackLauncher.IsSupported() ? Visibility.Visible : Visibility.Collapsed;
         }
 
         internal async void Activate(FileActivatedEventArgs args)
@@ -344,6 +347,14 @@ namespace AnimatedGifCreator
             if (_action != null && _action.Status == AsyncStatus.Started)
             {
                 _action.Cancel();
+            }
+        }
+
+        private async void OnFeedback(object sender, RoutedEventArgs e)
+        {
+            if (Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.IsSupported())
+            {
+                await Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault().LaunchAsync();
             }
         }
     }

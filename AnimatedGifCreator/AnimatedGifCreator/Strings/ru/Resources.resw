@@ -69,9 +69,6 @@
   <data name="Width" xml:space="preserve">
     <value>Ширина</value>
   </data>
-  <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Помогите перевести Создатель анимированных GIF на ваш язык.</value>
-  </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>Даниэль Морозов (рус.)</value>
   </data>
@@ -119,5 +116,15 @@
   <data name="MainPage.FlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>Обратная связь</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>Переводчики</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>кадр/с</value>
+    <comment>Frames Per Second abbreviation</comment>
   </data>
 </root>

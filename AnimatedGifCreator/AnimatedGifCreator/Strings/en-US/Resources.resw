@@ -174,7 +174,7 @@
   <data name="Width" xml:space="preserve">
     <value>Width</value>
   </data>
-  <data name="TranslateButton.Content" xml:space="preserve">
+  <data name="HelpTranslateText.Text" xml:space="preserve">
     <value>Help translate Animated GIF Creator to your language.</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
@@ -224,5 +224,15 @@ Technical details:
   <data name="MainPage.FlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>FPS</value>
+    <comment>Frames Per Second abbreviation</comment>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>Translators</value>
   </data>
 </root>

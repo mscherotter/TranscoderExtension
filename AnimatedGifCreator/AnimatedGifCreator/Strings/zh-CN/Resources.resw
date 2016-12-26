@@ -69,9 +69,6 @@
   <data name="Width" xml:space="preserve">
     <value>宽</value>
   </data>
-  <data name="TranslateButton.Content" xml:space="preserve">
-    <value>帮忙翻译成你的语言</value>
-  </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>丹尼尔 · 莫罗佐夫 (RU)</value>
   </data>
@@ -119,5 +116,15 @@
   <data name="MainPage.FlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>反馈</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>翻译人员</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>Fps</value>
+    <comment>Frames Per Second abbreviation</comment>
   </data>
 </root>

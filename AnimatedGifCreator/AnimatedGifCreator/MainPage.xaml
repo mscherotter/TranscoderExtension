@@ -7,7 +7,65 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Uid="MainPage"
     mc:Ignorable="d">
+    <Page.Resources>
+        <DataTemplate x:DataType="local:VideoFile" x:Key="NarrowItemTemplate">
+            <Grid Margin="0,4,4,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Thumbnail}" Width="95" Height="65"/>
+                <StackPanel Grid.Column="1" Margin="4,0,0,0">
+                    <TextBlock x:Name="Filename" Text="{Binding Name}" FontWeight="Bold" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
+                        <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
+                        <TextBox x:Uid="NarrowFPSBox" Height="60" Header="FPS" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:DataType="local:VideoFile" x:Key="WideItemTemplate">
+            <Grid Margin="0,4,4,4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Thumbnail}" Width="190" Height="130"/>
+                <StackPanel Grid.Column="1" Margin="4,0,0,0">
+                    <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom"/>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
+                        <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
+                        <TextBox x:Uid="FPSBox" Height="60" Header="Frames per second" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="ResponsiveStates">
+                <VisualState x:Name="Wide320">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FileList.(ListView.ItemTemplate)" Value="{StaticResource NarrowItemTemplate}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Wide720">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="Wide1024">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
@@ -16,31 +74,10 @@
         <StackPanel Padding="8">
             <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed" Margin="4"/>
             <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
-            <HyperlinkButton x:Uid="ATranscoderExtensionLink" Content="A Transcoder Extension" Margin="4" NavigateUri="http://clkde.tradedoubler.com/click?p=259740&amp;a=2825476&amp;g=0&amp;url=https%3a%2f%2fwww.microsoft.com%2fen-us%2fstore%2fapps%2fTranscoder%2f9nblggh5z1bg%3fsource%3dlinkbuilder"/>
             <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
             <Button x:Uid="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
         </StackPanel>
-        <ListView Grid.Row="1" x:Name="FileList" Margin="0,8,8,8" AutomationProperties.Name="Files to convert">
-            <ListView.ItemTemplate>
-                <DataTemplate x:DataType="local:VideoFile">
-                    <Grid Margin="0,4,4,4">
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="Auto"/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image Source="{Binding Thumbnail}" Width="190" Height="130"/>
-                        <StackPanel Grid.Column="1" Margin="4,0,0,0">
-                            <TextBlock Text="{Binding Name}" FontWeight="Bold" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis" VerticalAlignment="Bottom"/>
-                            <StackPanel Orientation="Horizontal">
-                                <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
-                                <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
-                                <TextBox x:Uid="FPSBox" Height="60" Header="Frames per second" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
-                            </StackPanel>
-                        </StackPanel>
-                    </Grid>
-                </DataTemplate>    
-            </ListView.ItemTemplate>
-        </ListView>
+        <ListView Grid.Row="1" x:Name="FileList" Margin="0,8,8,8" AutomationProperties.Name="Files to convert" ItemTemplate="{StaticResource WideItemTemplate}"/>
         <StackPanel Grid.Row="2" Margin="8">
             <StackPanel Orientation="Horizontal">
                 <Button Margin="4" x:Uid="ConvertButton" Content="Convert to animated GIF" Click="OnConvert" x:Name="ConvertButton" IsEnabled="False" />
@@ -48,12 +85,25 @@
                 <ProgressRing x:Name="ProgressRing" Margin="4"/>
                 <TextBlock x:Name="ProgressText" Margin="4" VerticalAlignment="Center"/>
             </StackPanel>
-            <HyperlinkButton Margin="4" Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator"/>
-            <TextBlock Text="Translators" FontWeight="Bold" x:Uid="TranslatorsText" Margin="4"/>
-            <TextBlock Text="Daniel Morozov (RU)" x:Uid="RussianTranslationText" Margin="4"/>
-            <TextBlock Text="Alex Qian (zh-CN)" x:Uid="ChineseTranslationText" Margin="4"/>
-            <TextBlock Text="Liêm Nguyễn (VI)" x:Uid="VietnameseTranslationText" Margin="4"/>
-            <HyperlinkButton Margin="4" x:Uid="TranslateButton" Content="Help translate Animated GIF Creator to your language." NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator"/>
+            <StackPanel Orientation="Horizontal">
+                <Button Content="Feedback" Margin="4" Click="OnFeedback" x:Name="FeedbackButton" x:Uid="FeedbackButton"/>
+                <Button Content="Translators" Margin="4" x:Uid="TranslatorsButton">
+                    <Button.Flyout>
+                        <Flyout>
+                            <StackPanel>
+                                <TextBlock Text="Translators" FontWeight="Bold" x:Uid="TranslatorsText" />
+                                <TextBlock Text="Daniel Morozov (RU)" x:Uid="RussianTranslationText" />
+                                <TextBlock Text="Alex Qian (zh-CN)" x:Uid="ChineseTranslationText" />
+                                <TextBlock Text="Liêm Nguyễn (VI)" x:Uid="VietnameseTranslationText" />
+                                <HyperlinkButton MaxWidth="320" NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator">
+                                    <TextBlock x:Name="HelpTranslateText" Text="Help translate Animated GIF Creator to your language." TextWrapping="Wrap"/>
+                                </HyperlinkButton>
+                            </StackPanel>
+                        </Flyout>
+                    </Button.Flyout>
+                </Button>
+                <HyperlinkButton Margin="4" Content="Clone/fork on GitHub" x:Uid="CloneForkLink" NavigateUri="https://github.com/mscherotter/TranscoderExtension/tree/master/AnimatedGifCreator"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

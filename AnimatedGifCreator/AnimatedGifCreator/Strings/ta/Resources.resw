@@ -40,4 +40,14 @@
     <value>LeftToRight</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
   </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>பின்னூட்டம்</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>மொழிபெயர்ப்பாளர்கள்</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>FPS</value>
+    <comment>Frames Per Second abbreviation</comment>
+  </data>
 </root>

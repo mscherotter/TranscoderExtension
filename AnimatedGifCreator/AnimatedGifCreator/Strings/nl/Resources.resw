@@ -69,9 +69,6 @@
   <data name="Width" xml:space="preserve">
     <value>Dikte</value>
   </data>
-  <data name="TranslateButton.Content" xml:space="preserve">
-    <value>Help mee met verdere Animated GIF Creator vertalen naar uw taal.</value>
-  </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>Daniel Morozov (RU)</value>
   </data>
@@ -119,5 +116,15 @@ Technische details:
   <data name="MainPage.FlowDirection" xml:space="preserve">
     <value>LeftToRight</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>Feedback</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>Vertalers</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>fps</value>
+    <comment>Frames Per Second abbreviation</comment>
   </data>
 </root>

@@ -82,10 +82,6 @@
           <source>Width</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Szerokość</target>
         </trans-unit>
-        <trans-unit id="TranslateButton.Content" translate="yes" xml:space="preserve">
-          <source>Help translate Animated GIF Creator to your language.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Pomóc w tłumaczeniu animowany GIF Creator na swój język.</target>
-        </trans-unit>
         <trans-unit id="RussianTranslationText.Text" translate="yes" xml:space="preserve">
           <source>Daniel Morozov (RU)</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Daniel Morozow (RU)</target>
@@ -150,6 +146,23 @@ Techniczne szczegóły:
           <source>LeftToRight</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">LeftToRight</target>
           <note from="MultilingualBuild" annotates="source" priority="2">Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</note>
+        </trans-unit>
+        <trans-unit id="FeedbackButton.Content" translate="yes" xml:space="preserve">
+          <source>Feedback</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Opinia</target>
+        </trans-unit>
+        <trans-unit id="TranslatorsButton.Content" translate="yes" xml:space="preserve">
+          <source>Translators</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Tłumacze</target>
+        </trans-unit>
+        <trans-unit id="NarrowFPSBox.Header" translate="yes" xml:space="preserve">
+          <source>FPS</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">klatek na sekundę</target>
+          <note from="MultilingualBuild" annotates="source" priority="2">Frames Per Second abbreviation</note>
+        </trans-unit>
+        <trans-unit id="HelpTranslateText.Text" translate="yes" xml:space="preserve">
+          <source>Help translate Animated GIF Creator to your language.</source>
+          <target state="new">Help translate Animated GIF Creator to your language.</target>
         </trans-unit>
       </group>
     </body>

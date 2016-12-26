@@ -69,9 +69,6 @@
   <data name="Width" xml:space="preserve">
     <value>WIDTH</value>
   </data>
-  <data name="TranslateButton.Content" xml:space="preserve">
-    <value>متحرک قاب خالق ترجمه به زبان شما کمک کند.</value>
-  </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
     <value>دانیل موروزوف (انگشت های دست فاصله)</value>
   </data>
@@ -119,5 +116,15 @@
   <data name="MainPage.FlowDirection" xml:space="preserve">
     <value>RightToLeft</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
+  </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>بازخورد</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>مترجمان</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>تعداد قاب در ثانیه</value>
+    <comment>Frames Per Second abbreviation</comment>
   </data>
 </root>

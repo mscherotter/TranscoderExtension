@@ -37,4 +37,14 @@
     <value>RightToLeft</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
   </data>
+  <data name="FeedbackButton.Content" xml:space="preserve">
+    <value>کاردانەوە</value>
+  </data>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>وەرگێڕان</value>
+  </data>
+  <data name="NarrowFPSBox.Header" xml:space="preserve">
+    <value>چوارچیوە/چرکە</value>
+    <comment>Frames Per Second abbreviation</comment>
+  </data>
 </root>
