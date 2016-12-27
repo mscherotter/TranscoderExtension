@@ -45,7 +45,7 @@ namespace AnimatedGifCreator
         /// <summary>
         /// the transcode action
         /// </summary>
-        private IAsyncActionWithProgress<double> _action;
+        private IAsyncOperationWithProgress<bool, double> _operation;
 
         /// <summary>
         /// the source files
@@ -73,20 +73,31 @@ namespace AnimatedGifCreator
 
         private async void OnSelectFile(object sender, RoutedEventArgs e)
         {
-            var picker = new FileOpenPicker
+            var button = sender as Button;
+
+            button.IsEnabled = false;
+
+            try
             {
-                SuggestedStartLocation = PickerLocationId.VideosLibrary,
-                ViewMode = PickerViewMode.Thumbnail
-            };
+                var picker = new FileOpenPicker
+                {
+                    SuggestedStartLocation = PickerLocationId.VideosLibrary,
+                    ViewMode = PickerViewMode.Thumbnail
+                };
 
-            picker.FileTypeFilter.Add(".mp4");
-            picker.FileTypeFilter.Add(".mov");
-            picker.FileTypeFilter.Add(".wmv");
-            picker.FileTypeFilter.Add(".avi");
+                picker.FileTypeFilter.Add(".mp4");
+                picker.FileTypeFilter.Add(".mov");
+                picker.FileTypeFilter.Add(".wmv");
+                picker.FileTypeFilter.Add(".avi");
 
-            var files = await picker.PickMultipleFilesAsync();
+                var files = await picker.PickMultipleFilesAsync();
 
-            await SetSourceFilesAsync(files);
+                await SetSourceFilesAsync(files);
+            }
+            finally
+            {
+                button.IsEnabled = true;
+            }
         }
 
         private async Task SetSourceFilesAsync(IEnumerable<StorageFile> files)
@@ -134,6 +145,8 @@ namespace AnimatedGifCreator
 
         private async void OnConvert(object sender, RoutedEventArgs e)
         {
+            ConvertButton.IsEnabled = false;
+
             try
             {
                 if (_sourceFiles.Count == 1)
@@ -184,7 +197,7 @@ namespace AnimatedGifCreator
             try
 
             {
-                _action = AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
+                _operation = AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
                 {
                     var progressPerFile = 100 / Convert.ToDouble(_sourceFiles.Count);
 
@@ -200,6 +213,11 @@ namespace AnimatedGifCreator
 
                         var destinationFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
 
+                        if (token.IsCancellationRequested)
+                        {
+                            return false;
+                        }
+
                         try
                         {
                             var gifCreator = new GifCreator();
@@ -207,7 +225,7 @@ namespace AnimatedGifCreator
                             var action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, item.Width,
                                 item.Height, item.FrameRate);
 
-                            action.Progress = delegate (IAsyncActionWithProgress<double> a, double v)
+                            action.Progress = delegate (IAsyncOperationWithProgress<bool, double> a, double v)
                             {
                                 if (token.IsCancellationRequested)
                                 {
@@ -218,6 +236,11 @@ namespace AnimatedGifCreator
                             };
 
                             await action;
+
+                            if (token.IsCancellationRequested)
+                            {
+                                return false;
+                            }
                         }
                         catch (System.Exception se)
                         {
@@ -226,11 +249,13 @@ namespace AnimatedGifCreator
 
                         fileIndex++;
                     }
+
+                    return true;
                 });
 
-                _action.Progress = OnProgress;
+                _operation.Progress = OnProgress;
 
-                await _action;
+                await _operation;
 
                 await Launcher.LaunchFolderAsync(folder);
             }
@@ -248,12 +273,15 @@ namespace AnimatedGifCreator
         /// </summary>
         private void Cleanup()
         {
-            _action = null;
+            _operation = null;
             ConvertButton.IsEnabled = true;
             ProgressRing.IsActive = false;
             CancelButton.Visibility = Visibility.Collapsed;
             ProgressBar.Visibility = Visibility.Collapsed;
             ProgressText.Visibility = Visibility.Collapsed;
+            FileList.IsEnabled = true;
+            SelectFileButton.IsEnabled = true;
+
         }
 
         private async Task TranscodeSingleFileAsync()
@@ -285,14 +313,14 @@ namespace AnimatedGifCreator
 
                 try
                 {
-                    _action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, firstVideo.Width,
+                    _operation = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, firstVideo.Width,
                         firstVideo.Height, firstVideo.FrameRate);
 
-                    _action.Progress = OnProgress;
+                    _operation.Progress = OnProgress;
 
-                    await _action;
+                    var succeeded = await _operation;
 
-                    if (_action.Status == AsyncStatus.Completed)
+                    if (succeeded && _operation.Status == AsyncStatus.Completed)
                     {
                         await Launcher.LaunchFileAsync(destinationFile);
                     }
@@ -318,7 +346,10 @@ namespace AnimatedGifCreator
             ProgressBar.Visibility = Visibility.Visible;
             ProgressText.Visibility = Visibility.Visible;
             CancelButton.Visibility = Visibility.Visible;
+            CancelButton.IsEnabled = true;
             ConvertButton.IsEnabled = false;
+            FileList.IsEnabled = false;
+            SelectFileButton.IsEnabled = false;
         }
 
         /// <summary>
@@ -326,7 +357,7 @@ namespace AnimatedGifCreator
         /// </summary>
         /// <param name="asyncInfo">the async information</param>
         /// <param name="progressInfo">the progress information (0-100)</param>
-        private async void OnProgress(IAsyncActionWithProgress<double> asyncInfo, double progressInfo)
+        private async void OnProgress(IAsyncOperationWithProgress<bool, double> asyncInfo, double progressInfo)
         {
             await
                 ProgressBar.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
@@ -344,9 +375,10 @@ namespace AnimatedGifCreator
         /// <param name="e"></param>
         private void OnCancel(object sender, RoutedEventArgs e)
         {
-            if (_action != null && _action.Status == AsyncStatus.Started)
+            if (_operation != null && _operation.Status == AsyncStatus.Started)
             {
-                _action.Cancel();
+                CancelButton.IsEnabled = false;
+                _operation.Cancel();
             }
         }
 

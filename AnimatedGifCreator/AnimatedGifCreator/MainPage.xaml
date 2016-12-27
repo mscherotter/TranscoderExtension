@@ -10,18 +10,20 @@
     <Page.Resources>
         <DataTemplate x:DataType="local:VideoFile" x:Key="NarrowItemTemplate">
             <Grid Margin="0,4,4,4">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Image Source="{Binding Thumbnail}" Width="95" Height="65"/>
-                <StackPanel Grid.Column="1" Margin="4,0,0,0">
-                    <TextBlock x:Name="Filename" Text="{Binding Name}" FontWeight="Bold" Margin="4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
-                    <StackPanel Orientation="Horizontal">
-                        <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
-                        <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
-                        <TextBox x:Uid="NarrowFPSBox" Height="60" Header="FPS" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
-                    </StackPanel>
+                <TextBlock x:Name="Filename" Grid.ColumnSpan="2" Text="{Binding Name}" FontWeight="Bold" Margin="0,4,4,4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
+                <Image Source="{Binding Thumbnail}" Width="95" Height="65" Grid.Row="1"/>
+                <StackPanel Grid.Column="1" Margin="4,0,0,0" Grid.Row="1" Orientation="Horizontal">
+                    <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4,4,4,0" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
+                    <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4,4,4,0" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
+                    <TextBox x:Uid="NarrowFPSBox" Height="60" Header="FPS" Margin="4,4,4,0" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -75,7 +77,7 @@
             <ProgressBar x:Name="ProgressBar" Minimum="0" Maximum="100" Visibility="Collapsed" Margin="4"/>
             <TextBlock x:Uid="AnimatedGIFCreatorText" Text="Animated GIF Creator" Margin="4" Style="{StaticResource SubtitleTextBlockStyle}"/>
             <TextBlock x:Uid="CreatedByText" Text="Created by Michael S. Scherotter" Margin="4"/>
-            <Button x:Uid="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
+            <Button x:Uid="SelectFileButton" x:Name="SelectFileButton" HorizontalAlignment="Left" Content="Select video files" Margin="4" Click="OnSelectFile"/>
         </StackPanel>
         <ListView Grid.Row="1" x:Name="FileList" Margin="0,8,8,8" AutomationProperties.Name="Files to convert" ItemTemplate="{StaticResource WideItemTemplate}"/>
         <StackPanel Grid.Row="2" Margin="8">

@@ -58,8 +58,8 @@ namespace CreationService
         /// <param name="width">the destination image width</param>
         /// <param name="height">the destination image height</param>
         /// <param name="fps">the frames per second to encode at</param>
-        /// <returns></returns>
-        public IAsyncActionWithProgress<double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height, double fps)
+        /// <returns>an async operation with boolean result and double (0-100) progress.</returns>
+        public IAsyncOperationWithProgress<bool, double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height, double fps)
         {
             if (source == null)
             {
@@ -96,7 +96,7 @@ namespace CreationService
 
                 if (token.IsCancellationRequested)
                 {
-                    return;
+                    return false;
                 }
 
                 progress.Report(10);
@@ -108,7 +108,7 @@ namespace CreationService
                     
                     if (token.IsCancellationRequested)
                     {
-                        return;
+                        return false;
                     }
 
                     progress.Report(20);
@@ -117,7 +117,7 @@ namespace CreationService
 
                     if (token.IsCancellationRequested)
                     {
-                        return;
+                        return false;
                     }
 
                     progress.Report(30);
@@ -141,7 +141,7 @@ namespace CreationService
 
                     if (token.IsCancellationRequested)
                     {
-                        return;
+                        return false;
                     }
 
                     var index = 0;
@@ -156,7 +156,7 @@ namespace CreationService
 
                         if (token.IsCancellationRequested)
                         {
-                            return;
+                            return false;
                         }
 
                         progress.Report(currentProgress+=progressPerStep);
@@ -165,7 +165,7 @@ namespace CreationService
 
                         if (token.IsCancellationRequested)
                         {
-                            return;
+                            return false;
                         }
 
                         progress.Report(currentProgress += progressPerStep);
@@ -199,7 +199,7 @@ namespace CreationService
 
                             if (token.IsCancellationRequested)
                             {
-                                return;
+                                return false;
                             }
 
                             progress.Report(currentProgress += progressPerStep);
@@ -211,10 +211,12 @@ namespace CreationService
 
                     if (token.IsCancellationRequested)
                     {
-                        return;
+                        return false;
                     }
 
                     progress.Report(100);
+
+                    return true;
                 }
         });
         }
