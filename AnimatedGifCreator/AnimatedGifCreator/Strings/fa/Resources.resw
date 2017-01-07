@@ -127,4 +127,7 @@
     <value>تعداد قاب در ثانیه</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>متحرک قاب خالق ترجمه به زبان شما کمک کند.</value>
+  </data>
 </root>

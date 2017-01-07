@@ -127,4 +127,7 @@ Tecnico Dettagli:
     <value>fps</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>Aiuta a tradurre Animated GIF Creator per la vostra lingua.</value>
+  </data>
 </root>

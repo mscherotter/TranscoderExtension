@@ -13,121 +13,121 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>GIF动画编辑器</value>
+    <value>الخالق GIF المتحركة</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>格式转换器扩展</value>
+    <value>ملحق إشارات</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>格式转换器扩展</value>
+    <value>ملحق إشارات</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>在GitHub上Clone/fork</value>
+    <value>استنساخ/شوكة في GitHub</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>转换为GIF动画</value>
+    <value>تحويل إلى صورة GIF المتحركة</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>由 Michael · S.Scherotter开发</value>
+    <value>تم إنشاؤها بواسطة مايكل س. شيروتير</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>将.mp4、.mov、.wmv 或.avi文件转换成GIF</value>
+    <value>تحويل ملفات.mp4 أو موف أو.wmv أو.avi صور GIF المتحركة.</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>GIF动画编辑器</value>
+    <value>الخالق GIF المتحركة</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>GIF图像</value>
+    <value>صور GIF</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>选择视频文件</value>
+    <value>حدد ملفات الفيديو</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>GIF动画编辑器</value>
+    <value>الخالق GIF المتحركة</value>
   </data>
   <data name="Video" xml:space="preserve">
-    <value>视频</value>
+    <value>فيديو</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>将视频转换为GIF文件</value>
+    <value>تحويل ملفات الفيديو إلى ملفات GIF المتحركة.</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>GIF动画转码器</value>
+    <value>إشارات GIF المتحركة</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>动态GIF</value>
+    <value>Gif متحرك</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>从一本杂志的页面上创建电影</value>
+    <value>قم بإنشاء فيلم من صفحات دفتر اليومية.</value>
   </data>
   <data name="Height" xml:space="preserve">
-    <value>高</value>
+    <value>الارتفاع</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>每帧秒</value>
+    <value>ثانية لكل إطار</value>
   </data>
   <data name="Width" xml:space="preserve">
-    <value>宽</value>
+    <value>العرض</value>
+  </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>المساعدة في ترجمة "المبدع GIF المتحركة" للغة الخاصة بك.</value>
   </data>
   <data name="RussianTranslationText.Text" xml:space="preserve">
-    <value>丹尼尔 · 莫罗佐夫 (RU)</value>
+    <value>دانيال موروزوف (RU)</value>
   </data>
   <data name="TranslatorsText.Text" xml:space="preserve">
-    <value>翻译人员</value>
+    <value>المترجمون</value>
   </data>
   <data name="ChineseTranslationText.Text" xml:space="preserve">
-    <value>亚历克斯钱其琛 (zh CN)</value>
+    <value>أليكس تشيان (زكية-أهي)</value>
   </data>
   <data name="HeightBox.Header" xml:space="preserve">
-    <value>高</value>
+    <value>الارتفاع</value>
   </data>
   <data name="WidthBox.Header" xml:space="preserve">
-    <value>宽</value>
+    <value>العرض</value>
   </data>
   <data name="FPSBox.Header" xml:space="preserve">
-    <value>每秒帧数</value>
+    <value>إطار في الثانية</value>
   </data>
   <data name="ErrorFormat" xml:space="preserve">
-    <value>创建GIF文件时出错
-详细信息︰
+    <value>وكان هناك مشكلة في إنشاء ملفات GIF المتحركة. تفاصيل 
+التقنية:
 {0}</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>创建GIF动画时出现问题</value>
+    <value>خلق مشكلة GIF المتحركة</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
-    <value>彼得 · 哈尔卜 (SL)</value>
-  </data>
-  <data name="KurdishTranslationText.Text" xml:space="preserve">
-    <value>优素福 Zana （KU-阿拉伯）</value>
+    <value>بطرس حرب (SL)</value>
   </data>
   <data name="IndonesianTranslationText.Text" xml:space="preserve">
-    <value>穆罕默德 Angga Siswantoro （中）</value>
+    <value>محمد إنغا سيسوانتورو ()</value>
   </data>
   <data name="ItalianTranslationText.Text" xml:space="preserve">
-    <value>亚历山德罗 · 迪罗伯托 (IT)</value>
+    <value>روبرتو دي أليساندرو (IT)</value>
+  </data>
+  <data name="KurdishTranslationText.Text" xml:space="preserve">
+    <value>زانا يوسف (كو-العربية)</value>
   </data>
   <data name="TamilTranslationText.Text" xml:space="preserve">
-    <value>亚 Arafath (TA)</value>
+    <value>يسار أرافاث (تا)</value>
   </data>
   <data name="VietnameseTranslationText.Text" xml:space="preserve">
-    <value>Liêm 阮 （六）</value>
+    <value>نكوين Liêm (سادسا)</value>
   </data>
   <data name="MainPage.FlowDirection" xml:space="preserve">
-    <value>LeftToRight</value>
+    <value>RightToLeft</value>
     <comment>Use RightToLeft for Right-reading languages like Arabic, Farsi, Hebrew</comment>
   </data>
   <data name="FeedbackButton.Content" xml:space="preserve">
-    <value>反馈</value>
-  </data>
-  <data name="TranslatorsButton.Content" xml:space="preserve">
-    <value>翻译人员</value>
+    <value>ملاحظات</value>
   </data>
   <data name="NarrowFPSBox.Header" xml:space="preserve">
-    <value>Fps</value>
+    <value>إطار/ث</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
-  <data name="HelpTranslateText.Text" xml:space="preserve">
-    <value>帮忙翻译一下你的语言动画 GIF 造物主。</value>
+  <data name="TranslatorsButton.Content" xml:space="preserve">
+    <value>المترجمون</value>
   </data>
 </root>

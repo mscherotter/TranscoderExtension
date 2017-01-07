@@ -127,4 +127,7 @@
     <value>Fps</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>帮忙翻译一下你的语言动画 GIF 造物主。</value>
+  </data>
 </root>

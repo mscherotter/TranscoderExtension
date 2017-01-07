@@ -127,4 +127,7 @@ Teknis rincian:
     <value>FPS</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>Membantu menerjemahkan animasi GIF pencipta untuk bahasa Anda.</value>
+  </data>
 </root>

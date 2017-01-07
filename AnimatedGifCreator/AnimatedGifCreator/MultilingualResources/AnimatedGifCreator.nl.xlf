@@ -162,7 +162,7 @@ Technische details:
         </trans-unit>
         <trans-unit id="HelpTranslateText.Text" translate="yes" xml:space="preserve">
           <source>Help translate Animated GIF Creator to your language.</source>
-          <target state="new">Help translate Animated GIF Creator to your language.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Help mee met verdere Animated GIF Creator vertalen naar uw taal.</target>
         </trans-unit>
       </group>
     </body>

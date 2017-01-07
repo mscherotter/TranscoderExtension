@@ -127,4 +127,7 @@ Tehnične podrobnosti:
     <value>sličic/s</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
+  <data name="HelpTranslateText.Text" xml:space="preserve">
+    <value>Pomoč, animirani GIF Creator prevesti v svoj jezik.</value>
+  </data>
 </root>
