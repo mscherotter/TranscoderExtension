@@ -164,6 +164,10 @@ Technische Details:
           <source>Help translate Animated GIF Creator to your language.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Helfen Sie animierte GIF Creator in Ihre Sprache zu übersetzen.</target>
         </trans-unit>
+        <trans-unit id="TurkishTraslationText.Text" translate="yes" xml:space="preserve">
+          <source>Salih Tekin (TR)</source>
+          <target state="new">Salih Tekin (TR)</target>
+        </trans-unit>
       </group>
     </body>
   </file>

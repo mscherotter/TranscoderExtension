@@ -164,6 +164,10 @@ Chi tiết kỹ thuật: {0}
           <source>Help translate Animated GIF Creator to your language.</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Giúp dịch Animated GIF Creator cho ngôn ngữ của bạn.</target>
         </trans-unit>
+        <trans-unit id="TurkishTraslationText.Text" translate="yes" xml:space="preserve">
+          <source>Salih Tekin (TR)</source>
+          <target state="new">Salih Tekin (TR)</target>
+        </trans-unit>
       </group>
     </body>
   </file>

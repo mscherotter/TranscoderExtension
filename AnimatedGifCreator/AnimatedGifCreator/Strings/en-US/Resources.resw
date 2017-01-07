@@ -235,4 +235,7 @@ Technical details:
   <data name="TranslatorsButton.Content" xml:space="preserve">
     <value>Translators</value>
   </data>
+  <data name="TurkishTraslationText.Text" xml:space="preserve">
+    <value>Salih Tekin (TR)</value>
+  </data>
 </root>

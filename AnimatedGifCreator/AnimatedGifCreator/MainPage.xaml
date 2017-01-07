@@ -97,6 +97,7 @@
                                 <TextBlock Text="Daniel Morozov (RU)" x:Uid="RussianTranslationText" />
                                 <TextBlock Text="Alex Qian (zh-CN)" x:Uid="ChineseTranslationText" />
                                 <TextBlock Text="Liêm Nguyễn (VI)" x:Uid="VietnameseTranslationText" />
+                                <TextBlock Text="Salih Tekin (TR)" x:Uid="TurkishTraslationText"/>
                                 <HyperlinkButton MaxWidth="320" NavigateUri="mailto:synergist@outlook.com?subject=Translate Animated GIF Creator">
                                     <TextBlock x:Name="HelpTranslateText" Text="Help translate Animated GIF Creator to your language." TextWrapping="Wrap"/>
                                 </HyperlinkButton>

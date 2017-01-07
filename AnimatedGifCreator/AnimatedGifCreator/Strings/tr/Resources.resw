@@ -13,58 +13,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animasyonlu GIF Oluşturucu</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Bir Transcoder uzantısı</value>
+    <value>Bir Transcoder Uzantısı</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Bir Transcoder uzantısı</value>
+    <value>Bir Transcoder Uzantısı</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Klon/GitHub doğum çatal</value>
+    <value>Klon/fork Github'da</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Animasyonlu GIF dönüştürmek</value>
+    <value>Animasyonlu GIF'e dönüştür</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>Michael S. Scherotter tarafından oluşturulmuş</value>
+    <value>Michael S. Scherotter tarafından oluşturuldu</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Animasyonlu GIF görüntüler için .mp4, .mov, .wmv veya .avi dosyalarını dönüştürün.</value>
+    <value>.mp4, .mov, .wmv veya .avi dosyalarını animasyonlu GIF resimlerine dönüştürün.</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animasyonlu GIF Oluşturucu</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
-    <value>GIF resimleri</value>
+    <value>GIF Resimleri</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
     <value>Video dosyalarını seçin</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>Animasyonlu GIF Creator</value>
+    <value>Animasyonlu GIF Oluşturucu</value>
   </data>
   <data name="Video" xml:space="preserve">
     <value>Video</value>
   </data>
   <data name="AppExtensionDescription" xml:space="preserve">
-    <value>Animasyonlu GIF dosyaları için videoları dönüştürmek.</value>
+    <value>Videoları animasyonlu GIF dosyalarına dönüştürün</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>Animasyonlu GIF dönüştürücü</value>
+    <value>Animasyonlu GIF Dönüştürücü</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>Canlandırılmış GIF</value>
+    <value>Animasyonlu GIF</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Bir film bir dergi sayfalarından oluşturun.</value>
+    <value>Bir günlüğün sayfalarından bir film yaratın.</value>
   </data>
   <data name="Height" xml:space="preserve">
     <value>Yükseklik</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Çerçeve başına saniye</value>
+    <value>Kare/saniye</value>
   </data>
   <data name="Width" xml:space="preserve">
     <value>Genişlik</value>
@@ -93,19 +93,19 @@ Teknik ayrıntılar:
 {0}</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Sorun oluşturma animasyonlu GIF</value>
+    <value>Animasyonlu GIF oluşturulurken hata</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>
   </data>
   <data name="KurdishTranslationText.Text" xml:space="preserve">
-    <value>Zana yiğit (KU-Arap)</value>
+    <value>Zana yiğit (KU-Arab)</value>
   </data>
   <data name="IndonesianTranslationText.Text" xml:space="preserve">
-    <value>Muhammed Angga Siswantoro (inç)</value>
+    <value>Muhammed Angga Siswantoro (IN)</value>
   </data>
   <data name="ItalianTranslationText.Text" xml:space="preserve">
-    <value>Alessandro Di Roberto (BT)</value>
+    <value>Alessandro Di Roberto (IT)</value>
   </data>
   <data name="TamilTranslationText.Text" xml:space="preserve">
     <value>Yasar Arafath (TA)</value>
@@ -128,6 +128,6 @@ Teknik ayrıntılar:
     <comment>Frames Per Second abbreviation</comment>
   </data>
   <data name="HelpTranslateText.Text" xml:space="preserve">
-    <value>Animasyonlu GIF Creator dilinize çeviriye yardım et.</value>
+    <value>Animasyonlu GIF Oluşturucu'yu dilinize çevirmede yardımcı olun.</value>
   </data>
 </root>
