@@ -41,10 +41,10 @@ namespace CreationService
             {
                 Price = await Transcoder.Extension.GetPriceAsync(), 
                 SourceType = "Video",
-                SourceFormats = new string[] { ".mp4", ".mov", ".wmv", ".avi" },
-                DestinationFormats = new string[] { ".gif" },
+                SourceFormats = new[] { ".mp4", ".mov", ".wmv", ".avi" },
+                DestinationFormats = new[] { ".gif" },
                 LogoFile = logoFile,
-                TranscodeAsync = this.TranscodeAsync
+                TranscodeAsync = TranscodeAsync
             };
 
             extension.Run(taskInstance, deferral);
@@ -133,8 +133,8 @@ namespace CreationService
 
                     var thumbnails = await composition.GetThumbnailsAsync(
                         timesFromStart,
-                        System.Convert.ToInt32(width),
-                        System.Convert.ToInt32(height),
+                        Convert.ToInt32(width),
+                        Convert.ToInt32(height),
                         VideoFramePrecision.NearestFrame);
 
                     progress.Report(40);
@@ -179,7 +179,7 @@ namespace CreationService
                             decoder.DpiY,
                             pixels.DetachPixelData());
 
-                        var delayTime = System.Convert.ToUInt16(increment.TotalSeconds * 1000);
+                        var delayTime = Convert.ToUInt16(increment.TotalSeconds * 1000);
 
                         var properties = new BitmapPropertySet
                         {
@@ -236,6 +236,11 @@ namespace CreationService
 
                 var videoProperties = await source.Properties.GetVideoPropertiesAsync();
 
+                if (token.IsCancellationRequested)
+                {
+                    return;
+                }
+
                 var width = videoProperties.Width;
                 var height = videoProperties.Height;
                     
@@ -248,13 +253,23 @@ namespace CreationService
                     if (Enum.TryParse(qualityString, out quality))
                     {
                         var profile = MediaEncodingProfile.CreateMp4(quality);
-                            
-                        width = profile.Video.Width;
-                        height = profile.Video.Height;
+
+                        if (profile != null && profile.Video != null)
+                        {
+                            width = profile.Video.Width;
+                            height = profile.Video.Height;
+                        }
                     }
                 }
 
-                await TranscodeGifAsync(source, destination, width, height, 10.0);
+                var operation = TranscodeGifAsync(source, destination, width, height, 10.0);
+
+                if (token.IsCancellationRequested)
+                {
+                    operation.Cancel();
+                }
+
+                await operation;
             });
         }
 

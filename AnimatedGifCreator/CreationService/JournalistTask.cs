@@ -34,8 +34,11 @@ namespace CreationService
 
             var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
 
-            details.AppServiceConnection.RequestReceived += AppServiceConnection_RequestReceived;
-            details.AppServiceConnection.ServiceClosed += AppServiceConnection_ServiceClosed;
+            if (details != null)
+            {
+                details.AppServiceConnection.RequestReceived += AppServiceConnection_RequestReceived;
+                details.AppServiceConnection.ServiceClosed += AppServiceConnection_ServiceClosed;
+            }
             taskInstance.Canceled += TaskInstance_Canceled;
         }
         #endregion
@@ -75,40 +78,44 @@ namespace CreationService
 
                 var data = request.Message["Data"] as string;
 
-                var jsonData = JsonObject.Parse(data);
-
-                var framesPerSecond = jsonData["FramesPerSecond"].GetNumber();
-
-                var secondsPerFrame = 1.0 / framesPerSecond;
-
-                var delayTime = System.Convert.ToUInt16(secondsPerFrame * 1000);
-
-                var file = await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
-
-                var temporaryFolder = Windows.Storage.ApplicationData.Current.TemporaryFolder;
-                var gifFile = await temporaryFolder.CreateFileAsync(file.DisplayName + ".gif", Windows.Storage.CreationCollisionOption.ReplaceExisting);
-
-                using (var stream = await file.OpenStreamForReadAsync())
+                if (data != null && token != null)
                 {
-                    using (var archive = new ZipArchive(stream, ZipArchiveMode.Read))
-                    {
-                        var journalXmlEntry = archive.GetEntry("journal.xml");
+                    var jsonData = JsonObject.Parse(data);
 
-                        using (var journalStream = journalXmlEntry.Open())
+                    var framesPerSecond = jsonData["FramesPerSecond"].GetNumber();
+
+                    var secondsPerFrame = 1.0 / framesPerSecond;
+
+                    var delayTime = Convert.ToUInt16(secondsPerFrame * 1000);
+
+                    var file = await SharedStorageAccessManager.RedeemTokenForFileAsync(token);
+
+                    var temporaryFolder = Windows.Storage.ApplicationData.Current.TemporaryFolder;
+                    var gifFile = await temporaryFolder.CreateFileAsync(file.DisplayName + ".gif",
+                        Windows.Storage.CreationCollisionOption.ReplaceExisting);
+
+                    using (var stream = await file.OpenStreamForReadAsync())
+                    {
+                        using (var archive = new ZipArchive(stream, ZipArchiveMode.Read))
                         {
-                            await EncodeImagesAsync(delayTime, gifFile, archive, journalStream);
+                            var journalXmlEntry = archive.GetEntry("journal.xml");
+
+                            using (var journalStream = journalXmlEntry.Open())
+                            {
+                                await EncodeImagesAsync(delayTime, gifFile, archive, journalStream);
+                            }
                         }
                     }
+
+                    var gifToken = SharedStorageAccessManager.AddFile(gifFile);
+
+                    var responseMessage = new ValueSet
+                    {
+                        ["FileToken"] = gifToken
+                    };
+
+                    await request.SendResponseAsync(responseMessage);
                 }
-
-                var gifToken = SharedStorageAccessManager.AddFile(gifFile);
-
-                var responseMessage = new ValueSet
-                {
-                    ["FileToken"] = gifToken
-                };
-
-                await request.SendResponseAsync(responseMessage);
             }
             finally
             {

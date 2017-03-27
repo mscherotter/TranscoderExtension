@@ -29,7 +29,7 @@ namespace Transcoder
     internal class Extension
     {
         #region Fields
-        private BackgroundTaskDeferral backgroundTaskDeferral;
+        private BackgroundTaskDeferral _backgroundTaskDeferral;
         private bool _canceled;
         private IAsyncAction _action;
         #endregion
@@ -40,7 +40,7 @@ namespace Transcoder
         /// </summary>
         internal Extension()
         {
-            var version = Windows.ApplicationModel.Package.Current.Id.Version;
+            var version = Package.Current.Id.Version;
 
             var versionString = string.Format(
                 CultureInfo.InvariantCulture,
@@ -62,7 +62,7 @@ namespace Transcoder
         {
             get
             {
-                return this._canceled;
+                return _canceled;
             }
         }
         /// <summary>
@@ -119,7 +119,7 @@ namespace Transcoder
         /// <param name="deferral">the deferral</param>
         public void Run(IBackgroundTaskInstance taskInstance, BackgroundTaskDeferral deferral)
         {
-            this.backgroundTaskDeferral = deferral;
+            _backgroundTaskDeferral = deferral;
 
             taskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
 
@@ -180,25 +180,26 @@ namespace Transcoder
                         break;
 
                     case "Transcode":
-                        var jsonArray = JsonArray.Parse(args.Request.Message["FileTokens"] as string);
-
-                        var sourceTokens = from item in jsonArray
-                                           select item.GetObject();
-
-                        await TranscodeJsonAsync(sourceTokens, args.Request.Message);
-
-                        if (_canceled)
+                        var input = args.Request.Message["FileTokens"] as string;
+                        if (input != null)
                         {
-                            throw new TaskCanceledException();
+                            var jsonArray = JsonArray.Parse(input);
+
+                            var sourceTokens = from item in jsonArray
+                                select item.GetObject();
+
+                            await TranscodeJsonAsync(sourceTokens, args.Request.Message);
+
+                            if (_canceled)
+                            {
+                                throw new TaskCanceledException();
+                            }
+                            response["Status"] = "OK";
                         }
-                        response["Status"] = "OK";
                         break;
 
                     case "GetDescription":
                         GetDescription(response);
-                        break;
-
-                    default:
                         break;
                 }
 
@@ -223,14 +224,14 @@ namespace Transcoder
             response["PublisherName"] = PublisherName;
             response["Version"] = Version;
             response["Price"] = Price;
-            response["LogoFileToken"] = SharedStorageAccessManager.AddFile(this.LogoFile);
-            response["SourceType"] = this.SourceType;
+            response["LogoFileToken"] = SharedStorageAccessManager.AddFile(LogoFile);
+            response["SourceType"] = SourceType;
         }
 
         /// <summary>
         /// Transcode the source files
         /// </summary>
-        /// <param name="sourceFiles">the source files as a JsonArray</param>
+        /// <param name="fileTokens">the source files as a JsonArray</param>
         /// <param name="message">the transcode parameters</param>
         /// <returns>a list of tokens</returns>
         private async Task TranscodeJsonAsync(IEnumerable<JsonObject> fileTokens, ValueSet message)
@@ -252,7 +253,7 @@ namespace Transcoder
         /// Prepare for transcoding
         /// </summary>
         /// <param name="message">the transcode parameters</param>
-        /// <param name="jsonValue">a JsonValue containing the token</param>
+        /// <param name="fileTokens">a JsonValue containing the token</param>
         /// <returns>an async task with a JsonValue</returns>
         private async Task PrepareTranscodeAsync(ValueSet message, JsonObject fileTokens)
         {
@@ -268,16 +269,16 @@ namespace Transcoder
 
             var destinationFile = await SharedStorageAccessManager.RedeemTokenForFileAsync(destinationToken);
 
-            this._action = TranscodeAsync(sourceFile, destinationFile, message);
+            _action = TranscodeAsync(sourceFile, destinationFile, message);
 
-            await this._action;
+            await _action;
 
             if (_canceled)
             {
                 throw new TaskCanceledException();
             }
 
-            this._action = null;
+            _action = null;
         }
 
         /// <summary>
@@ -294,12 +295,12 @@ namespace Transcoder
                 _action.Cancel();
             }
 
-            if (this.backgroundTaskDeferral != null)
+            if (_backgroundTaskDeferral != null)
             {
                 // Complete the service deferral.
-                this.backgroundTaskDeferral.Complete();
+                _backgroundTaskDeferral.Complete();
 
-                this.backgroundTaskDeferral = null;
+                _backgroundTaskDeferral = null;
             }
         }
         #endregion
