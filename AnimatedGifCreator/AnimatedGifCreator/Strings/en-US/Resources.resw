@@ -238,4 +238,7 @@ Technical details:
   <data name="TurkishTraslationText.Text" xml:space="preserve">
     <value>Salih Tekin (TR)</value>
   </data>
+  <data name="PortugueseBrazilText.Text" xml:space="preserve">
+    <value>Marcus Vinícius da Silva Mesquita (pt-BR)</value>
+  </data>
 </root>

@@ -168,6 +168,10 @@ Chi tiết kỹ thuật: {0}
           <source>Salih Tekin (TR)</source>
           <target state="new">Salih Tekin (TR)</target>
         </trans-unit>
+        <trans-unit id="PortugueseBrazilText.Text" translate="yes" xml:space="preserve">
+          <source>Marcus Vinícius da Silva Mesquita (pt-BR)</source>
+          <target state="new">Marcus Vinícius da Silva Mesquita (pt-BR)</target>
+        </trans-unit>
       </group>
     </body>
   </file>
