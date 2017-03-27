@@ -64,7 +64,7 @@
         {
             if (Width * Height > 0 && Aspect == 0)
             {
-                Aspect = System.Convert.ToSingle(Width) / System.Convert.ToSingle(Height);
+                Aspect = Convert.ToSingle(Width) / Convert.ToSingle(Height);
             }
         }
 

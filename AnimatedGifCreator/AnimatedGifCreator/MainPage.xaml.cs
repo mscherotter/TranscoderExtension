@@ -6,51 +6,52 @@
 // <date>2016-04-04</date>
 // <summary>MainPage code behind</summary>
 
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
+using System.Threading.Tasks;
+using Windows.ApplicationModel.Activation;
+using Windows.ApplicationModel.Resources;
+using Windows.Foundation;
+using Windows.Storage;
+using Windows.Storage.FileProperties;
+using Windows.Storage.Pickers;
+using Windows.System;
+using Windows.UI.Core;
+using Windows.UI.Popups;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media.Imaging;
+using CreationService;
+using Microsoft.Services.Store.Engagement;
+
 namespace AnimatedGifCreator
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Runtime.InteropServices.WindowsRuntime;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using CreationService;
-    using Microsoft.Services.Store.Engagement;
-    using Windows.ApplicationModel.Activation;
-    using Windows.ApplicationModel.Resources;
-    using Windows.Foundation;
-    using Windows.Storage;
-    using Windows.Storage.FileProperties;
-    using Windows.Storage.Pickers;
-    using Windows.System;
-    using Windows.UI.Core;
-    using Windows.UI.Popups;
-    using Windows.UI.Xaml;
-    using Windows.UI.Xaml.Controls;
-    using Windows.UI.Xaml.Media.Imaging;
-
     /// <summary>
     ///     MainPage code behind
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage
     {
         /// <summary>
-        /// Default frame rate
+        ///     Default frame rate
         /// </summary>
         private const double DefaultFrameRate = 24.0;
 
         /// <summary>
-        /// the transcode action
-        /// </summary>
-        private IAsyncOperationWithProgress<bool, double> _operation;
-
-        /// <summary>
-        /// the source files
+        ///     the source files
         /// </summary>
         private readonly ObservableCollection<VideoFile> _sourceFiles = new ObservableCollection<VideoFile>();
+
+        /// <summary>
+        ///     the transcode action
+        /// </summary>
+        private IAsyncOperationWithProgress<bool, double> _operation;
 
         /// <summary>
         ///     Initializes a new instance of the MainPage class.
@@ -61,7 +62,9 @@ namespace AnimatedGifCreator
 
             FileList.ItemsSource = _sourceFiles;
 
-            this.FeedbackButton.Visibility = StoreServicesFeedbackLauncher.IsSupported() ? Visibility.Visible : Visibility.Collapsed;
+            FeedbackButton.Visibility = StoreServicesFeedbackLauncher.IsSupported()
+                ? Visibility.Visible
+                : Visibility.Collapsed;
         }
 
         internal async void Activate(FileActivatedEventArgs args)
@@ -75,28 +78,31 @@ namespace AnimatedGifCreator
         {
             var button = sender as Button;
 
-            button.IsEnabled = false;
-
-            try
+            if (button != null)
             {
-                var picker = new FileOpenPicker
+                button.IsEnabled = false;
+
+                try
                 {
-                    SuggestedStartLocation = PickerLocationId.VideosLibrary,
-                    ViewMode = PickerViewMode.Thumbnail
-                };
+                    var picker = new FileOpenPicker
+                    {
+                        SuggestedStartLocation = PickerLocationId.VideosLibrary,
+                        ViewMode = PickerViewMode.Thumbnail
+                    };
 
-                picker.FileTypeFilter.Add(".mp4");
-                picker.FileTypeFilter.Add(".mov");
-                picker.FileTypeFilter.Add(".wmv");
-                picker.FileTypeFilter.Add(".avi");
+                    picker.FileTypeFilter.Add(".mp4");
+                    picker.FileTypeFilter.Add(".mov");
+                    picker.FileTypeFilter.Add(".wmv");
+                    picker.FileTypeFilter.Add(".avi");
 
-                var files = await picker.PickMultipleFilesAsync();
+                    var files = await picker.PickMultipleFilesAsync();
 
-                await SetSourceFilesAsync(files);
-            }
-            finally
-            {
-                button.IsEnabled = true;
+                    await SetSourceFilesAsync(files);
+                }
+                finally
+                {
+                    button.IsEnabled = true;
+                }
             }
         }
 
@@ -109,9 +115,7 @@ namespace AnimatedGifCreator
                 var videoProperties = await file.Properties.GetVideoPropertiesAsync();
 
                 if (videoProperties.Height == 0)
-                {
                     continue;
-                }
 
                 var videoFile = new VideoFile
                 {
@@ -132,9 +136,9 @@ namespace AnimatedGifCreator
 
                     videoFile.Thumbnail = image;
                 }
-                catch (System.Exception se)
+                catch (Exception se)
                 {
-                    System.Diagnostics.Debug.WriteLine(se.Message);
+                    Debug.WriteLine(se.Message);
                 }
 
                 _sourceFiles.Add(videoFile);
@@ -150,20 +154,16 @@ namespace AnimatedGifCreator
             try
             {
                 if (_sourceFiles.Count == 1)
-                {
                     await TranscodeSingleFileAsync();
-                }
                 else if (_sourceFiles.Count > 1)
-                {
                     await TranscodeMultipleFilesAsync();
-                }
             }
-            catch (System.Exception se)
+            catch (Exception se)
             {
                 var resources = ResourceLoader.GetForCurrentView();
 
                 var content = string.Format(
-                    CultureInfo.CurrentCulture, 
+                    CultureInfo.CurrentCulture,
                     resources.GetString("ErrorFormat"),
                     se.Message);
 
@@ -180,7 +180,7 @@ namespace AnimatedGifCreator
             var picker = new FolderPicker
             {
                 SuggestedStartLocation = PickerLocationId.PicturesLibrary,
-                ViewMode = PickerViewMode.List,
+                ViewMode = PickerViewMode.List
             };
 
             picker.FileTypeFilter.Add(".gif");
@@ -188,16 +188,14 @@ namespace AnimatedGifCreator
             var folder = await picker.PickSingleFolderAsync();
 
             if (folder == null)
-            {
                 return;
-            }
 
             Initialize();
 
             try
 
             {
-                _operation = AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
+                _operation = AsyncInfo.Run(async delegate(CancellationToken token, IProgress<double> progress)
                 {
                     var progressPerFile = 100 / Convert.ToDouble(_sourceFiles.Count);
 
@@ -211,12 +209,11 @@ namespace AnimatedGifCreator
 
                         var desiredName = Path.ChangeExtension(item.Name, ".gif");
 
-                        var destinationFile = await folder.CreateFileAsync(desiredName, CreationCollisionOption.GenerateUniqueName);
+                        var destinationFile = await folder.CreateFileAsync(desiredName,
+                            CreationCollisionOption.GenerateUniqueName);
 
                         if (token.IsCancellationRequested)
-                        {
                             return false;
-                        }
 
                         try
                         {
@@ -225,26 +222,24 @@ namespace AnimatedGifCreator
                             var action = gifCreator.TranscodeGifAsync(sourceFile, destinationFile, item.Width,
                                 item.Height, item.FrameRate);
 
-                            action.Progress = delegate (IAsyncOperationWithProgress<bool, double> a, double v)
+                            var index = fileIndex;
+
+                            action.Progress = delegate(IAsyncOperationWithProgress<bool, double> a, double v)
                             {
                                 if (token.IsCancellationRequested)
-                                {
                                     action.Cancel();
-                                }
 
-                                progress.Report((fileIndex * progressPerFile) + progressPerFile * v / 100.0);
+                                progress.Report(index * progressPerFile + progressPerFile * v / 100.0);
                             };
 
                             await action;
 
                             if (token.IsCancellationRequested)
-                            {
                                 return false;
-                            }
                         }
-                        catch (System.Exception se)
+                        catch (Exception se)
                         {
-                            System.Diagnostics.Debug.WriteLine(se.Message);
+                            Debug.WriteLine(se.Message);
                         }
 
                         fileIndex++;
@@ -258,6 +253,10 @@ namespace AnimatedGifCreator
                 await _operation;
 
                 await Launcher.LaunchFolderAsync(folder);
+
+                var logger = StoreServicesCustomEventLogger.GetDefault();
+
+                logger.Log("Transcode multiple files");
             }
             catch (TaskCanceledException)
             {
@@ -269,7 +268,7 @@ namespace AnimatedGifCreator
         }
 
         /// <summary>
-        /// Clean up interface after transcode
+        ///     Clean up interface after transcode
         /// </summary>
         private void Cleanup()
         {
@@ -281,7 +280,6 @@ namespace AnimatedGifCreator
             ProgressText.Visibility = Visibility.Collapsed;
             FileList.IsEnabled = true;
             SelectFileButton.IsEnabled = true;
-
         }
 
         private async Task TranscodeSingleFileAsync()
@@ -301,7 +299,7 @@ namespace AnimatedGifCreator
 
             var resources = ResourceLoader.GetForCurrentView();
 
-            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new[] { ".gif" }.ToList());
+            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new[] {".gif"}.ToList());
 
             var destinationFile = await picker.PickSaveFileAsync();
 
@@ -309,7 +307,7 @@ namespace AnimatedGifCreator
             {
                 Initialize();
 
-                var videoProperties = await sourceFile.Properties.GetVideoPropertiesAsync();
+                ////var videoProperties = await sourceFile.Properties.GetVideoPropertiesAsync();
 
                 try
                 {
@@ -321,9 +319,11 @@ namespace AnimatedGifCreator
                     var succeeded = await _operation;
 
                     if (succeeded && _operation.Status == AsyncStatus.Completed)
-                    {
                         await Launcher.LaunchFileAsync(destinationFile);
-                    }
+
+                    var logger = StoreServicesCustomEventLogger.GetDefault();
+
+                    logger.Log("Transcode single file");
                 }
                 catch (TaskCanceledException)
                 {
@@ -336,7 +336,7 @@ namespace AnimatedGifCreator
         }
 
         /// <summary>
-        /// Initialize Progress UI
+        ///     Initialize Progress UI
         /// </summary>
         private void Initialize()
         {
@@ -353,7 +353,7 @@ namespace AnimatedGifCreator
         }
 
         /// <summary>
-        /// Progress changed handler
+        ///     Progress changed handler
         /// </summary>
         /// <param name="asyncInfo">the async information</param>
         /// <param name="progressInfo">the progress information (0-100)</param>
@@ -361,7 +361,7 @@ namespace AnimatedGifCreator
         {
             await
                 ProgressBar.Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
-                    delegate 
+                    delegate
                     {
                         ProgressBar.Value = progressInfo;
                         ProgressText.Text = (progressInfo / 100.0).ToString("p0", CultureInfo.CurrentCulture);
@@ -369,7 +369,7 @@ namespace AnimatedGifCreator
         }
 
         /// <summary>
-        /// Cancel the transcode
+        ///     Cancel the transcode
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -384,10 +384,8 @@ namespace AnimatedGifCreator
 
         private async void OnFeedback(object sender, RoutedEventArgs e)
         {
-            if (Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.IsSupported())
-            {
-                await Microsoft.Services.Store.Engagement.StoreServicesFeedbackLauncher.GetDefault().LaunchAsync();
-            }
+            if (StoreServicesFeedbackLauncher.IsSupported())
+                await StoreServicesFeedbackLauncher.GetDefault().LaunchAsync();
         }
     }
 }
