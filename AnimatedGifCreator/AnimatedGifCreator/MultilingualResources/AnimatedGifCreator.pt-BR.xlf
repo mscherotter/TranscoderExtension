@@ -68,7 +68,7 @@
         </trans-unit>
         <trans-unit id="JournalistExportDescription" translate="yes" xml:space="preserve">
           <source>Create a movie from the pages of a journal.</source>
-          <target state="final">Crie um filme a partir das páginas de um jornal.</target>
+          <target state="final">Crie um filme a partir de páginas de um díario.</target>
         </trans-unit>
         <trans-unit id="Height" translate="yes" xml:space="preserve">
           <source>Height</source>

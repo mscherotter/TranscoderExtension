@@ -14,12 +14,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("AnimatedGifCreator")]
+[assembly: AssemblyTitle("Animated Gif Creator")]
 [assembly: AssemblyDescription("Animated GIF Creator")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Michael S. Scherotter")]
 [assembly: AssemblyProduct("AnimatedGifCreator")]
-[assembly: AssemblyCopyright("Copyright © Michael S. Scherotter 2016")]
+[assembly: AssemblyCopyright("Copyright © Michael S. Scherotter 2016-2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

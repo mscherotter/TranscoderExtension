@@ -1,4 +1,5 @@
-﻿// <copyright file="AssemblyInfo.cs" company="Michael S. Scherotter">
+﻿using System.Resources;
+// <copyright file="AssemblyInfo.cs" company="Michael S. Scherotter">
 // Copyright (c) 2016 Michael S. Scherotter All Rights Reserved
 // </copyright>
 // <author>Michael S. Scherotter</author>
@@ -18,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Michael S. Scherotter")]
 [assembly: AssemblyProduct("CreationService")]
-[assembly: AssemblyCopyright("Copyright © 2016 Michael S. Scherotter")]
+[assembly: AssemblyCopyright("Copyright © 2016-2017 Michael S. Scherotter")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -35,3 +36,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: ComVisible(false)]
+[assembly: NeutralResourcesLanguage("en-US")]
+
