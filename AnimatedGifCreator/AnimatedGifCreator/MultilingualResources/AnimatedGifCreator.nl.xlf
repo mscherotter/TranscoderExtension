@@ -172,6 +172,18 @@ Technische details:
           <source>Marcus Vinícius da Silva Mesquita (pt-BR)</source>
           <target state="new">Marcus Vinícius da Silva Mesquita (pt-BR)</target>
         </trans-unit>
+        <trans-unit id="Animated GIF file" translate="yes" xml:space="preserve">
+          <source>Animated GIF file</source>
+          <target state="new">Animated GIF file</target>
+        </trans-unit>
+        <trans-unit id="OpenButton.Content" translate="yes" xml:space="preserve">
+          <source>Open...</source>
+          <target state="new">Open...</target>
+        </trans-unit>
+        <trans-unit id="ShareButton.Content" translate="yes" xml:space="preserve">
+          <source>Share...</source>
+          <target state="new">Share...</target>
+        </trans-unit>
       </group>
     </body>
   </file>

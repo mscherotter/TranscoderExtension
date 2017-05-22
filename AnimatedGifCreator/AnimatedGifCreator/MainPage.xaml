@@ -5,25 +5,33 @@
     xmlns:local="using:AnimatedGifCreator"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:c="using:AnimatedGifCreator.Commands"
     x:Uid="MainPage"
     mc:Ignorable="d">
     <Page.Resources>
+        <c:ShareCommand x:Key="ShareCommand"/>
+        <c:LaunchFileCommand x:Key="LaunchFileCommand"/>
         <DataTemplate x:DataType="local:VideoFile" x:Key="NarrowItemTemplate">
             <Grid Margin="0,4,4,4">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <TextBlock x:Name="Filename" Grid.ColumnSpan="2" Text="{Binding Name}" FontWeight="Bold" Margin="0,4,4,4" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis"/>
-                <Image Source="{Binding Thumbnail}" Width="95" Height="65" Grid.Row="1"/>
+                <Image Source="{Binding Thumbnail}" Width="95" Height="65" Grid.Row="1" Grid.RowSpan="2"/>
                 <StackPanel Grid.Column="1" Margin="4,0,0,0" Grid.Row="1" Orientation="Horizontal">
                     <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4,4,4,0" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
                     <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4,4,4,0" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
                     <TextBox x:Uid="NarrowFPSBox" Height="60" Header="FPS" Margin="4,4,4,0" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                    <Button Margin="4" Content="Share..." CommandParameter="{Binding DestinationFile}" Command="{StaticResource ShareCommand}" />
+                    <Button Margin="4" Content="Open..." CommandParameter="{Binding DestinationFile}" Command="{StaticResource LaunchFileCommand}"/>
                 </StackPanel>
             </Grid>
         </DataTemplate>
@@ -40,6 +48,10 @@
                         <TextBox x:Uid="WidthBox" Height="60" Header="Width" Margin="4" x:Name="WidthBox" InputScope="Number" Text="{Binding Width, Mode=TwoWay}"/>
                         <TextBox x:Uid="HeightBox" Height="60" Header="Height" Margin="4" x:Name="HeightBox" InputScope="Number" Text="{Binding Height, Mode=TwoWay}"/>
                         <TextBox x:Uid="FPSBox" Height="60" Header="Frames per second" Margin="4" x:Name="FPSBox" InputScope="Number" Text="{Binding FrameRate, Mode=TwoWay}"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Margin="4" x:Uid="ShareButton" Content="Share..." CommandParameter="{Binding DestinationFile}" Command="{StaticResource ShareCommand}" />
+                        <Button Margin="4" x:Uid="OpenButton" Content="Open..." CommandParameter="{Binding DestinationFile}" Command="{StaticResource LaunchFileCommand}"/>
                     </StackPanel>
                 </StackPanel>
             </Grid>

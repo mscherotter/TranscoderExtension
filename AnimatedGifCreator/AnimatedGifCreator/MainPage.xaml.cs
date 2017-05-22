@@ -234,6 +234,8 @@ namespace AnimatedGifCreator
 
                             await action;
 
+                            item.DestinationFile = destinationFile;
+
                             if (token.IsCancellationRequested)
                                 return false;
                         }
@@ -319,8 +321,11 @@ namespace AnimatedGifCreator
                     var succeeded = await _operation;
 
                     if (succeeded && _operation.Status == AsyncStatus.Completed)
-                        await Launcher.LaunchFileAsync(destinationFile);
+                    {
+                        firstVideo.DestinationFile = destinationFile;
 
+                        await Launcher.LaunchFileAsync(destinationFile);
+                    }
                     var logger = StoreServicesCustomEventLogger.GetDefault();
 
                     logger.Log("Transcode single file");

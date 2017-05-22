@@ -12,6 +12,7 @@
     {
         private uint _width;
         private uint _height;
+        private StorageFile _destinationFile;
 
         /// <summary>
         /// Gets or sets the name of the video file
@@ -100,6 +101,27 @@
         /// Gets or sets the aspect ratio
         /// </summary>
         public float Aspect { get; set; }
+
+        /// <summary>
+        /// Gets or sets the destination file
+        /// </summary>
+        public StorageFile DestinationFile
+        {
+            get
+            {
+                return _destinationFile;
+            }
+
+            internal set
+            {
+                if (_destinationFile != value)
+                {
+                    _destinationFile = value;
+
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(DestinationFile)));
+                }
+            }
+        }
 
         /// <summary>
         /// Property changed event handler
