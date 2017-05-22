@@ -245,13 +245,7 @@
     <Warning Text="$(MSBuildProjectFile) is Multilingual build enabled, but the Multilingual App Toolkit is unavailable during the build. If building with Visual Studio, please check to ensure that toolkit is properly installed." />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>set DestinationFolder=%25OneDrive%25\Animated GIF Creator Localization
-
-@echo Copying XLF files to %25DestinationFolder%25...
-
-if not exist "%25DestinationFolder%25" md "%25DestinationFolder%25"
-
-copy /y $(ProjectDir)MultilingualResources\*.xlf "%25DestinationFolder%25
+    <PostBuildEvent>
 </PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
