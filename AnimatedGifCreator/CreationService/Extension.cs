@@ -151,12 +151,7 @@ namespace Transcoder
 
             var product = await storeContext.GetStoreProductForCurrentAppAsync();
 
-            if (product?.Product?.Price == null)
-            {
-                return string.Empty;
-            }
-
-            return product.Product.Price.FormattedPrice;
+            return product?.Product?.Price == null ? string.Empty : product.Product.Price.FormattedPrice;
         }
 
         #endregion
