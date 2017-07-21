@@ -13,37 +13,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AnimatedGIFCreatorText.Text" xml:space="preserve">
-    <value>Animiertes GIF Creator</value>
+    <value>Animierted GIF Creator</value>
   </data>
   <data name="ATranscoderExtension.Text" xml:space="preserve">
-    <value>Ein Transcoder-Erweiterung</value>
+    <value>Eine Transcoder-Erweiterung</value>
   </data>
   <data name="ATranscoderExtensionLink.Content" xml:space="preserve">
-    <value>Ein Transcoder-Erweiterung</value>
+    <value>Eine Transcoder-Erweiterung</value>
   </data>
   <data name="CloneForkLink.Content" xml:space="preserve">
-    <value>Klon/Gabel auf GitHub</value>
+    <value>Auf GitHub klonen / übernehmen</value>
   </data>
   <data name="ConvertButton.Content" xml:space="preserve">
-    <value>Animierte GIF-DATEI umwandeln</value>
+    <value>Dateien in animierte GIF-Dateien konvertieren</value>
   </data>
   <data name="CreatedByText.Text" xml:space="preserve">
-    <value>Erstellt von Michael S. Scherotter</value>
+    <value>Entwickelt von Michael S. Scherotter</value>
   </data>
   <data name="Description" xml:space="preserve">
-    <value>Animierte GIF-Bilder umwandeln Sie. MP4, .mov, .wmv oder .avi-Dateien.</value>
+    <value>Videos im Format .mp4, .mov, .wmv oder .avi zu animierten GIF-Bildern konvertieren</value>
   </data>
   <data name="DisplayName" xml:space="preserve">
-    <value>Animiertes GIF Creator</value>
+    <value>Animated GIF Creator</value>
   </data>
   <data name="GIFImages" xml:space="preserve">
     <value>GIF-Bilder</value>
   </data>
   <data name="SelectFileButton.Content" xml:space="preserve">
-    <value>Wählen Sie video-Dateien</value>
+    <value>Video-Dateien auswählen</value>
   </data>
   <data name="ShortName" xml:space="preserve">
-    <value>Animiertes GIF Creator</value>
+    <value>Animated GIF Creator</value>
   </data>
   <data name="Video" xml:space="preserve">
     <value>Video</value>
@@ -52,19 +52,19 @@
     <value>Konvertieren Sie Videos in animierte GIF-Dateien.</value>
   </data>
   <data name="AppExtensionDisplayName" xml:space="preserve">
-    <value>Animiertes GIF Transcoder</value>
+    <value>Animiertes GIF-Konverter</value>
   </data>
   <data name="AnimatedGIF" xml:space="preserve">
-    <value>Animierte GIF</value>
+    <value>Animiertes GIF</value>
   </data>
   <data name="JournalistExportDescription" xml:space="preserve">
-    <value>Erstellen Sie einen Film aus den Seiten einer Zeitschrift.</value>
+    <value>Daumenkino erstellen.</value>
   </data>
   <data name="Height" xml:space="preserve">
     <value>Höhe</value>
   </data>
   <data name="SecondsPerFrame" xml:space="preserve">
-    <value>Sekunden pro Bild</value>
+    <value>Bilddauer (Sekunden)</value>
   </data>
   <data name="Width" xml:space="preserve">
     <value>Breite</value>
@@ -85,21 +85,21 @@
     <value>Breite</value>
   </data>
   <data name="FPSBox.Header" xml:space="preserve">
-    <value>Frames pro Sekunde</value>
+    <value>Bilder pro Sekunde</value>
   </data>
   <data name="ErrorFormat" xml:space="preserve">
-    <value>Es gab ein Problem beim Erstellen von animierter GIF-Dateien. 
+    <value>Es gab ein Problem beim Erstellen der animierten GIF-Dateien. 
 Technische Details:
 {0}</value>
   </data>
   <data name="ErrorTitle" xml:space="preserve">
-    <value>Problem erstellen von animierten GIF</value>
+    <value>Problem beim Erstellen der animierten GIF-Datei</value>
   </data>
   <data name="SlovenianTranslationText.Text" xml:space="preserve">
     <value>Peter Harb (SL)</value>
   </data>
   <data name="KurdishTranslationText.Text" xml:space="preserve">
-    <value>Zana Yousif (KU-Arabisch)</value>
+    <value>Zana Yousif (KU-Arab)</value>
   </data>
   <data name="IndonesianTranslationText.Text" xml:space="preserve">
     <value>Muhammed Angga Siswantoro (IN)</value>
@@ -124,10 +124,25 @@ Technische Details:
     <value>Übersetzer</value>
   </data>
   <data name="NarrowFPSBox.Header" xml:space="preserve">
-    <value>F/s</value>
+    <value>FPS</value>
     <comment>Frames Per Second abbreviation</comment>
   </data>
   <data name="HelpTranslateText.Text" xml:space="preserve">
-    <value>Helfen Sie animierte GIF Creator in Ihre Sprache zu übersetzen.</value>
+    <value>Helfen Sie dabei, Animated GIF Creator in Ihre Sprache zu übersetzen.</value>
+  </data>
+  <data name="TurkishTraslationText.Text" xml:space="preserve">
+    <value>Salih Tekin (TR)</value>
+  </data>
+  <data name="PortugueseBrazilText.Text" xml:space="preserve">
+    <value>Marcus Vinícius da Silva Mesquita (pt-BR)</value>
+  </data>
+  <data name="Animated GIF file" xml:space="preserve">
+    <value>Animierte GIF-Datei</value>
+  </data>
+  <data name="OpenButton.Content" xml:space="preserve">
+    <value>Öffnen...</value>
+  </data>
+  <data name="ShareButton.Content" xml:space="preserve">
+    <value>Teilen...</value>
   </data>
 </root>
