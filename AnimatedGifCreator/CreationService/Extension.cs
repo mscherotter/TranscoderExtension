@@ -8,6 +8,7 @@
 
 using Windows.Services.Store;
 
+// ReSharper disable once CheckNamespace
 namespace Transcoder
 {
     using System;
@@ -149,9 +150,18 @@ namespace Transcoder
                 return string.Empty;
             }
 
-            var product = await storeContext.GetStoreProductForCurrentAppAsync();
+            try
+            {
+                var product = await storeContext.GetStoreProductForCurrentAppAsync();
 
-            return product?.Product?.Price == null ? string.Empty : product.Product.Price.FormattedPrice;
+                return product?.Product?.Price == null ? string.Empty : product.Product.Price.FormattedPrice;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error Getting price: {e.Message}.");
+            }
+
+            return string.Empty;
         }
 
         #endregion
