@@ -250,4 +250,7 @@ Technical details:
   <data name="ShareButton.Content" xml:space="preserve">
     <value>Share...</value>
   </data>
+  <data name="GermanTranslationText.Text" xml:space="preserve">
+    <value>Jakob Hermann Preusker (DE)</value>
+  </data>
 </root>

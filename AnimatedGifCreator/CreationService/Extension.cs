@@ -6,6 +6,9 @@
 // <date>2016-04-04</date>
 // <summary>Transcoder extension</summary>
 
+using Windows.Services.Store;
+
+// ReSharper disable once CheckNamespace
 namespace Transcoder
 {
     using System;
@@ -17,7 +20,6 @@ namespace Transcoder
     using Windows.ApplicationModel.AppService;
     using Windows.ApplicationModel.Background;
     using Windows.ApplicationModel.DataTransfer;
-    using Windows.ApplicationModel.Store;
     using Windows.Data.Json;
     using Windows.Foundation;
     using Windows.Foundation.Collections;
@@ -141,12 +143,25 @@ namespace Transcoder
         /// <returns>an async task with the formatted price of the app as a string</returns>
         internal static async Task<string> GetPriceAsync()
         {
-#if DEBUG
-            var listingInformation = await CurrentAppSimulator.LoadListingInformationAsync();
-#else
-            var listingInformation = await CurrentApp.LoadListingInformationAsync();
-#endif
-            return listingInformation.FormattedPrice;
+            var storeContext = StoreContext.GetDefault();
+
+            if (storeContext == null)
+            {
+                return string.Empty;
+            }
+
+            try
+            {
+                var product = await storeContext.GetStoreProductForCurrentAppAsync();
+
+                return product?.Product?.Price == null ? string.Empty : product.Product.Price.FormattedPrice;
+            }
+            catch (Exception e)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error Getting price: {e.Message}.");
+            }
+
+            return string.Empty;
         }
 
         #endregion

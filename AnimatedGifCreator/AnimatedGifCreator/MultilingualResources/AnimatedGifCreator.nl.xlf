@@ -184,6 +184,10 @@ Technische details:
           <source>Share...</source>
           <target state="new">Share...</target>
         </trans-unit>
+        <trans-unit id="GermanTranslationText.Text" translate="yes" xml:space="preserve">
+          <source>Jakob Hermann Preusker (DE)</source>
+          <target state="new">Jakob Hermann Preusker (DE)</target>
+        </trans-unit>
       </group>
     </body>
   </file>
