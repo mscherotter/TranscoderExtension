@@ -14,8 +14,10 @@ using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Analytics;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 
 namespace AnimatedGifCreator
 {
@@ -33,6 +35,12 @@ namespace AnimatedGifCreator
         {
             InitializeComponent();
             Suspending += OnSuspending;
+
+            AppCenter.Start(
+                "fc76dfcc-2d4c-44c2-86a9-50cdf85f672b", 
+                typeof(Analytics), 
+                typeof(Crashes), 
+                typeof(Push));
         }
 
         /// <summary>
@@ -41,8 +49,6 @@ namespace AnimatedGifCreator
         /// <param name="args">the file activated event arguments</param>
         protected override void OnFileActivated(FileActivatedEventArgs args)
         {
-            StartMobileCenterAnalytics();
-
             var frame = CreateRootFrame();
 
             if (frame.Content == null)
@@ -58,11 +64,6 @@ namespace AnimatedGifCreator
             Window.Current.Activate();
         }
 
-        private void StartMobileCenterAnalytics()
-        {
-            MobileCenter.Start("fc76dfcc-2d4c-44c2-86a9-50cdf85f672b", typeof(Analytics));
-        }
-
         private Frame CreateRootFrame()
         {
             var rootFrame = Window.Current.Content as Frame;
@@ -72,10 +73,11 @@ namespace AnimatedGifCreator
             if (rootFrame == null)
             {
                 // Create a Frame to act as the navigation context and navigate to the first page 
-                rootFrame = new Frame();
+                rootFrame = new Frame
+                {
+                    Language = ApplicationLanguages.Languages[0]
+                };
 
-                // Set the default language 
-                rootFrame.Language = ApplicationLanguages.Languages[0];
                 rootFrame.NavigationFailed += OnNavigationFailed;
 
                 // Place the frame in the current Window 
@@ -92,8 +94,6 @@ namespace AnimatedGifCreator
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
-            StartMobileCenterAnalytics();
-
 #if DEBUG
             if (Debugger.IsAttached)
             {
