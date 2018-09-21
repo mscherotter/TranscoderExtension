@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3" IgnorableNamespaces="uap uap3 mp">
-  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.67.0" />
+  <Identity Name="49752MichaelS.Scherotter.AnimatedGIFCreator" Publisher="CN=9ABF1D81-CCC5-4B47-904F-BFF5B3A88B37" Version="1.1.68.0" />
   <mp:PhoneIdentity PhoneProductId="16ae70ab-1e32-42a7-a7c0-7d6913db6eb6" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Animated GIF Creator</DisplayName>
@@ -21,23 +21,6 @@
         </uap:DefaultTile>
       </uap:VisualElements>
       <Extensions>
-        <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
-          <uap:AppService Name="com.charette.gifcreator" />
-        </uap:Extension>
-        <uap:Extension Category="windows.fileTypeAssociation">
-          <uap:FileTypeAssociation Name="video">
-            <uap:DisplayName>ms-resource:Video</uap:DisplayName>
-            <uap:SupportedFileTypes>
-              <uap:FileType ContentType="video/x-ms-wmv">.wmv</uap:FileType>
-              <uap:FileType ContentType="video/mp4">.mp4</uap:FileType>
-              <uap:FileType ContentType="video/quicktime">.mov</uap:FileType>
-              <uap:FileType ContentType="video/avi">.avi</uap:FileType>
-            </uap:SupportedFileTypes>
-          </uap:FileTypeAssociation>
-        </uap:Extension>
-        <uap:Extension Category="windows.appService" EntryPoint="CreationService.JournalistTask">
-          <uap:AppService Name="AnimatedGifCreator.Journalist.1" />
-        </uap:Extension>
         <uap3:Extension Category="windows.appExtension">
           <uap3:AppExtension Name="Transcoder.Transcode.1" Id="AnimatedGifTranscoder" PublicFolder="Public" DisplayName="ms-resource:AppExtensionDisplayName" Description="ms-resource:AppExtensionDescription">
             <uap3:Properties>
@@ -57,6 +40,23 @@
             </uap3:Properties>
           </uap3:AppExtension>
         </uap3:Extension>
+        <uap:Extension Category="windows.appService" EntryPoint="CreationService.GifCreator">
+          <uap:AppService Name="com.charette.gifcreator" />
+        </uap:Extension>
+        <uap:Extension Category="windows.fileTypeAssociation">
+          <uap:FileTypeAssociation Name="video">
+            <uap:DisplayName>ms-resource:Video</uap:DisplayName>
+            <uap:SupportedFileTypes>
+              <uap:FileType ContentType="video/x-ms-wmv">.wmv</uap:FileType>
+              <uap:FileType ContentType="video/mp4">.mp4</uap:FileType>
+              <uap:FileType ContentType="video/quicktime">.mov</uap:FileType>
+              <uap:FileType ContentType="video/avi">.avi</uap:FileType>
+            </uap:SupportedFileTypes>
+          </uap:FileTypeAssociation>
+        </uap:Extension>
+        <uap:Extension Category="windows.appService" EntryPoint="CreationService.JournalistTask">
+          <uap:AppService Name="AnimatedGifCreator.Journalist.1" />
+        </uap:Extension>
       </Extensions>
     </Application>
   </Applications>
