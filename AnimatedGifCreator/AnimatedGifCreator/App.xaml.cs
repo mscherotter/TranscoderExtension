@@ -16,8 +16,8 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
-using Microsoft.AppCenter.Push;
+//using Microsoft.AppCenter.Crashes;
+//using Microsoft.AppCenter.Push;
 
 namespace AnimatedGifCreator
 {
@@ -37,10 +37,10 @@ namespace AnimatedGifCreator
             Suspending += OnSuspending;
 
             AppCenter.Start(
-                "fc76dfcc-2d4c-44c2-86a9-50cdf85f672b", 
-                typeof(Analytics), 
-                typeof(Crashes), 
-                typeof(Push));
+                "fc76dfcc-2d4c-44c2-86a9-50cdf85f672b",
+                typeof(Analytics));
+                ////typeof(Crashes));
+            ////    typeof(Push));
         }
 
         /// <summary>

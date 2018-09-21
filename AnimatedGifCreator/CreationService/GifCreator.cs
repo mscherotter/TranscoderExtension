@@ -171,7 +171,7 @@ namespace CreationService
                         progress.Report(currentProgress += progressPerStep);
 
                         encoder.SetPixelData(
-                            decoder.BitmapPixelFormat,
+                            BitmapPixelFormat.Rgba8,
                             BitmapAlphaMode.Ignore,
                             decoder.PixelWidth,
                             decoder.PixelHeight,
