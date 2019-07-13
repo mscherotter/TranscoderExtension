@@ -16,6 +16,7 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 //using Microsoft.AppCenter.Crashes;
 //using Microsoft.AppCenter.Push;
 
@@ -38,8 +39,8 @@ namespace AnimatedGifCreator
 
             AppCenter.Start(
                 "fc76dfcc-2d4c-44c2-86a9-50cdf85f672b",
-                typeof(Analytics));
-                ////typeof(Crashes));
+                typeof(Analytics),
+                typeof(Crashes));
             ////    typeof(Push));
         }
 
@@ -66,11 +67,10 @@ namespace AnimatedGifCreator
 
         private Frame CreateRootFrame()
         {
-            var rootFrame = Window.Current.Content as Frame;
-
             // Do not repeat app initialization when the Window already has content, 
             // just ensure that the window is active 
-            if (rootFrame == null)
+
+            if (!(Window.Current.Content is Frame rootFrame))
             {
                 // Create a Frame to act as the navigation context and navigate to the first page 
                 rootFrame = new Frame
@@ -99,13 +99,12 @@ namespace AnimatedGifCreator
             {
                 //this.DebugSettings.EnableFrameRateCounter = true;
             }
-#endif
 
-            var rootFrame = Window.Current.Content as Frame;
+#endif
 
             // Do not repeat app initialization when the Window already has content,
             // just ensure that the window is active
-            if (rootFrame == null)
+            if (!(Window.Current.Content is Frame rootFrame))
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();

@@ -10,6 +10,7 @@ namespace CreationService
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Runtime.InteropServices.WindowsRuntime;
     using System.Threading;
     using Windows.ApplicationModel;
@@ -33,6 +34,8 @@ namespace CreationService
         /// <param name="taskInstance">the task instance</param>
         public async void Run(IBackgroundTaskInstance taskInstance)
         {
+            if (taskInstance == null) throw new ArgumentNullException(nameof(taskInstance));
+
             var deferral = taskInstance.GetDeferral(); 
 
             var logoFile = await Package.Current.InstalledLocation.GetFileAsync("Assets\\Logo.png");
@@ -61,36 +64,30 @@ namespace CreationService
         /// <returns>an async operation with boolean result and double (0-100) progress.</returns>
         public IAsyncOperationWithProgress<bool, double> TranscodeGifAsync(StorageFile source, StorageFile destination, uint width, uint height, double fps)
         {
-            if (source == null)
-            {
-                throw new ArgumentNullException("source", "source cannot be null.");
-            }
+            if (source == null) throw new ArgumentNullException(nameof(source), "source cannot be null.");
 
-            if (destination == null)
-            {
-                throw new ArgumentNullException("destination", "destination cannot be null.");
-            }
+            if (destination == null) throw new ArgumentNullException(nameof(destination), "destination cannot be null.");
 
             if (width == 0)
             {
-                throw new ArgumentOutOfRangeException("width", "width cannot be 0.");
+                throw new ArgumentOutOfRangeException(nameof(width), "width cannot be 0.");
             }
 
             if (height == 0)
             {
-                throw new ArgumentOutOfRangeException("height", "height cannot be 0.");
+                throw new ArgumentOutOfRangeException(nameof(height), "height cannot be 0.");
             }
 
             if (fps <= 0)
             {
-                throw new ArgumentOutOfRangeException("fps", "fps must be greater than 0.");
+                throw new ArgumentOutOfRangeException(nameof(fps), "fps must be greater than 0.");
             }
 
             return AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
             {
                 var composition = new MediaComposition();
 
-                System.Diagnostics.Debug.WriteLine(source.Path);
+                Debug.WriteLine($"Creating clip from {source.Path}...");
 
                 var clip = await MediaClip.CreateFromFileAsync(source);
 
@@ -103,15 +100,18 @@ namespace CreationService
 
                 composition.Clips.Add(clip);
 
+                Debug.WriteLine("Opening output file...");
+
                 using (var outputStream = await destination.OpenAsync(FileAccessMode.ReadWrite))
                 {
-                    
                     if (token.IsCancellationRequested)
                     {
                         return false;
                     }
 
                     progress.Report(20);
+
+                    Debug.WriteLine("Creating bitmap encoder...");
 
                     var encoder = await BitmapEncoder.CreateAsync(BitmapEncoder.GifEncoderId, outputStream);
 
@@ -130,6 +130,8 @@ namespace CreationService
                     {
                         timesFromStart.Add(timeCode);
                     }
+
+                    Debug.WriteLine("Getting thumbnails...");
 
                     var thumbnails = await composition.GetThumbnailsAsync(
                         timesFromStart,
@@ -152,8 +154,10 @@ namespace CreationService
 
                     foreach (var thumbnail in thumbnails)
                     {
-                        var decoder = await BitmapDecoder.CreateAsync(thumbnail);
+                        Debug.WriteLine($"Adding thumbnail {index + 1} of {thumbnails.Count}...");
 
+                        var decoder = await BitmapDecoder.CreateAsync(thumbnail);
+                        
                         if (token.IsCancellationRequested)
                         {
                             return false;
@@ -191,8 +195,6 @@ namespace CreationService
 
                         await encoder.BitmapProperties.SetPropertiesAsync(properties);
 
-
-
                         if (index < thumbnails.Count - 1)
                         {
                             await encoder.GoToNextFrameAsync();
@@ -206,6 +208,8 @@ namespace CreationService
                         }
                         index++;
                     }
+
+                    Debug.WriteLine("Flushing encoder...");
 
                     await encoder.FlushAsync();
 

@@ -30,6 +30,8 @@ namespace CreationService
         /// <param name="taskInstance">the background task instance</param>
         public void Run(IBackgroundTaskInstance taskInstance)
         {
+            if (taskInstance == null) throw new ArgumentNullException(nameof(taskInstance));
+
             _deferral = taskInstance.GetDeferral();
 
             var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
