@@ -44,7 +44,7 @@
                 {
                     _width = value;
 
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Width"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Width)));
 
                     UpdateAspect();
 
@@ -85,7 +85,7 @@
                 {
                     _height = value;
 
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Height"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Height)));
 
                     UpdateAspect();
 

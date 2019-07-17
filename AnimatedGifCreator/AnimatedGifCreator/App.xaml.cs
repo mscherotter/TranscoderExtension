@@ -6,6 +6,9 @@
 // <date>2016-04-04</date>
 // <summary>App.xaml code behind</summary>
 
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Diagnostics;
 using Windows.ApplicationModel;
@@ -14,9 +17,6 @@ using Windows.Globalization;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
-using Microsoft.AppCenter;
-using Microsoft.AppCenter.Analytics;
-using Microsoft.AppCenter.Crashes;
 //using Microsoft.AppCenter.Crashes;
 //using Microsoft.AppCenter.Push;
 
@@ -50,6 +50,8 @@ namespace AnimatedGifCreator
         /// <param name="args">the file activated event arguments</param>
         protected override void OnFileActivated(FileActivatedEventArgs args)
         {
+            if (args == null) throw new ArgumentNullException(nameof(args));
+
             var frame = CreateRootFrame();
 
             if (frame.Content == null)
@@ -94,6 +96,8 @@ namespace AnimatedGifCreator
         /// <param name="e">Details about the launch request and process.</param>
         protected override void OnLaunched(LaunchActivatedEventArgs e)
         {
+            if (e == null) throw new ArgumentNullException(nameof(e));
+
 #if DEBUG
             if (Debugger.IsAttached)
             {

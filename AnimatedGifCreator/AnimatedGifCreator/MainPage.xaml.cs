@@ -6,6 +6,8 @@
 // <date>2016-04-04</date>
 // <summary>MainPage code behind</summary>
 
+using CreationService;
+using Microsoft.Services.Store.Engagement;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -28,8 +30,6 @@ using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
-using CreationService;
-using Microsoft.Services.Store.Engagement;
 
 namespace AnimatedGifCreator
 {
@@ -76,9 +76,7 @@ namespace AnimatedGifCreator
 
         private async void OnSelectFile(object sender, RoutedEventArgs e)
         {
-            var button = sender as Button;
-
-            if (button != null)
+            if (sender is Button button)
             {
                 button.IsEnabled = false;
 
@@ -195,7 +193,7 @@ namespace AnimatedGifCreator
             try
 
             {
-                _operation = AsyncInfo.Run(async delegate(CancellationToken token, IProgress<double> progress)
+                _operation = AsyncInfo.Run(async delegate (CancellationToken token, IProgress<double> progress)
                 {
                     var progressPerFile = 100 / Convert.ToDouble(_sourceFiles.Count);
 
@@ -224,7 +222,7 @@ namespace AnimatedGifCreator
 
                             var index = fileIndex;
 
-                            action.Progress = delegate(IAsyncOperationWithProgress<bool, double> a, double v)
+                            action.Progress = delegate (IAsyncOperationWithProgress<bool, double> a, double v)
                             {
                                 if (token.IsCancellationRequested)
                                     action.Cancel();
@@ -301,7 +299,7 @@ namespace AnimatedGifCreator
 
             var resources = ResourceLoader.GetForCurrentView();
 
-            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new[] {".gif"}.ToList());
+            picker.FileTypeChoices.Add(resources.GetString("GIFImages"), new[] { ".gif" }.ToList());
 
             var destinationFile = await picker.PickSaveFileAsync();
 

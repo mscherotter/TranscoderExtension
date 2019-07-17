@@ -126,9 +126,8 @@ namespace Transcoder
             taskInstance.Canceled += OnTaskCanceled; // Associate a cancellation handler with the background task.
 
             // Retrieve the app service connection and set up a listener for incoming app service requests.
-            var details = taskInstance.TriggerDetails as AppServiceTriggerDetails;
 
-            if (details == null)
+            if (!(taskInstance.TriggerDetails is AppServiceTriggerDetails details))
             {
                 return;
             }
@@ -195,13 +194,12 @@ namespace Transcoder
                         break;
 
                     case "Transcode":
-                        var input = args.Request.Message["FileTokens"] as string;
-                        if (input != null)
+                        if (args.Request.Message["FileTokens"] is string input)
                         {
                             var jsonArray = JsonArray.Parse(input);
 
                             var sourceTokens = from item in jsonArray
-                                select item.GetObject();
+                                               select item.GetObject();
 
                             await TranscodeJsonAsync(sourceTokens, args.Request.Message);
 

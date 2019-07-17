@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="Extension.cs" />
     <Compile Include="GifCreator.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="JournalistTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
