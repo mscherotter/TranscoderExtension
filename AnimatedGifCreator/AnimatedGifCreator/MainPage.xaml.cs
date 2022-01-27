@@ -7,7 +7,7 @@
 // <summary>MainPage code behind</summary>
 
 using CreationService;
-using Microsoft.Services.Store.Engagement;
+//using Microsoft.Services.Store.Engagement;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -62,9 +62,9 @@ namespace AnimatedGifCreator
 
             FileList.ItemsSource = _sourceFiles;
 
-            FeedbackButton.Visibility = StoreServicesFeedbackLauncher.IsSupported()
-                ? Visibility.Visible
-                : Visibility.Collapsed;
+            FeedbackButton.Visibility = Visibility.Collapsed;// StoreServicesFeedbackLauncher.IsSupported()
+                //? Visibility.Visible
+                //: Visibility.Collapsed;
         }
 
         internal async void Activate(FileActivatedEventArgs args)
@@ -254,9 +254,9 @@ namespace AnimatedGifCreator
 
                 await Launcher.LaunchFolderAsync(folder);
 
-                var logger = StoreServicesCustomEventLogger.GetDefault();
+                //var logger = StoreServicesCustomEventLogger.GetDefault();
 
-                logger.Log("Transcode multiple files");
+                //logger.Log("Transcode multiple files");
             }
             catch (TaskCanceledException)
             {
@@ -324,9 +324,9 @@ namespace AnimatedGifCreator
 
                         await Launcher.LaunchFileAsync(destinationFile);
                     }
-                    var logger = StoreServicesCustomEventLogger.GetDefault();
+                    //var logger = StoreServicesCustomEventLogger.GetDefault();
 
-                    logger.Log("Transcode single file");
+                    //logger.Log("Transcode single file");
                 }
                 catch (TaskCanceledException)
                 {
@@ -385,10 +385,10 @@ namespace AnimatedGifCreator
             }
         }
 
-        private async void OnFeedback(object sender, RoutedEventArgs e)
+        private void OnFeedback(object sender, RoutedEventArgs e)
         {
-            if (StoreServicesFeedbackLauncher.IsSupported())
-                await StoreServicesFeedbackLauncher.GetDefault().LaunchAsync();
+            //if (StoreServicesFeedbackLauncher.IsSupported())
+              //  await StoreServicesFeedbackLauncher.GetDefault().LaunchAsync();
         }
     }
 }
