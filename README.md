@@ -85,7 +85,11 @@ FileTokens | String | a JSON array containing JSON objects with SourceToken and 
 Quality	   | String | Source, Custom, HD1080p, HD720p, Wvga, Ntsc, Pal, Vga, Qvga
 Width	   | UInt   | (optional) width of destination file if Quality is "Custom"
 Height	   | UInt   | (optional) height of destination file if Quality is "Custom"
+
 #### Output
 Property   | Type   | Description
 ---------- | ------ | -----------
-Status     | String | "OK" if successful
+Status     | String | "OK" if successful, an error message to show to the user in the case of a problem.
+
+### Errors in Extensions
+If you use the Transcoder.Extension class, throwing an exception in your extension will show that message in the exception to the user in a Toast notification from Transcoder.
