@@ -200,14 +200,21 @@ namespace Transcoder
 
                             var sourceTokens = from item in jsonArray
                                                select item.GetObject();
-
-                            await TranscodeJsonAsync(sourceTokens, args.Request.Message);
-
-                            if (_canceled)
+                            try
                             {
-                                throw new TaskCanceledException();
+                                await TranscodeJsonAsync(sourceTokens, args.Request.Message);
+
+                                if (_canceled)
+                                {
+                                    response["Status"] = "Canceled";
+                                }
+
+                                response["Status"] = "OK";
                             }
-                            response["Status"] = "OK";
+                            catch (Exception ex)
+                            {
+                                response["Status"] = ex.Message;
+                            }
                         }
                         break;
 

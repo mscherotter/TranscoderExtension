@@ -66,6 +66,7 @@ namespace CreationService
         {
             if (source == null) throw new ArgumentNullException(nameof(source), "source cannot be null.");
 
+            
             if (destination == null) throw new ArgumentNullException(nameof(destination), "destination cannot be null.");
 
             if (width == 0)
@@ -222,7 +223,7 @@ namespace CreationService
 
                     return true;
                 }
-        });
+            });
         }
 
         /// <summary>
